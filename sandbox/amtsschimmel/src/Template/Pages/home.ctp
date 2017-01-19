@@ -87,7 +87,7 @@ Email::configTransport('gmail', [
       margin-bottom: 30px;
   }  
   .jumbotron {
-      background-color: #474E5D;
+      background-color: #413131;
       color: #fff;
       padding: 100px 25px;
       font-family: Montserrat, sans-serif;
@@ -99,25 +99,25 @@ Email::configTransport('gmail', [
       background-color: #f6f6f6;
   }
   .logo-small {
-      color: #474E5D;
+      color: #413131;
       font-size: 50px;
   }
   .logo {
-      color: #474E5D;
+      color: #413131;
       font-size: 200px;
   }
   .carousel-control.right, .carousel-control.left {
       background-image: none;
-      color: #474E5D;
+      color: #413131;
   }
     .carousel-indicators {
         bottom: -10px !important;
     }  
   .carousel-indicators li {
-      border-color: #474E5D;
+      border-color: #413131;
   }
   .carousel-indicators li.active {
-      background-color: #474E5D;
+      background-color: #413131;
   }
   .item h4 {
       font-size: 19px;
@@ -125,12 +125,13 @@ Email::configTransport('gmail', [
       font-weight: 400;
       font-style: italic;
       margin: 40px 0;
+      min-height: 55px;
   }
   .item span {
       font-style: normal;
   }
   .panel {
-      border: 1px solid #474E5D; 
+      border: 1px solid #413131; 
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
@@ -138,13 +139,13 @@ Email::configTransport('gmail', [
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
   .panel-footer .btn:hover {
-      border: 1px solid #474E5D;
+      border: 1px solid #413131;
       background-color: #fff !important;
-      color: #474E5D;
+      color: #413131;
   }
   .panel-heading {
       color: #fff !important;
-      background-color: #474E5D !important;
+      background-color: #413131 !important;
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
@@ -164,7 +165,7 @@ Email::configTransport('gmail', [
   }
   .panel-footer .btn {
       margin: 15px 0;
-      background-color: #474E5D;
+      background-color: #413131;
       color: #fff;
   }
   
@@ -173,14 +174,26 @@ Email::configTransport('gmail', [
     border-radius: 0;
     margin-bottom: 0;
     font-size: 17px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    letter-spacing: 2px;
+    -webkit-backface-visibility: hidden !important;
   }
   .navbar li a, .navbar .navbar-brand {
-      color: #474E5D !important;
+      color: #413131 !important;
       font-size: 17px;
+  }
+  .navbar-brand {
+      margin-bottom: 10px;
+  }
+  .navbar li a {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 30px !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: whitesmoke !important;
-      background-color: #474e5d !important;
+      background-color: #413131 !important;
   }
   .navbar-default .navbar-toggle {
       border-color: transparent;
@@ -189,7 +202,7 @@ Email::configTransport('gmail', [
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #474E5D;
+      color: #413131;
   }
   .slideanim {visibility:hidden;}
   .slide {
@@ -246,15 +259,14 @@ Email::configTransport('gmail', [
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Amtshilfe-LE.de</a>
+      <a class="navbar-brand" href="#">AMTSHILFE-LE.de</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#what">WAS</a></li>
         <li><a href="#how">WIE</a></li>
-        <li><a href="#pricing">WIEVIEL</a></li>
-        <li><a href="#contact">WER</a></li>        
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">LOS GEHT'S<span class="caret"></span></a>
+        <li><a href="#pricing">WIEVIEL</a></li>      
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">WANN <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#section41">Section 4-1</a></li>
               <li><a href="#section42">Section 4-2</a></li>
@@ -267,16 +279,24 @@ Email::configTransport('gmail', [
 </nav>
     
 <div id="what" class="container-fluid high-padding bg-even text-center">
-    <div class="delay sec1 left"><span class="glyphicon glyphicon-check"> schnell</span></div>
-    <div class="delay sec2 left"><span class="glyphicon glyphicon-check"> günstig</span></div>
-    <div class="delay sec3 left"><span class="glyphicon glyphicon-check"> zuverlässig</span></div>
+
 <h3 style='font-weight: 500; font: Montserrat, sans-serif'>Keine Zeit für die Fahrt zum Amt? Keine Nerven oder keine Ahnung?</h3>
-  <?= $this->Html->image('kopf.png', ['alt' => 'Reite den Amtsschimmel', 'class' => 'img-responsive img-circle margin', 'style' => 'display:inline', 'alt' => '', 'width' => '300', 'height' => '300']); ?>
-<h3 style='font-weight: 500; font: Montserrat, sans-serif'>Wir erledigen Ihre Behördengänge und helfen bei allen Fragen und Formularen</h3>
+  <?= $this->Html->image('kopf.png', ['alt' => 'Reite den Amtsschimmel', 'class' => 'img-responsive img-circle margin', 'style' => 'display:inline', 'alt' => '', 'width' => '280', 'height' => '280']); ?>
+<h3 style='font-weight: 500; font: Montserrat, sans-serif'>Wir erledigen Ihre Behördengänge und helfen bei allen Fragen und Formularen.</h3>
+<div class="starter">
+    <a class="sign-up" href="#lohn-form">
+        JETZT TESTEN
+    </a>
+    <div class="delay sec1 left"><span class="glyphicon glyphicon-check"> </span> Professionell & Zuverlässig</div>
+    <div class="delay sec2 left"><span class="glyphicon glyphicon-check"> </span> Günstig & Verständlich</div>
+    <div class="delay sec3 left"><span class="glyphicon glyphicon-check"> </span> Schnell & Flexibel</div>
+</div>
+
+
 </div>
     
 <div class="container-fluid bg-odd low">
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="10000">
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="5000">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -287,13 +307,13 @@ Email::configTransport('gmail', [
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
+        <h4>"Kein Schlange stehen und einen Tag Urlaub gespart." (KFZ-Anmeldung)<br><span style="font-style:normal;">Robert Lange, Dipl.-Kfm.</span></h4>
       </div>
       <div class="item">
-        <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
+        <h4>"Formulare per Mail und Hilfe beim Ausfüllen. Bin voll zufrieden."<br><span style="font-style:normal;">Benjamin Litschko, Geologe</span></h4>
       </div>
       <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
+        <h4>"Parkausweis innerhalb eines Tages erhalten. Perfekt."<br><span style="font-style:normal;">Santina Koj, Pädagogin</span></h4>
       </div>
     </div>
 
@@ -521,7 +541,7 @@ $(document).ready(function(){
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
-        scrollTop: $(hash).offset().top -10
+        scrollTop: $(hash).offset().top -50
       }, 700, function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)
