@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- Schachbrettmuster (funktioniert wegen Vendor-Prefix nur im Firefox) -->
+
+<style>
+div {
+	height:100%; width:100%;
+	border:1px solid #000;
+}
+#foo {
+    background-color:white;
+	background:-moz-linear-gradient(45deg, black 25%, transparent 25%,
+	                                transparent 75%, black 75%, black),
+				-moz-linear-gradient(45deg, black 25%, transparent 25%,
+	                                transparent 75%, black 75%, black);
+	background-position:0 0, 50px 50px;
+	background-size:99px 99px;
+}
+</style>
+
+<div id="foo"></div>

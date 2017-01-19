@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Ein Strichmännchen malen... auf die harte Tour! -->
+<p>
+<canvas id="canvas" width="500" height="250" style="border:1px solid black"></canvas>
+
+<script>
+var canvas = document.getElementById('canvas');
+if(canvas.getContext){
+	var context = canvas.getContext('2d');
+	
+	// Pfad-Einstellungen
+	context.strokeStyle = 'red';
+	context.lineWidth = 12;
+	context.lineCap = 'round';
+	
+	// Neuer Pfad
+	context.beginPath();
+	
+	// Körper
+	context.moveTo(240, 100);
+	context.lineTo(240, 200);
+	
+	// Beine
+	context.lineTo(190, 250);
+	context.moveTo(240, 200);
+	context.lineTo(290, 250);
+	
+	// Arme
+	context.moveTo(240, 150);
+	context.lineTo(190, 150);
+	context.moveTo(240, 150);
+	context.lineTo(290, 150);
+	
+	// Linien ziehen
+	context.stroke();
+
+	// Neuer Pfad für den Kopf
+	context.beginPath();
+
+	// Grad-zu-Radiant-Hilfsfunktion
+	Math.toRad = function(x){
+		return x * Math.PI / 180;
+	}
+
+	// Kreis ziehen
+	context.arc(240, 80, 35, Math.toRad(0), Math.toRad(360), true);
+
+	// Linien ziehen
+	context.stroke();
+
+	// Kopf füllen
+	context.fillStyle = 'red';
+	context.fill();
+
+	// Pfad schließen
+	context.closePath();
+	
+}
+</script>

@@ -1,0 +1,23 @@
+var intervalHandler = 0;
+var intervalTime = 1000;        
+var bling = 'false';
+function blinkIt(){
+	if(bling == 'false'){
+		document.getElementById("teaser").className = "bling";
+		bling = 'true';
+	} else {
+		document.getElementById("teaser").className = "textglow";
+		bling = 'false';
+		document.getElementById('progress').style.display="none";
+	}
+}
+
+if(document.getElementById){
+	intervalHandler = setInterval(function(){blinkIt()}, intervalTime);
+}
+
+							
+							
+
+							
+							

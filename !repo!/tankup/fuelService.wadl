@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://research.sun.com/wadl/2006/10"
+xmlns:fs="http://www.sparesprit.de/fuelService">
+	
+	<grammars>
+		<include href="fuelService.xsd" />
+	</grammars>
+
+    <resources base="http://www.spareSprit.de/api/v2">
+        <resource path="/CoordsByTown/{town}">
+            <method name="GET">
+                <response>
+                    <representation mediaType="application/xml" element="fs:location" />
+                    <fault mediaType="application/xml" element="fs:error" status="404" />
+                    <fault mediaType="application/xml" element="fs:error" status="500" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/TownByCoords/{latitude}/{longitude}">
+            <method name="GET">
+                <response>
+                    <representation mediaType="application/xml" element="fs:town" />
+                    <fault mediaType="application/xml" element="fs:error" status="404" />
+                    <fault mediaType="application/xml" element="fs:error" status="500" />                    
+                </response>
+            </method>
+        </resource>    
+        <resource path="/DataByCoords/{article}/{distance}/{sortBy}{latitude}/{longitude}">
+            <method name="GET">
+                <response>
+                    <representation mediaType="application/xml" element="fs:GetDataByCoordsResponse" />
+                    <fault mediaType="application/xml" element="fs:error" status="404" />
+                    <fault mediaType="application/xml" element="fs:error" status="500" />                    
+                </response>
+            </method>
+        </resource>             
+    </resources>
+</application>

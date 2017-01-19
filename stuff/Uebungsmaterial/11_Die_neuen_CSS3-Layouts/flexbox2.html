@@ -1,0 +1,44 @@
+<!doctype html>
+<title>Flexbox-Layout</title>
+
+<!-- Flexbox-Layout 1 -->
+<!-- Actung: Funktioniert mit Vendor-Prefix -moz- nur im Firefox -->
+
+<style>
+
+#container {
+	width: 960px;
+	height: 512px;
+	border: 8px solid blue;
+	display: -moz-box;
+	-moz-box-pack: center;
+}
+#blubb {
+	border: 8px solid black;
+	display: -moz-box;
+	margin: 0 auto;
+}
+#foo {
+	border: 8px solid red;
+	-moz-box-flex: 4;
+}
+#bar {
+	border: 8px solid green;
+	-moz-box-flex: 2;
+}
+#baz {
+	border: 8px solid magenta;
+	-moz-box-flex: 1;
+}
+
+</style>
+
+<div id="container">
+<div id="blubb">
+	<div id="foo">Foo</div>
+	<div id="bar">Bar</div>
+	<div id="baz">Baz</div>
+</div>
+</div>
+
+</div>

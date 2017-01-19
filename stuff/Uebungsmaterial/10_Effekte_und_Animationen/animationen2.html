@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Ein durchkonfiguriertes Beispiel für CSS-Animationen -->
+<style>
+@-moz-keyframes test {
+	from {
+		padding-left:0;
+		color:black;
+	}
+	50% {
+		padding-left:256px;
+		color:red;
+	}
+	to {
+		padding-left:128px;
+		color:lime;
+	}
+}
+p {
+	font-size:64px;
+	font-weight:bold;
+	color:black;
+}
+p:hover {
+	color:blue;
+	-moz-animation-name:test;
+	-moz-animation-duration:3s;
+	-moz-animation-delay:750ms;
+	-moz-animation-timing-function:ease-out;
+	-moz-animation-fill-mode:forwards;
+	-moz-animation-iteration-count:infinite;
+	-moz-animation-direction:alternate;
+}
+</style>
+
+<p>Animiere mich!</p>

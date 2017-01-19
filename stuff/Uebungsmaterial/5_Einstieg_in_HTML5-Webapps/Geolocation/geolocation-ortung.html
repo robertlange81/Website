@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Positionsüberwachung mit der Geolocation-API -->
+<style>body { font-size:1.5em; }</style>
+
+<pre id="ergebnis"></pre>
+
+<input type="button" value="Stopp!" onclick="stopWatch()">
+
+<script>
+var erfolgCallback = function(position){
+	var msg = 'Zeit: ' + position.timestamp + "\n" +
+	'Geographische Breite: ' + position.coords.latitude + "\n" +
+	'Geographische Länge: ' + position.coords.longitude + "\n" +
+	'Höhe: ' + position.coords.altitude + "\n" +
+	'Präzision: ' + position.coords.accuracy + "\n" +
+	'Präzision der Höhenmessung: ' + position.coords.altitudeAccuracy + "\n" +
+	'Richtung: ' + position.coords.heading + "\n" +
+	'Geschwindigkeit: ' + position.coords.speed + "\n";
+	document.getElementById('ergebnis').innerHTML = msg;
+};
+
+var fehlerCallback = function(e){
+	var msg = 'Fehler ' + e.code + ': ' + e.message;
+	alert(msg);
+};
+
+var optionen = {
+	enableHighAccuracy: true,
+	timeout: 5000,
+	maximumAge: 0
+};
+
+if(navigator.geolocation){
+	var ueberwachung = navigator.geolocation.watchPosition(erfolgCallback, fehlerCallback, optionen);
+}
+
+var stopWatch = function(){
+	navigator.geolocation.clearWatch(ueberwachung);
+}
+
+</script>

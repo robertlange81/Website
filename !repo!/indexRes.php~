@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Standard - Web & App</title>
+		<meta name="keywords" content="Robert Lange, Standard80, Wapplication, Web, App" />
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta charset="utf-8" />
+		<link rel="SHORTCUT ICON" href="images/favicon1.ico">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+      
+      <!--[if IE]>
+            <link rel="stylesheet" type="text/css" href="css/desktop_ie.css" media="all" />
+      <![endif]-->
+      <script src="js/load.js"></script>
+      <script type="text/javascript" src="js/spiral.js"></script>
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/android.js"></script>
+		
+      <?php
+                  /**
+                   * @Robert Lange
+                   * @copyright 2011
+                   */
+                   $db_id = mysql_connect("localhost","web1162","bX2KARTc");
+                   if(§db_id == FALSE)
+                   {	
+                          die("Verbindungsaufbau ist gescheitert");
+                   }
+
+                   mysql_query("use usr_web_1162_2");
+                   mysql_query("SET names 'utf8'");
+                   mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'", $db_id);
+
+                  include_once("check_mobile.php");
+                  $style = '';
+                  if(check_mobile()) {
+                          $type = check_mobile();
+                          $style = 'handheld';
+                          printf("<script type='text/javascript'> var style ='handheld'; </script>");
+                          printf("<link rel='stylesheet' type='text/css' href='css/android.css' media='screen,projection' />");
+                  } else {
+                  		  
+                          $os = $_SERVER['HTTP_USER_AGENT'];
+                          if (strpos($os, 'Opera')!== false) {
+                                 printf("<script type='text/javascript'> var style ='opera'; </script>");
+                                 printf("<link rel='stylesheet' href='css/opera.css' type='text/css' media='screen,projection' /> \n\t");
+                                 $style = 'opera';
+                          } else {
+                                 $style = 'screen';
+                                 printf("<link rel='stylesheet' type='text/css' href='css/android.css' media='only screen and (max-width: 480px)' />\n\t");
+                                 printf("  <link rel='stylesheet' type='text/css' href='css/desktop.css' media='screen and (min-width: 481px)' /> \n");                       
+                          }
+                  }
+
+         ?>
+	 </head>
+    
+     <body onloadstart="loadPage()" onload="pageLoaded()">
+		<div id="progress">loading...</div>
+		<div id="container">
+						
+            <header class="home">
+            	<div id="Spirale">
+						<img id="spiralbild" alt="80" src="./images/gay_spiral.jpg" />
+					</div>
+						<h2 class="textglow">
+								Standard80  -
+								<span id="android">
+									 <i>  Home</i> 
+								</span>	
+								<span id="desktop">
+									 <strong><b>Web & App & Database</b></strong>
+								</span>	
+						</h2>			
+				</header>
+				
+				<aside>
+                		<nav>
+                		  <div id="breadcrumbs">
+								<ul>
+                  			<li class="home_Button"><a href="/index.php?theme=home" style="color:whitesmoke">  Home  </a></li>
+                  			<li class="apps_Button"><a href="/index.php?theme=apps">  Apps  </a></li>
+									<li class="games_Button"><a href="/index.php?theme=games">  Games </a></li>
+									<li class="projects_Button"><a href="/index.php?theme=projects" >Projects</a></li>
+									<li class="blog_Button"><a href="/index.php?theme=home" >  Blog  </a></li>
+								</ul>
+							  </div>
+							</nav>
+            </aside>
+												            
+            <section id="content">
+					<script type="text/javascript" >
+						$(document).ready(function(){loadPage();})
+					</script>
+						<article  id="home">    
+							Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum					
+							Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum
+							Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumIpsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum
+														
+						</article> 
+					<!--
+           
+               	<h2>About</h2>
+               	<p><img alt="Portrait of Robert Lange" src="images\Robert_Lange.JPG" width="50" height="50">Robert Lange is a software developer having a Diploma in Economics and Business Administration.</p>
+					
+					-->           
+            </section>
+                        
+            <div id="font_size">
+             <label style="font-size:65%; color:black; vertical-align:baseline" title="minimize font size" onclick="klein()">A</label>
+             <label style="font-size:105%; color:black; vertical-align:baseline" title="normal font size" onclick="normal()">A</label>
+             <label style="font-size:150%; color:black; vertical-align:baseline" title="maximize font size" onclick="gross()">A</label>
+    			</div>
+    			
+    			<div id="language" class="android_lang_home">
+    				<a href="link.xhtml"><img src="images/german.jpg" alt="deutsch" width="50" height="25" title="deutsch" id="not_chosen" /></a>
+    				<a href="link.xhtml"><img src="images/unionJack.jpg" alt="english" width="50" height="25" title="english" id="chosen" /></a>
+    			</div>
+            
+            <footer class="home">
+            	<span id="footlinks">
+                	<a href="#">About</a>  <a href="#">Imprint</a> 
+               </span>
+               <span id="overview">
+                	Robert Lange - Web & App - IT Services
+               </span>
+            </footer>      
+		</div>
+    </body>
+</html>

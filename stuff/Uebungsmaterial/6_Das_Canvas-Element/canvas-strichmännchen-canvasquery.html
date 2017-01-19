@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- Strichmännchen mit CanvasQuery -->
+
+<p>
+<canvas id="canvas" width="500" height="250" style="border:1px solid black"></canvas>
+
+<script src="CanvasQuery.js"></script>
+<script>
+var context = new CanvasQuery('canvas');
+context.set({
+	strokeStyle: 'red',
+	lineWidth: 12,
+	lineCap: 'round'
+});
+context.beginPath().moveTo(240, 100).lineTo(240, 200);
+context.lineTo(190, 250).moveTo(240, 200).lineTo(290, 250);
+context.moveTo(240, 150).lineTo(190, 150).moveTo(240, 150).lineTo(290, 150).stroke();
+context.beginPath().arc(240, 80, 35, context.toRad(0), context.toRad(360), true).stroke();
+context.set('fillStyle', 'red').fill().closePath();
+</script>

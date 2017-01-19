@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Anklickbarer Fortschrittsbalken für unser Video-Element -->
+<p>
+<video id="film" src="video.mp4" width="50%"></video>
+
+<p>
+<progress id="fortschritt" min="0" value="0" max="" style="width:50%"></progress>
+
+<p>
+<input type="button" value="Start/Stop" onclick="start()">
+<input type="button" value="Stummschalten" onclick="stumm()">
+<input type="button" value="Lauter" onclick="lauter()">
+<input type="button" value="Leiser" onclick="leiser()">
+
+<script>
+var video = document.getElementById('film');
+
+var start = function(){
+	if(video.paused){
+		video.play();
+	}
+	else {
+		video.pause();
+	}
+}
+
+var stumm = function(){
+	if(video.muted){
+		video.muted = false;
+	}
+	else {
+		video.muted = true;
+	}
+}
+
+var lauter = function(){
+	if(video.volume < 1){
+		video.volume = (video.volume < 0.8) ? video.volume + 0.2 : 1;
+	}
+}
+
+var leiser = function(){
+	if(video.volume > 0){
+		video.volume = (video.volume > 0.2) ? video.volume - 0.2 : 0;
+	}
+}
+
+video.addEventListener('loadedmetadata', function(){
+	var fortschritt = document.getElementById('fortschritt');
+	fortschritt.setAttribute('max', video.duration);
+	setInterval(function(){
+		fortschritt.setAttribute('value', video.currentTime);
+	}, 500);
+}, false);
+
+var springeZu = function(zeit){
+	video.currentTime = zeit;
+}
+
+// Quelle: http://www.quirksmode.org/js/findpos.html
+var findPos = function(obj){
+    var curleft = 0;
+	var curtop = 0;
+    if(obj.offsetParent){
+        do {
+            curleft += obj.offsetLeft;
+            curtop  += obj.offsetTop;
+        } while(obj = obj.offsetParent);
+    }
+    return [curleft, curtop];
+}
+
+// Klickbarer Fortschrittsbalken
+var fortschritt = document.getElementById('fortschritt');
+fortschritt.addEventListener('click', function(event){
+	// Breite des Balken bestimmen
+	var breite = parseInt(window.getComputedStyle(this, null).getPropertyValue('width'));
+	// X-Koordinate des Balken im Dokument
+	var balkenX = findPos(this)[0];
+	// X-Koordinate des Klicks im Balken
+	var clickX = event.clientX - balkenX;
+	// Balken-Pixel zu Prozent
+	var prozent = 100 / breite * clickX;
+	// Prozent zu Video-Zeit
+	var zeit = video.duration / 100 * prozent; 
+	springeZu(zeit);
+}, false);
+</script>

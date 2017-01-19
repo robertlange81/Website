@@ -1,0 +1,2 @@
+[03/Jan/2015:17:28:13] (FuelApi) SQL_Injection?: /api/v2/FuelApi.php?request=townbycoords&latitude=51.3493&longitude=select
+[03/Jan/2015:17:31:50] (FuelApi) SQL_Injection?: /api/v1/FuelApi.php?request=townbycoords&latitude=51.3493&longitude=select

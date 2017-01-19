@@ -1,0 +1,22 @@
+update wp_posts set post_content = replace( post_content,'Ã¼','&uuml;');
+update wp_posts set post_content = replace( post_content,'Ã¤','&auml;');
+update wp_posts set post_content = replace( post_content,'Ã¶','&ouml;');
+update wp_posts set post_content = replace( post_content,'ÃŸ','&szlig;');
+update wp_posts set post_content = replace( post_content,'Ãœ','&Uuml;');
+update wp_posts set post_content = replace( post_content,'Ã„','&Auml;');
+update wp_posts set post_content = replace( post_content,'Ã–','&Ouml;');
+update wp_posts set post_title = replace( post_title,'Ã¼','&uuml;');
+update wp_posts set post_title = replace( post_title,'Ã¤','&auml;');
+update wp_posts set post_title = replace( post_title,'Ã¶','&ouml;');
+update wp_posts set post_title = replace( post_title,'ÃŸ','&szlig;');
+update wp_posts set post_title = replace( post_title,'Ãœ','&Uuml;');
+update wp_posts set post_title = replace( post_title,'Ã„','&Auml;');
+update wp_posts set post_title = replace( post_title,'Ã–','&Ouml;');
+update wp_comments set comment_content = replace( comment_content,'Ã¼','&uuml;');
+update wp_comments set comment_content = replace( comment_content,'Ã¤','&auml;');
+update wp_comments set comment_content = replace( comment_content,'Ã¶','&ouml;');
+update wp_comments set comment_content = replace( comment_content,'ÃŸ','&szlig;');
+update wp_comments set comment_content = replace( comment_content,'Ãœ','&Uuml;');
+update wp_comments set comment_content = replace( comment_content,'Ã„','&Auml;');
+update wp_comments set comment_content = replace( comment_content,'Ã–','&Ouml;');
+

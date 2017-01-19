@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Achtung: Funktioniert nur über einen echten Webserver (egal ob online oder lokal)
+Hintergrund ist, dass das Kopieren von Bilddaten durch die Same-Origin-Policy
+geschützt ist. Ohne Origin (d.h. einen ordnungsgemäßen Host über den die Seite
+aufgerufen wird) gibt's kein Kopieren.
+-->
+<style> * { text-align:center; } video, canvas { margin:1em; } </style>
+
+<p>
+<video controls id="video" width="320" height="180">
+	<source src="video.mp4" type="video/mp4">
+	<source src="video.webm" type="video/webm">
+	<source src="video.ogv" type="video/ogv">
+</video>
+
+<canvas id="c1" width="320" height="180" style="border:1px solid black"></canvas>
+
+<canvas id="c2" width="320" height="180" style="border:1px solid black"></canvas>
+
+<script>
+var video = document.getElementById('video');
+var zwischenablage = document.getElementById('c1').getContext('2d');
+var zielcanvas     = document.getElementById('c2').getContext('2d');
+
+var reqAniFra = (function(){
+	return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function(callback){
+			setTimeout(callback, 1000 / 60);
+		}
+})();
+
+var kopieren = function(){
+	zwischenablage.drawImage(video, 0, 0, 320, 180);
+	var bilddaten = zwischenablage.getImageData(0, 0, 320, 180);
+	bilddaten = effekt(bilddaten);
+	zielcanvas.putImageData(bilddaten, 0, 0);
+	if(!video.paused){
+		reqAniFra(kopieren);
+	}
+}
+
+var effekt = function(daten){
+	var i = 0;
+	while(i < daten.data.length){
+		daten.data[i] = 255 - daten.data[i++];
+		daten.data[i] = 255 - daten.data[i++];
+		daten.data[i] = 255 - daten.data[i++];
+		i++;
+	}
+	return daten;
+}
+
+video.addEventListener('play', function(){
+	reqAniFra(kopieren);
+}, false);
+
+</script>

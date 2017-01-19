@@ -1,0 +1,30 @@
+<?php
+ 
+// eine beliebige PHP-Funktion 
+function placeContent($arg1, $arg2)
+{
+	 
+	 $db_id = mysql_connect("localhost","web1162","bX2KARTc");
+    if(!§db_id)
+    {	
+        die("Verbindungsaufbau ist gescheitert");
+    }
+
+    // mysql_query("use usr_web_1162_2");
+    $db_sel = mysql_select_db("usr_web1162_2", $db_id);
+    if (!$db_sel) { 
+		die ('Kann Datenbank nicht benutzen : ' . mysql_error()); 
+	 }
+	 echo $arg1;
+	 echo $arg2;
+    $article = mysql_query("select * from `content` where `theme` = 'home' and `lang` = 'de'");
+	 if(mysql_num_rows($article) >=1) {
+	 	while($aktZeile = mysql_fetch_assoc($article)){
+	 		echo $aktZeile['article'];
+	 	}
+	 } 
+}
+ 
+placeContent($_POST['theme'], $_POST['lang']);
+
+?>

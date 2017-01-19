@@ -1,0 +1,4 @@
+AddDefaultCharset UTF-8
+
+AddHandler x-httpd-php5 .php
+Redirect permanent http://www.standard80.de http://www.robert-lange.eu

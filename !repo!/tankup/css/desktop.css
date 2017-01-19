@@ -1,0 +1,732 @@
+	
+html {
+	font-family:'Lucida Casual', 'Comic Sans MS';
+	width: 100%;
+	height: 100%;
+	background-color: gray;
+}
+
+a:focus {
+   outline: none;	
+}
+
+body {	
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: url(../img/bg_3_2.jpg) no-repeat;
+	background-position: center bottom;
+	background-size: 105% 105%;
+	position: relative;
+	top: -10px;
+	left: -10px;
+	color: wheat;
+}
+
+#progress {
+	
+    /*background:-moz-radial-gradient(center, #000, #8181FF); /* Firefox */
+	 /*background:-webkit-radial-gradient(center, #000, #8181FF); /* Safari, Chrome */
+	 /*background:-o-radial-gradient(center, #000, #8181FF); /* Opera */
+	 /*background:-ms-radial-gradient(center, #000, #8181FF); /* IE */
+	 /*background:radial-gradient(center, #000, #8181FF); /* W3C Standard */
+	 background-color: white;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    left: 0px;
+    top:0px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9;
+}
+
+#hauptmenu {
+	 background: url(../img/hauptmenu_bg_16_9_new.png) 50% 100% / 100% no-repeat;
+	 position: fixed;
+	 bottom: 0px;
+	 left: -100px;
+	 width: 1245px;
+	 height: 700px;
+	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+	 z-index: 1;
+}
+
+#favoriten{
+	position:fixed;
+	top:90px;
+	left:15px;
+	border: 2px solid #444444;
+	padding: 5px;
+	z-index: 99;
+}
+
+#results {
+	position:fixed;
+	color: whitesmoke;
+	right: -5%;
+	width: 650px;
+	bottom: 50px;
+	border: none;
+	padding: 1px;
+	font-size: 0.8rem;
+	text-transform: uppercase;	
+	opacity: 0.8;
+}
+
+#results img {
+	width: 55px;
+	height: 55px;	
+}
+
+#results table {
+	border: 1px solid black;
+	background-color: gray;
+}
+
+#results a {
+	text-decoration: none;
+	color: wheat;	
+}
+
+.redBorder {
+	border: 2px solid red;	
+	background-color: white;
+	opacity: 1.0;
+}
+
+.redBackground {
+	background-color: red;
+}
+
+.whiteBorder {
+	border: 2px solid white;
+	background-color: white;
+	opacity: 1.0;	
+}
+
+#results table, th
+{
+	padding: 3px;
+}
+
+#results tr 
+{
+	background-color: gray;
+	background-image: -webkit-linear-gradient(#383838 0%, #555 100%);
+	background-image: -moz-linear-gradient(#383838 0%, #555 100%);
+	background-image: -ms-linear-gradient(#383838 0%, #555 100%);
+	background-image: -o-linear-gradient(#383838 0%, #555 100%);
+	background-image: linear-gradient(#383838 0%, #555 100%);	
+}
+
+#results td 
+{
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.detail {
+	display: none;
+	visibility: hidden;	
+	height: 0px;
+}
+/*
+#detail0 {
+	display: none;
+	visibility: hidden;	
+}*/
+
+#ort {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	text-align: center;
+	width: 600px;
+	height: 126px;
+	color: darkblue;
+	background: url(../img/schild_leer_gross2.png) 50% 0 / 100% no-repeat;
+	vertical-align: middle;
+	padding-left: 10px;
+	padding-top: 5px;
+	overflow: hidden;
+}
+
+#stadt {
+	bottom: 73px;
+	left: 45px;
+	font-size: 35px;
+	width: 91%;
+	position: absolute;
+	border: none;	
+	color: blueviolet;
+	background-color: transparent;
+	text-align: left;
+}
+
+#saeule{
+	position:relative;
+	height: 100%;	
+	width: 25%;
+	left: 245px;
+	/*background: #777 url(../img/schild_ueberschrift.png) no-repeat;*/
+	font-size: 200%;
+	font-weight: bold;
+	 z-index: 1;
+	 text-align: center;
+}
+
+#tankstelle {
+	color: red;
+	position: relative;
+	top: 10px;
+	text-align: center;
+	width: 100%; 
+	left: -5px;
+	font-size: 130%;
+	z-index: 99;
+	line-height: 90%;
+}
+
+#tankstelleText {
+	color: red;
+}
+
+#art {
+	top: 5px;
+	position: relative;	
+}
+
+#treibstoff {
+	bottom: 0px;
+	height: 460px;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+
+
+#treibstoff select {
+    padding:3px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+	padding-left: 20px;
+    color: red;
+    border: 2px solid red;
+    outline:none;
+    display: inline-block;
+    cursor:pointer;
+    font-size: 40px;
+    text-align: center;
+    font-variant: visual;
+    width: 250px;
+    text-align: center;
+	/*
+    background:-moz-radial-gradient(center, #000, #eeeeee); 
+	 background:-webkit-radial-gradient(center, #000, #eeeeee); 
+	 background:-o-radial-gradient(center, #000, #eeeeee); 
+	 background:-ms-radial-gradient(center, #000, #eeeeee); 
+	 background:radial-gradient(center, #000, #eeeeee); */
+	 	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	
+	background-image: -webkit-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -moz-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -ms-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -o-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	border:none;
+}
+
+
+#preis {
+	color: wheat;
+	font-size: 200%;
+	position: relative;
+	text-align: center;
+	top: 30px;
+}
+
+.preis {
+	color: wheat;
+	font-size: 120%;
+	position: relative;
+	text-align: center;
+}
+
+#preis input {
+	position: relative;
+	top: 70px;
+	width: 240px;
+	font-size: 70%;
+	color: darkblue;
+	text-align: center;
+	background:-moz-radial-gradient(center, #fff, #F1F181); /* Firefox */
+ 	background:-webkit-radial-gradient(center, #fff, #F1F181); /* Safari, Chrome */
+ 	background:-o-radial-gradient(center, #fff, #F1F181); /* Opera */
+ 	background:-ms-radial-gradient(center, #fff, #F1F181); /* IE */
+ 	background:radial-gradient(center, #fff, #F1F181); /* W3C Standard */
+ 	border-radius: 10px;
+ 	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;		
+}	
+
+#route {
+	position: relative;
+	top: 110px;
+	width: 300px;	
+}
+
+a.button {
+	width: 250px;
+	height: 40px;
+	background: #333;
+	display: block;
+	position: relative;
+	margin: 30px auto 0;
+	overflow: hidden;
+	border: 1px solid #333333;
+	color: white;
+	text-decoration: none;	
+	text-transform: uppercase;
+	
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	
+	background-image: -webkit-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -moz-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -ms-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -o-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+}
+
+a.button span.text {
+    font: 20px Arial;
+    position: relative;
+    top: 14px;
+}
+
+a.button span.shine {
+	content: '';
+	position: absolute;
+	height: 400px;
+	width: 20px;
+	background: white;
+	top: -80px;
+	left: -20px;
+	display: block;
+	opacity: 0.8;
+	
+	-webkit-box-shadow: 0px 0px 20px 10px white; 
+	-moz-box-shadow: 0px 0px 20px 10px white; 
+	box-shadow: 0px 0px 20px 10px white; 
+	
+	-webkit-transform: rotate(-45deg);	
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+a.button:hover {
+	-webkit-box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+	box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+}
+
+a.button:active {
+	-webkit-box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+	-moz-box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+	box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+}
+
+a.button:hover span.shine {
+	left: 170px;
+	top: -300px;
+}
+
+/* Tooltip */
+a.tooltip {outline:none; }
+a.tooltip strong {line-height:30px;}
+a.tooltip:hover {text-decoration:none;} 
+a.tooltip span {
+    z-index:10;display:none; padding:14px 20px;
+    margin-top:-30px; margin-left:28px;
+    width:240px; line-height:16px;
+}
+a.tooltip:hover span{
+    display:inline; position:absolute; color:#111;
+    border:1px solid #DCA; background:#fffAF0;}
+.callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}
+    
+/*CSS3 extras*/
+a.tooltip span
+{
+    border-radius:4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+        
+    -moz-box-shadow: 5px 5px 8px #CCC;
+    -webkit-box-shadow: 5px 5px 8px #CCC;
+    box-shadow: 5px 5px 8px #CCC;
+}
+
+.tooltip {
+  display:inline-block;
+  position:relative;
+  cursor:pointer;
+}
+
+.tooltipUnten {
+  color:#e74c3c;
+  transition:all 500ms;
+  font-size: 20px;
+}
+
+.tooltipUnten:before,
+.tooltipUnten:after {
+  display:block;
+  opacity:0;
+  visibility:hidden;
+  position:absolute;
+  transition:opacity 500ms;
+  position: fixed;
+  bottom: 5px;
+  right: 2px;
+}
+.tooltipUnten:before {
+  content:attr(data-tooltip-text);
+  z-index:1000;
+  color:#fff;
+  background:linear-gradient(#5c5c5c 0, #3e3e3e 100%);
+  border:.1em solid #000;
+  border-radius:20px;
+  padding: 10px;
+}
+.tooltipUnten:after {
+  content:"";
+  z-index:999;
+  width:0;
+  height:0;
+  border-top:1em solid #3e3e3e;
+  border-right:1em solid transparent;
+}
+.tooltipUnten:hover:before,
+.tooltipUnten:focus:before,
+.tooltipUnten:hover:after,
+.tooltipUnten:focus:after {
+  opacity:1;
+  visibility:visible;
+}
+
+.noFav {
+	background-image:url(../img/starblack.jpg) !important;
+	background-repeat:no-repeat;	
+	background-size: 65px 65px;
+	cursor: pointer;	
+	width: 65px;
+	height: 65px;
+	padding: 0px;
+}
+
+.noFav:hover {
+	background-image:url(../img/stargold.jpg) !important;	
+	background-repeat:no-repeat;	
+	background-size: 65px 65px;
+	cursor: pointer;
+	width: 65px;
+	height: 65px;
+	padding: 0px;
+}
+
+.isFav {
+	background-image:url(../img/stargold.jpg) !important;
+	background-repeat:no-repeat;	
+	background-size: 65px 65px;
+	cursor: pointer;
+	width: 65px;
+	height: 65px;
+	padding: 0px;
+}
+
+.transparent {
+	color: transparent;	
+}
+
+.transparent a {
+	color: transparent;	
+}
+
+.red {
+	color: wheat;	
+}
+
+.select {
+    padding:3px;
+	border: 2px solid maroon;
+	 color: red;
+	 text-decoration: none;	
+	 text-transform: uppercase;
+    cursor:pointer;
+	 width: 240px;
+	 height: 39px;
+	 background: #333;
+	 display: block;
+	 position: relative;
+    text-align: center;
+    font-size: 25px;
+    width: 275px;
+    text-align: center;
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	
+	background-image: -webkit-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -moz-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -ms-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -o-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	border:none;
+}
+
+#test:hover {
+	-webkit-box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+	box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+}
+
+#test:active {
+	-webkit-box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+	-moz-box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+	box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+}
+
+#umkreisDiv{
+	position:fixed;
+	top:-8px;
+	right:25px;
+	padding: 10px;
+	padding-right: 10px;
+	z-index: 5;
+	width: 250px;
+	float: left;
+}
+
+#sortierungDiv {
+	position:fixed;
+	top:57px;
+	right:25px;
+	padding: 10px;
+	padding-right: 10px;
+	z-index: 5;
+	width: 250px;
+	float: left;	
+}
+
+label {
+	color: wheat;
+	font-size: 20px;	
+}
+
+#profileinstellung {
+	 background: #777 url(../img/einstellungen_bg_16_9.png) no-repeat center center fixed;
+	 width: 100%;
+	 height: 100%;
+	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+	 overflow: hidden;
+}
+
+#profil {
+	display: none;
+	position: fixed;
+	bottom: 10px;
+	left: 202px;	
+	top: -20px;
+	z-index: 5;
+}
+
+#oeffnungszeiten {
+	/*background: url(../img/offen.jpg) 50% 100% / 100% no-repeat;*/
+	position: relative;
+	top: 20px;
+}
+
+#oeffnungszeiten img{
+ 	height: 40px;
+}
+
+
+@media all 
+and (min-height : 480px) 
+and (max-height : 700px)
+{
+	#hauptmenu {
+	 width: 800px;
+	 height: 500px;
+	}
+	#saeule{
+	 left: 140px;
+	}	
+	#route {
+	 top: 170px;
+	 width: 225px;	
+	 left: -10px;
+	}
+	#treibstoff {
+	 bottom: 2px;
+	 z-index: -1;
+	}
+	#treibstoff select {
+    font-size: 30px;
+    width: 200px;
+    top: 130px;
+    left: 1px;
+    z-index: 99;
+	}	
+	#tankstelle {
+	 position: relative;
+	 top: -30px;
+	 text-align: center;
+	 width: 150px; 
+	 left: -20px;
+	 font-size: 130%;
+	 z-index: 99;
+	 line-height: 90%;
+	 height: 20px;
+	 color: red;
+	}
+	#oeffnungszeiten {
+	 	top: 0px;
+	}	
+	#oeffnungszeiten img{
+	 	height: 30px;
+	}
+	#favoriten{
+	 top:80px;
+	}	
+	#preis input {
+	 top: 140px;
+	 width: 180px;
+	 font-size: 50%;	
+	}
+	#results {
+	 bottom: 40px;
+	}		
+	
+@media all 
+and (min-width : 800px) 
+and (max-width : 1100px)
+{
+	#hauptmenu {
+	 width: 800px;
+	 height: 500px;
+	}
+	#saeule{
+	 left: 140px;
+	}	
+	#route {
+	 top: 170px;
+	 width: 225px;	
+	 left: -10px;
+	}
+	#treibstoff {
+	 bottom: 2px;
+	 z-index: -1;
+	}
+	#treibstoff select {
+    font-size: 30px;
+    width: 200px;
+    top: 130px;
+    left: 1px;
+    z-index: 99;
+	}	
+	#tankstelle {
+	 position: relative;
+	 top: -30px;
+	 text-align: center;
+	 width: 150px; 
+	 left: -20px;
+	 font-size: 130%;
+	 z-index: 99;
+	 line-height: 90%;
+	 height: 20px;
+	 color: red;
+	}
+	#oeffnungszeiten {
+	 	top: 0px;
+	}	
+	#oeffnungszeiten img{
+	 	height: 30px;
+	}
+	#favoriten{
+	 top:80px;
+	}	
+	#preis input {
+	 top: 140px;
+	 width: 180px;
+	 font-size: 50%;	
+	}
+	#results {
+	 bottom: 40px;
+	}				
+}
+
+
+
+

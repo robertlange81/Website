@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- Responsive Design - unterschiedliche Styles für unterschiedliche Auflösungen -->
+
+<style>
+@media screen and (min-width: 960px) {
+	#foo {
+		background:yellow;
+	}
+}
+@media screen and (max-width: 960px) {
+	#foo {
+		background:blue;
+	}
+}
+@media screen and (max-width: 480px) {
+	#foo {
+		background:lime;
+	}
+}
+@media screen and (max-width: 320px) {
+	#foo {
+		background:red;
+	}
+}
+</style>
+
+
+<p id="foo" style="font-size:64px;">
+Hallo Welt!

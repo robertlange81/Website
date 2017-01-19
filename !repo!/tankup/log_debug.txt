@@ -1,0 +1,21 @@
+[22/Sep/2014:01:33:55] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675859 , Lat: 51.3220398.
+[22/Sep/2014:01:33:55] (jsonrpcserver) Ort: Leipzig
+[22/Sep/2014:01:33:58] (jsonrpcserver) Aufruf getFavsByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675859 , Lat: 51.3220398.
+[22/Sep/2014:01:34:05] (jsonrpcserver) Aufruf getFavsByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675859 , Lat: 51.3220398.
+[22/Sep/2014:01:34:09] (jsonrpcserver) Aufruf getFavsByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675859 , Lat: 51.3220398.
+[22/Sep/2014:01:35:15] (jsonrpcserver) Ort: Leipzig
+[22/Sep/2014:01:35:15] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675918 , Lat: 51.3220289.
+[22/Sep/2014:01:36:09] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675936 , Lat: 51.3220276.
+[22/Sep/2014:01:36:10] (jsonrpcserver) Ort: Leipzig
+[22/Sep/2014:01:36:13] (jsonrpcserver) GetFavs mit id: Array
+[22/Sep/2014:01:36:13] (jsonrpcserver) Aufruf getFavsByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675936 , Lat: 51.3220276.
+[22/Sep/2014:01:37:29] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675819 , Lat: 51.3220316.
+[22/Sep/2014:01:37:29] (jsonrpcserver) Ort: Leipzig
+[22/Sep/2014:01:37:47] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675765 , Lat: 51.3220128.
+[22/Sep/2014:01:37:47] (jsonrpcserver) Ort: Leipzig
+[22/Sep/2014:01:38:10] (jsonrpcserver) Ort: Leipzig
+[22/Sep/2014:01:38:11] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.367571 , Lat: 51.3219988.
+[22/Sep/2014:01:40:06] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675704 , Lat: 51.3220066.
+[22/Sep/2014:01:40:06] (jsonrpcserver) Ort: Leipzig
+[22/Sep/2014:01:40:11] (jsonrpcserver) GetFavs mit id:  1
+[22/Sep/2014:01:40:11] (jsonrpcserver) Aufruf getFavsByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675704 , Lat: 51.3220066.

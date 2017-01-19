@@ -1,0 +1,909 @@
+[06/Sep/2015:21:09:02] (FuelApi) FuelApi_v2: 51.32231276
+[06/Sep/2015:21:09:03] (FuelApi) FuelApi_v2: [3,1]
+[06/Sep/2015:21:09:03] (FuelApi) FuelApi_v2: (3,1)
+[06/Sep/2015:21:09:03] (FuelApi) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.32231276' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.32231276' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.36739854' ) ) ) *6380 AS 'distance'
+
+	 													from ( select Max(`version`) as newest
+	 															from `fuelPrice`
+	 															group by `id` ) plNewest,
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (3,1)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id`
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[06/Sep/2015:21:09:05] (FuelApi) FuelApi_v2: 51.32231276
+[06/Sep/2015:21:09:07] (FuelApi) FuelApi_v2: 51.32231276
+[06/Sep/2015:21:09:07] (FuelApi) FuelApi_v2: [3,1]
+[06/Sep/2015:21:09:07] (FuelApi) FuelApi_v2: (3,1)
+[06/Sep/2015:21:09:07] (FuelApi) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.32231276' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.32231276' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.36739854' ) ) ) *6380 AS 'distance'
+
+	 													from ( select Max(`version`) as newest
+	 															from `fuelPrice`
+	 															group by `id` ) plNewest,
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (3,1)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id`
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[06/Sep/2015:21:09:59] (FuelApi) FuelApi_v2: 51.32231276
+[06/Sep/2015:21:10:00] (FuelApi) FuelApi_v2: 51.32231276
+[06/Sep/2015:21:10:00] (FuelApi) FuelApi_v2: [3]
+[06/Sep/2015:21:10:00] (FuelApi) FuelApi_v2: (3)
+[06/Sep/2015:21:10:00] (FuelApi) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.32231276' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.32231276' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.36739854' ) ) ) *6380 AS 'distance'
+
+	 													from ( select Max(`version`) as newest
+	 															from `fuelPrice`
+	 															group by `id` ) plNewest,
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (3)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id`
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[06/Sep/2015:21:10:25] (FuelApi) FuelApi_v2: 51.32231276
+[06/Sep/2015:21:10:25] (FuelApi) FuelApi_v2: [3]
+[06/Sep/2015:21:10:25] (FuelApi) FuelApi_v2: (3)
+[06/Sep/2015:21:10:25] (FuelApi) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.32231276' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.32231276' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.36739854' ) ) ) *6380 AS 'distance'
+
+	 													from ( select Max(`version`) as newest
+	 															from `fuelPrice`
+	 															group by `id` ) plNewest,
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (3)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id`
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[06/Sep/2015:21:10:29] (FuelApi) FuelApi_v2: 51.32231276
+[06/Sep/2015:21:10:29] (FuelApi) FuelApi_v2: [3]
+[06/Sep/2015:21:10:29] (FuelApi) FuelApi_v2: (3)
+[06/Sep/2015:21:10:29] (FuelApi) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.32231276' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.32231276' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.36739854' ) ) ) *6380 AS 'distance'
+
+	 													from ( select Max(`version`) as newest
+	 															from `fuelPrice`
+	 															group by `id` ) plNewest,
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (3)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id`
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[06/Sep/2015:21:10:49] (FuelApi) FuelApi_v2: 51.32206305
+[06/Sep/2015:21:10:49] (FuelApi) FuelApi_v2: [3]
+[06/Sep/2015:21:10:49] (FuelApi) FuelApi_v2: (3)
+[06/Sep/2015:21:10:49] (FuelApi) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.32206305' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.32206305' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.36756036' ) ) ) *6380 AS 'distance'
+
+	 													from ( select Max(`version`) as newest
+	 															from `fuelPrice`
+	 															group by `id` ) plNewest,
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (3)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id`
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[07/Sep/2015:16:16:22] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 8.6352638 , Lat: 50.1563532.
+[07/Sep/2015:16:16:22] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '50.1563532' - 0.4
+										 						AND a.latitude < '50.1563532' + 0.4
+										 						AND a.longitude > '8.6352638' - 0.4
+										 						AND a.longitude < '8.6352638' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[07/Sep/2015:16:16:22] (jsonrpcserver) Ort: Eschersheim
+[07/Sep/2015:16:16:29] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 30 , Sortieren nach: preis , Long: 8.6352638 , Lat: 50.1563532.
+[07/Sep/2015:16:16:29] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '50.1563532' - 0.4
+										 						AND a.latitude < '50.1563532' + 0.4
+										 						AND a.longitude > '8.6352638' - 0.4
+										 						AND a.longitude < '8.6352638' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '30'  order by fuelPriceE5, distance limit 7
+[07/Sep/2015:16:16:36] (jsonrpcserver) Aufruf jsonrpc:getCoordsByTown mit 
+[07/Sep/2015:16:16:36] (jsonrpcserver) Leipzig
+[07/Sep/2015:16:16:36] (jsonrpcserver) Ergebnis :
+[07/Sep/2015:16:16:36] (jsonrpcserver) 51.3493:12.39392
+[07/Sep/2015:16:16:36] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 30 , Sortieren nach: preis , Long: 12.39392 , Lat: 51.3493.
+[07/Sep/2015:16:16:36] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3493' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3493' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.39392' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.3493' - 0.4
+										 						AND a.latitude < '51.3493' + 0.4
+										 						AND a.longitude > '12.39392' - 0.4
+										 						AND a.longitude < '12.39392' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '30'  order by fuelPriceE5, distance limit 7
+[07/Sep/2015:16:16:39] (jsonrpcserver) Aufruf jsonrpc:getCoordsByTown mit 
+[07/Sep/2015:16:16:39] (jsonrpcserver) B#oe#hlen bei Leipzig
+[07/Sep/2015:16:16:39] (jsonrpcserver) Ergebnis :
+[07/Sep/2015:16:16:39] (jsonrpcserver) 51.2:12.3833
+[07/Sep/2015:16:16:39] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 30 , Sortieren nach: preis , Long: 12.3833 , Lat: 51.2.
+[07/Sep/2015:16:16:39] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.2' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.2' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3833' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.2' - 0.4
+										 						AND a.latitude < '51.2' + 0.4
+										 						AND a.longitude > '12.3833' - 0.4
+										 						AND a.longitude < '12.3833' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '30'  order by fuelPriceE5, distance limit 7
+[07/Sep/2015:16:16:46] (jsonrpcserver) select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.2' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.2' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3833' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (1,4,2,5)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.2' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.2' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3833' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (1,4,2,5)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[07/Sep/2015:16:16:54] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 8.6352638 , Lat: 50.1563532.
+[07/Sep/2015:16:16:54] (jsonrpcserver) Ort: Eschersheim
+[07/Sep/2015:16:16:54] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '50.1563532' - 0.4
+										 						AND a.latitude < '50.1563532' + 0.4
+										 						AND a.longitude > '8.6352638' - 0.4
+										 						AND a.longitude < '8.6352638' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[07/Sep/2015:16:16:58] (jsonrpcserver) select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (1,4,2,5)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (1,4,2,5)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[07/Sep/2015:16:29:23] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: distanz , Long: 8.6352638 , Lat: 50.1563532.
+[07/Sep/2015:16:29:23] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '50.1563532' - 0.4
+										 						AND a.latitude < '50.1563532' + 0.4
+										 						AND a.longitude > '8.6352638' - 0.4
+										 						AND a.longitude < '8.6352638' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[07/Sep/2015:16:29:28] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 30 , Sortieren nach: distanz , Long: 8.6352638 , Lat: 50.1563532.
+[07/Sep/2015:16:29:28] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '50.1563532' - 0.4
+										 						AND a.latitude < '50.1563532' + 0.4
+										 						AND a.longitude > '8.6352638' - 0.4
+										 						AND a.longitude < '8.6352638' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '30'  order by fuelPriceE5, distance limit 7
+[07/Sep/2015:16:29:30] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 30 , Sortieren nach: preis , Long: 8.6352638 , Lat: 50.1563532.
+[07/Sep/2015:16:29:30] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '50.1563532' - 0.4
+										 						AND a.latitude < '50.1563532' + 0.4
+										 						AND a.longitude > '8.6352638' - 0.4
+										 						AND a.longitude < '8.6352638' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '30'  order by fuelPriceE5, distance limit 7
+[07/Sep/2015:16:29:32] (jsonrpcserver) select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (1,4,2,5)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (1,4,2,5)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[14/Sep/2015:00:50:00] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.367529 , Lat: 51.3221519.
+[14/Sep/2015:00:50:00] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3221519' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3221519' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.367529' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.3221519' - 0.4
+										 						AND a.latitude < '51.3221519' + 0.4
+										 						AND a.longitude > '12.367529' - 0.4
+										 						AND a.longitude < '12.367529' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[14/Sep/2015:00:50:01] (jsonrpcserver) Ort: Leipzig
+[14/Sep/2015:00:50:08] (jsonrpcserver) select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3221519' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3221519' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.367529' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (4,6)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3221519' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3221519' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.367529' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (4,6)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[14/Sep/2015:00:50:18] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 30 , Sortieren nach: preis , Long: 12.367529 , Lat: 51.3221519.
+[14/Sep/2015:00:50:18] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3221519' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3221519' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.367529' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.3221519' - 0.4
+										 						AND a.latitude < '51.3221519' + 0.4
+										 						AND a.longitude > '12.367529' - 0.4
+										 						AND a.longitude < '12.367529' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '30'  order by fuelPriceE5, distance limit 7
+[14/Sep/2015:00:50:23] (jsonrpcserver) select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3221519' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3221519' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.367529' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (4,6)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3221519' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3221519' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.367529' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (4,6)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[20/Sep/2015:00:28:41] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3675069 , Lat: 51.3220094.
+[20/Sep/2015:00:28:41] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3220094' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3220094' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3675069' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.3220094' - 0.4
+										 						AND a.latitude < '51.3220094' + 0.4
+										 						AND a.longitude > '12.3675069' - 0.4
+										 						AND a.longitude < '12.3675069' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[20/Sep/2015:00:28:42] (jsonrpcserver) Ort: Leipzig
+[25/Sep/2015:18:28:51] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 8.6352638 , Lat: 50.1563532.
+[25/Sep/2015:18:28:51] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '50.1563532' - 0.4
+										 						AND a.latitude < '50.1563532' + 0.4
+										 						AND a.longitude > '8.6352638' - 0.4
+										 						AND a.longitude < '8.6352638' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[25/Sep/2015:18:28:51] (jsonrpcserver) Ort: Eschersheim
+[25/Sep/2015:18:29:00] (jsonrpcserver) select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (1,4,2,5)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '50.1563532' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '50.1563532' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '8.6352638' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.`id` in (1,4,2,5)
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0
+[04/Nov/2015:13:55:54] (jsonrpcserver) Aufruf jsonrpc:getCoordsByTown mit 
+[04/Nov/2015:13:55:54] (jsonrpcserver) 91154
+[04/Nov/2015:13:55:54] (jsonrpcserver) Ergebnis :
+[04/Nov/2015:13:55:54] (jsonrpcserver) :
+[04/Nov/2015:13:55:54] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 0 , Lat: 0.
+[04/Nov/2015:13:55:55] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '0' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '0' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '0' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '0' - 0.4
+										 						AND a.latitude < '0' + 0.4
+										 						AND a.longitude > '0' - 0.4
+										 						AND a.longitude < '0' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[03/Mar/2016:14:34:06] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3907 , Lat: 51.331.
+[03/Mar/2016:14:34:06] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.331' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.331' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3907' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.331' - 0.4
+										 						AND a.latitude < '51.331' + 0.4
+										 						AND a.longitude > '12.3907' - 0.4
+										 						AND a.longitude < '12.3907' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[03/Mar/2016:14:34:06] (jsonrpcserver) Ort: Leipzig
+[03/Mar/2016:14:34:22] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 20 , Sortieren nach: preis , Long: 12.3907 , Lat: 51.331.
+[03/Mar/2016:14:34:22] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.331' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.331' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3907' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.331' - 0.4
+										 						AND a.latitude < '51.331' + 0.4
+										 						AND a.longitude > '12.3907' - 0.4
+										 						AND a.longitude < '12.3907' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '20'  order by fuelPriceE5, distance limit 7
+[03/Mar/2016:14:34:36] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceDiesel , Umkreis: 20 , Sortieren nach: preis , Long: 12.3907 , Lat: 51.331.
+[03/Mar/2016:14:34:36] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceDiesel , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.331' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.331' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3907' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.331' - 0.4
+										 						AND a.latitude < '51.331' + 0.4
+										 						AND a.longitude > '12.3907' - 0.4
+										 						AND a.longitude < '12.3907' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceDiesel > 0 	
+	 															having distance < '20'  order by fuelPriceDiesel, distance limit 7
+[03/Mar/2016:14:34:43] (jsonrpcserver) Ort: Leipzig
+[03/Mar/2016:14:34:43] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3907 , Lat: 51.331.
+[03/Mar/2016:14:34:43] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.331' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.331' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3907' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.331' - 0.4
+										 						AND a.latitude < '51.331' + 0.4
+										 						AND a.longitude > '12.3907' - 0.4
+										 						AND a.longitude < '12.3907' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[03/Mar/2016:14:34:46] (jsonrpcserver) Ort: Leipzig
+[03/Mar/2016:14:34:46] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3907 , Lat: 51.331.
+[03/Mar/2016:14:34:46] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.331' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.331' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3907' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.331' - 0.4
+										 						AND a.latitude < '51.331' + 0.4
+										 						AND a.longitude > '12.3907' - 0.4
+										 						AND a.longitude < '12.3907' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[03/Mar/2016:14:34:50] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceDiesel , Umkreis: 5 , Sortieren nach: preis , Long: 12.3907 , Lat: 51.331.
+[03/Mar/2016:14:34:50] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceDiesel , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.331' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.331' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3907' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.331' - 0.4
+										 						AND a.latitude < '51.331' + 0.4
+										 						AND a.longitude > '12.3907' - 0.4
+										 						AND a.longitude < '12.3907' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceDiesel > 0 	
+	 															having distance < '5'  order by fuelPriceDiesel, distance limit 7
+[19/Mar/2016:22:47:40] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 5 , Sortieren nach: preis , Long: 12.3676228 , Lat: 51.3221196.
+[19/Mar/2016:22:47:40] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3221196' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3221196' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3676228' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.3221196' - 0.4
+										 						AND a.latitude < '51.3221196' + 0.4
+										 						AND a.longitude > '12.3676228' - 0.4
+										 						AND a.longitude < '12.3676228' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '5'  order by fuelPriceE5, distance limit 7
+[19/Mar/2016:22:47:40] (jsonrpcserver) Ort: Leipzig
+[19/Mar/2016:22:47:43] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 30 , Sortieren nach: preis , Long: 12.3676228 , Lat: 51.3221196.
+[19/Mar/2016:22:47:43] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.3221196' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.3221196' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.3676228' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.3221196' - 0.4
+										 						AND a.latitude < '51.3221196' + 0.4
+										 						AND a.longitude > '12.3676228' - 0.4
+										 						AND a.longitude < '12.3676228' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '30'  order by fuelPriceE5, distance limit 7
+[19/Mar/2016:22:48:18] (jsonrpcserver) Aufruf jsonrpc:getCoordsByTown mit 
+[19/Mar/2016:22:48:18] (jsonrpcserver) Bad d#ue#ben
+[19/Mar/2016:22:48:18] (jsonrpcserver) Ergebnis :
+[19/Mar/2016:22:48:18] (jsonrpcserver) 51.594443525229:12.5893004074096
+[19/Mar/2016:22:48:18] (jsonrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 30 , Sortieren nach: preis , Long: 12.5893004074 , Lat: 51.5944435252.
+[19/Mar/2016:22:48:18] (jsonrpcserver) FuelApi_v2: select distinct TIME_FORMAT(ot.startTimeOfPeriod,'%H:%i') as ab, TIME_FORMAT(ot.endTimeOfPeriod,'%H:%i') as bis,
+    													(select CASE WHEN CURRENT_TIME BETWEEN ot.startTimeOfPeriod
+																					AND ot.endTimeOfPeriod
+																	then 1
+																	else 0
+																	end
+															) as open,
+    													fuelPriceE5 , a.id, a.petrolStationBrand, a.petrolStationStreet, a.petrolStationHouseNumber, a.petrolStationPostcode, a.petrolStationPlace, a.petrolStationVersionTime, a.longitude as AnbietGPSLaenge, a.latitude as AnbietGPSBreite, ACOS( SIN( RADIANS( a.latitude ) ) * SIN( RADIANS( '51.5944435252' ) ) + COS( RADIANS( a.latitude ) ) * COS( RADIANS( '51.5944435252' ) ) * COS( RADIANS( a.longitude ) - RADIANS( '12.5893004074' ) ) ) *6380 AS 'distance'
+										 
+	 													from ( select Max(`version`) as newest 
+	 															from `fuelPrice` 
+	 															group by `id` ) plNewest, 
+	 														`fuelPrice` pl, `petrolStation` a, `openingTimes` ot
+	 															where a.latitude > '51.5944435252' - 0.4
+										 						AND a.latitude < '51.5944435252' + 0.4
+										 						AND a.longitude > '12.5893004074' - 0.4
+										 						AND a.longitude < '12.5893004074' + 0.4
+										 						and pl.`version` = plNewest.newest
+	 															and a.`id` = pl.`id` 
+																and ot.applicableDay = (SELECT DAYNAME( CURDATE( ) ) )
+																and ot.fid = a.id
+	 															and fuelPriceE5 > 0 	
+	 															having distance < '30'  order by fuelPriceE5, distance limit 7

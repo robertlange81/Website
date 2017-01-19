@@ -1,0 +1,269 @@
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Test WSDL
+</wsdl:documentation>
+
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+			
+<s:complexType name="location">
+<s:sequence>
+	<s:element name="latitude" type="s:double" minOccurs="1" maxOccurs="1" />
+	<s:element name="longitude" type="s:double" minOccurs="1" maxOccurs="1"/>
+</s:sequence>
+</s:complexType> 
+
+<s:complexType name="address">
+	<s:sequence>
+		<s:element name="street" type="s:string" minOccurs="1" maxOccurs="1"/>
+		<s:element name="housenumber" type="s:string" minOccurs="1" maxOccurs="1"/>
+		<s:element name="postal" type="s:string" minOccurs="1" maxOccurs="1"/>
+		<s:element name="place" type="s:string" minOccurs="1" maxOccurs="1"/>
+	</s:sequence>
+</s:complexType>
+
+<s:complexType name="petrolStation">
+	<s:all>
+		<s:element name="id" type="s:string" minOccurs="1" maxOccurs="1"/>
+		<s:element name="owner" type="s:string" minOccurs="1" maxOccurs="1"/>
+		<s:element name="isOpen" type="s:boolean" minOccurs="1" maxOccurs="1"/>
+		<s:element name="openFrom" type="s:string" minOccurs="1" maxOccurs="1"/>
+		<s:element name="openTo" type="s:string" minOccurs="1" maxOccurs="1"/>
+		<s:element name="location" type="tns:location" minOccurs="1" maxOccurs="1"/>
+		<s:element name="price" type="s:float" minOccurs="1" maxOccurs="1"/>
+		<s:element name="address" type="tns:address" minOccurs="1" maxOccurs="1"/>
+		<s:element name="reporttime" type="s:string" minOccurs="1" maxOccurs="1"/>
+		<s:element name="distance" type="s:float" minOccurs="1" maxOccurs="1"/>
+	</s:all>
+</s:complexType>
+
+<s:element name="GetCoordsByTownRequest">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="town" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetCoordsByTownResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="location" type="tns:location" />
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetTownByCoordsRequest">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="location" type="tns:location" />
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetTownByCoordsRPCRequest">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="latitude" type="tns:int" />
+<s:element minOccurs="1" maxOccurs="1" name="longitude" type="tns:int" />
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetTownByCoordsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="town" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetDataByCoordsRequest">
+<s:complexType>
+<s:sequence>
+<s:element name="article" type="s:string" minOccurs="1" maxOccurs="1"/>
+<s:element name="distance" type="s:int" minOccurs="1" maxOccurs="1"/>
+<s:element name="sortBy" type="s:string" minOccurs="1" maxOccurs="1"/>
+<s:element name="location" type="tns:location" minOccurs="1" maxOccurs="1"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetDataByCoordsResponse">
+<s:complexType>
+<s:sequence>
+<s:element name="petrolStation" type="tns:petrolStation" minOccurs="1" maxOccurs="unbounded"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+
+</s:schema>
+</wsdl:types>
+
+<wsdl:message name="GetCoordsByTownIn">
+<wsdl:part name="parameters" element="tns:GetCoordsByTownRequest"/>
+</wsdl:message>
+<wsdl:message name="GetCoordsByTownOut">
+<wsdl:part name="parameters" element="tns:GetCoordsByTownResponse"/>
+</wsdl:message>
+
+<wsdl:message name="GetTownByCoordsIn">
+<wsdl:part name="parameters" element="tns:GetTownByCoordsRequest"/>
+</wsdl:message>
+<wsdl:message name="GetTownByCoordsRPCIn">
+<wsdl:part name="parameters" element="tns:GetTownByCoordsRPCRequest"/>
+</wsdl:message>
+<wsdl:message name="GetTownByCoordsOut">
+<wsdl:part name="parameters" element="tns:GetTownByCoordsResponse"/>
+</wsdl:message>
+
+<wsdl:message name="GetDataByCoordsIn">
+<wsdl:part name="parameters" element="tns:GetDataByCoordsRequest"/>
+</wsdl:message>
+<wsdl:message name="GetDataByCoordsOut">
+<wsdl:part name="parameters" element="tns:GetDataByCoordsResponse"/>
+</wsdl:message>
+
+<wsdl:portType name="FuelServiceSoapType">
+
+<wsdl:operation name="GetCoordsByTown">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Lade Koordinaten zu Stadt
+</wsdl:documentation>
+<wsdl:input message="tns:GetCoordsByTownIn"/>
+<wsdl:output message="tns:GetCoordsByTownOut"/>
+</wsdl:operation>
+
+<wsdl:operation name="GetTownByCoords">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Lade Stadt zu Koordinaten
+</wsdl:documentation>
+<wsdl:input message="tns:GetTownByCoordsIn"/>
+<wsdl:output message="tns:GetTownByCoordsOut"/>
+</wsdl:operation>
+
+<wsdl:operation name="GetDataByCoords">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Lade Tankstellenpreise und Oeffnungszeiten zu Koordinaten
+</wsdl:documentation>
+<wsdl:input message="tns:GetDataByCoordsIn"/>
+<wsdl:output message="tns:GetDataByCoordsOut"/>
+</wsdl:operation>
+
+</wsdl:portType>
+
+<wsdl:portType name="FuelServiceSoapTypeRPC">
+
+<wsdl:operation name="GetCoordsByTownRPC">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Lade Koordinaten zu Stadt
+</wsdl:documentation>
+<wsdl:input message="tns:GetCoordsByTownIn"/>
+<wsdl:output message="tns:GetCoordsByTownOut"/>
+</wsdl:operation>
+
+<wsdl:operation name="GetTownByCoordsRPC">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Lade Stadt zu Koordinaten
+</wsdl:documentation>
+<wsdl:input message="tns:GetTownByCoordsRPCIn"/>
+<wsdl:output message="tns:GetTownByCoordsOut"/>
+</wsdl:operation>
+
+<wsdl:operation name="GetDataByCoordsRPC">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Lade Tankstellenpreise und Oeffnungszeiten zu Koordinaten
+</wsdl:documentation>
+<wsdl:input message="tns:GetDataByCoordsIn"/>
+<wsdl:output message="tns:GetDataByCoordsOut"/>
+</wsdl:operation>
+
+</wsdl:portType>
+
+
+<wsdl:binding name="FuelServiceSoap" type="tns:FuelServiceSoapType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+
+<wsdl:operation name="GetCoordsByTown">
+<soap:operation soapAction="http://tempuri.org/GetCoordsByTown" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+
+<wsdl:operation name="GetTownByCoords">
+<soap:operation soapAction="http://tempuri.org/GetTownByCoords" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+
+<wsdl:operation name="GetDataByCoords">
+<soap:operation soapAction="http://tempuri.org/GetDataByCoords" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+
+</wsdl:binding>
+
+
+<wsdl:binding name="FuelServiceSoapRPC" type="tns:FuelServiceSoapTypeRPC">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+
+<wsdl:operation name="GetCoordsByTownRPC">
+<soap:operation soapAction="http://tempuri.org/GetCoordsByTownRPC" style="rpc"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+
+<wsdl:operation name="GetTownByCoordsRPC">
+<soap:operation soapAction="http://tempuri.org/GetTownByCoordsRPC" style="rpc"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+
+<wsdl:operation name="GetDataByCoordsRPC">
+<soap:operation soapAction="http://tempuri.org/GetDataByCoordsRPC" style="rpc"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+
+</wsdl:binding>
+
+
+<wsdl:service name="FuelService">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Service zur Ermittlung von Geo-Koordinaten, Tankstellenpreise und Oeffnungszeiten von Tankstellen
+</wsdl:documentation>
+
+<wsdl:port name="FuelServiceSoapRPC" binding="tns:FuelServiceSoapRPC">
+	<soap:address location="http://www.sparesprit.de/soapserverRPC"/>
+</wsdl:port>
+
+<wsdl:port name="FuelServiceSoap" binding="tns:FuelServiceSoap">
+	<soap:address location="http://www.sparesprit.de/soapserver"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

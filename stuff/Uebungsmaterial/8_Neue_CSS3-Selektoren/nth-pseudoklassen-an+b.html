@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- an+b-Syntax erklärt -->
+
+<style>
+/* Jedes dritte Element ab und einschließlich dem zweiten */
+li:nth-child(3n+2){
+	color:red;
+}
+
+/* Jedes zweite Element ab und einschließlich dem ersten */
+li:nth-child(2n+1){
+	text-decoration:underline;
+}
+
+/* Jedes vierte Element */
+li:nth-child(4n){
+	font-style:italic;
+}
+
+/* Jedes Element ab und einschließlich dem dritten */
+li:nth-child(n+3){
+	text-transform:uppercase;
+}
+
+/* Jedes Element vor und einschließlich dem zweiten */
+li:nth-child(-n+3){
+	font-size:150%;
+}
+
+/* Jedes vierte Element ab und einschließlich dem (imaginären) minus-zweiten */
+li:nth-child(4n-2){
+	font-weight:bold;
+}
+</style>
+
+<ul id="navi">
+	<li>Start
+	<li>Unternehmen
+	<li>Unser Angebot
+	<li>Blog
+	<li>Projekte
+	<li>Referenzen
+	<li>Login
+	<li>Kontakt
+</ul>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Robert Lange</title>
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="android.css" media="only screen and (max-width: 480px)" />
+        <link rel="stylesheet" type="text/css" href="desktop.css" media="screen and (min-width: 481px)" />
+		       
+        <!--[if IE]>
+            <link rel="stylesheet" type="text/css" href="explorer.css" media="all" />
+        <![endif]-->
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="android.js"></script>
+    </head>
+    <body>
+            <div id="header">
+                <h2 id="h1">Standard80 - Web & App</h2>
+
+                <div id="nav">
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="apps.html">Applications</a></li>
+								<li><a href="games.html">Games</a></li>
+								<li><a href="blog.html">Blog</a></li>
+								<li><a href="contact.html">Contact</a></li>                   
+                    </ul>
+                </div>
+            </div>
+            <div id="content">
+                <h2>About</h2>
+                <p><img alt="Portrait of Robert Lange" src="Robert_Lange.JPG" width="50" height="50">Robert Lange is a software developer having a Diploma in Economics and Business Administration.</p>
+            </div>
+            <div id="sidebar">
+                <p>Projekte</p>
+                    <ul>
+                        <li><a href="http://www.uni-leipzig.de/gwzo/wissensdatenbank/">Projekt Wissensdatenbank</a></li>
+                    </ul>
+            </div>
+            <div id="footer">
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="imprint.html">Imprint</a></li>
+                </ul>
+                <p class="subtle">Robert Lange - Web & App - IT Services</p>
+            </div>
+    </body>
+</html>

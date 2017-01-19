@@ -1,0 +1,979 @@
+/* *****************************************************
+
+   Stylesheet Datei fuer die Website von
+
+   Fabian Schreiber Webdesign
+   Im Stockrain 17
+   D-71549, Auenwald
+
+   Telefon :  07191 302340
+   Mail    :  info@fabi-webdesign.de
+   Web     :  www.fabi-webdesign.de
+
+   Der Inhalt dieser Datei ist das geistige Eigentum
+   von Fabian Schreiber.
+
+   Inhalte oder Teile dieser Datei duerfen nur mit
+   seiner der schriftlichen Genehmigung weiterverwendet,
+   veraendert oder vervielfaeltigt werden.
+
+   ***************************************************** */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #444444 url('img/pixelstreifen.gif') repeat-x left top;
+  font-family: Arial, Sans, Verdana, Tahoma, Helvecia;
+}
+
+p {
+  text-align: justify;
+}
+
+/* --- Allgemeine Formatierungen --- */
+img.links {
+  float: left;
+  margin: 0px 10px 5px 0px;
+}
+
+.links {
+	text-align: left;
+}
+
+.mitte {
+	text-align: center;
+}
+
+.rechts {
+	text-align: right;
+}
+
+a img {
+	border: 0;
+}
+
+a:focus {
+	outline: 0;
+	border: 0;
+}
+
+
+/* --- Seiten-Behaelter --- */
+div.seite {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 61px;
+  width: 790px;
+  background: transparent url('img/seite_hintergrund.gif') repeat-y left top;
+}
+
+
+/* ***********************************************************
+   Seiten-Kopf
+   **********************************************************/
+div.seite div.kopf {
+  padding: 0;
+  margin: 0;
+  width: 790px;
+  height: 396px;
+  background: transparent url('img/kopf_hintergrund.jpg') no-repeat left top;
+}
+
+div.seite div.kopf ul {
+  float: right;
+  padding: 0;
+  margin: 0px 35px 0px 0px;
+  list-style-type: none;
+}
+
+div.seite div.kopf ul li {
+  float: left;
+  padding: 0;
+  margin: 0px 1px 0px 0px;
+}
+
+div.seite div.kopf ul li a {
+  color: #ffffff;
+  padding: 17px 13px 0px 13px;
+  height: 33px;
+  font-size: 12px;
+  text-decoration: none;
+  display: block;
+  background: transparent url('img/menuepunkt_hintergrund.gif') repeat-x left top;
+}
+
+
+div.seite div.kopf ul li a:hover {
+  background: transparent url('img/menuepunkt_hintergrund.gif') repeat-x left -50px;
+}
+
+div.seite div.kopf ul li.gewaehlt a {
+  background: transparent url('img/menuepunkt_1_aktiv.gif') repeat-x left top;
+}
+
+/* --- Untermenue --- */
+
+div.seite div.kopf ul li.gewaehlt ul {
+  position: absolute;
+  background: transparent url('img/untermenue_hintergrund.gif') repeat-x left top;
+  margin: 0px 0px 0px 0px;
+  display: block;
+  margin: 0;
+  padding: 10px 0px 15px 0px;
+}
+
+div.seite div.kopf ul li.gewaehlt ul li {
+  display: block;
+  clear: left;
+  margin: 0;
+  padding: 0px 0px 0px 0px;
+}
+
+div.seite div.kopf ul li.gewaehlt ul li.gewaehlt {
+  background: transparent url('img/untermenue_gewaehlt.gif') no-repeat 12px 10px;
+}
+
+div.seite div.kopf ul li.gewaehlt ul li a {
+  color: #ffffff;
+  padding: 7px 30px 7px 30px;
+  margin: 0;
+  height: auto;
+  font-size: 12px;
+  text-decoration: none;
+  display: block;
+  background: none;
+}
+
+
+div.seite div.kopf ul li.gewaehlt ul li a:hover {
+  text-decoration: underline;
+  background: transparent;
+}
+
+/* ***********************************************************
+   Inhalt / Spezielle Elemente
+   **********************************************************/
+div.seite div.inhalt ul.parallelSeiten {
+	float: left;
+	margin: 0;
+	padding: 0 0 6px 0;
+  width: 100%;
+}
+
+div.seite div.inhalt ul.parallelSeiten li {
+	background: none;
+	float: left;
+	list-style-type: none;
+	margin: 0 10px 0 20px;
+	padding: 0;
+}
+
+div.seite div.inhalt ul.parallelSeiten li a {
+	text-decoration: none;
+}
+
+div.seite div.inhalt ul.parallelSeiten li a:hover {
+	text-decoration: underline;
+}
+
+div.seite div.inhalt ul.parallelSeiten li.gewaehlt a {
+	text-decoration: underline;
+	color: #990000;
+}
+
+
+
+/* ***********************************************************
+   Inhalt / Allgemeine Inhaltsformatierungen
+   **********************************************************/
+	 
+div.seite div.inhalt {
+  font-family: Arial, Sans, Verdana, Tahoma, Helvecia;
+  font-size: 12px;
+  line-height: 22px;
+  color: #555555;
+  padding: 0px 5px 0px 5px;
+}
+
+div.seite div.inhalt h1 {
+  margin: 0;
+  padding: 3px 0 0 10px;
+  position: absolute;
+  top: 350px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #ffffff;
+  font-weight: normal;
+  background: transparent url('img/h1_punkt.gif') no-repeat left 4px;
+  height: 43px;
+}
+
+div.seite div.inhalt hr {
+	clear: both;
+	float: none;
+	width: 100%;
+	border: 0px;
+	border-bottom: 1px solid #ccc;
+	background: transparent;
+	height: 1px;
+}
+
+div.seite div.inhalt a {
+  color: #555555;
+	text-decoration: underline;
+}
+
+div.seite div.inhalt span.fussInfo {
+  color: #cccccc;
+	font-size: 10px;
+}
+
+div.seite div.inhalt a.pdf {
+  padding: 0 0 0 18px;
+	background: transparent url('img/pdf.gif') no-repeat left 2px;
+}
+
+div.seite div.inhalt h1 span.untertitel {
+  display: block;
+  font-size: 10px;
+  color: #555555;
+}
+
+div.seite div.inhalt p {
+  margin: 0px 0px 20px 0px;
+  padding: 0px;
+}
+
+div.seite div.inhalt blockquote {
+  font-weight: normal;
+  font-style: italic;
+	padding: 0 0 0 45px;
+	margin: 10px 0 25px 0;
+	background: transparent url('img/zitat.gif') no-repeat left 6px;
+}
+
+div.seite div.inhalt ul {
+	margin: 0 0 30px 10px;
+	padding: 0;
+}
+
+div.seite div.inhalt ul li {
+	padding: 0 0 0 16px;
+	margin: 0;
+	background: transparent url('img/pfeil.gif') no-repeat left 6px;
+	list-style: none;
+}
+
+div.seite div.inhalt dl {
+	padding: 10px 0 0 0;
+	margin: 0 0 20px 0;
+}
+
+div.seite div.inhalt dl dt {
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	float: left;
+	text-align: right;
+	width: 90px;
+}
+
+div.seite div.inhalt dl dd {
+	padding: 0 0 0 10px;
+	margin: 0 0 10px 100px;
+	border-left: 2px solid #ccc;
+}
+
+div.seite div.inhalt div.screenshot {
+	margin: 0 0 20px 0;
+}
+
+div.seite div.inhalt div.screenshot img {
+	border: 1px solid #eee;
+}
+
+div.seite div.inhalt div.screenshot span.untertitel {
+	color: #999;
+	font-size: 10px;
+	line-height: 12px;
+	display: block;
+	margin: 5px 0 10px 0px;
+	padding: 2px 170px 10px 23px;
+	background: transparent url('img/info.gif') no-repeat 4px 2px;
+}
+
+div.seite div.inhalt div.screenshotZoom {
+	margin: 0 0 25px 0;
+}
+
+div.seite div.inhalt div.screenshotZoom span.untertitel {
+	color: #999;
+	font-size: 10px;
+	line-height: 12px;
+	display: block;
+	margin: 5px 0 10px 0px;
+	padding: 2px 140px 10px 23px;
+	background: transparent url('img/info.gif') no-repeat 4px 2px;
+}
+
+div.seite div.inhalt div.screenshotZoom a.bild {
+	display: block;
+	width: 456px;
+	height: 200px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+}
+
+div.seite div.inhalt div.screenshotZoom a:hover img {
+	position: relative;
+	left: -77px;
+}
+
+div.seite div.inhalt div.gallerie {
+	display: none;
+}
+
+/* - Bewertungsliste - */
+div.seite div.inhalt ul.wertung {
+	margin: 10px 0 10px 5px;
+	padding: 0;
+}
+
+div.seite div.inhalt ul.wertung li {
+	background-repeat: no-repeat;
+	background-position: left 8px;
+	padding: 0 0 0 45px;
+	list-style: none;
+}
+
+div.seite div.inhalt ul.wertung li.s0 {
+	background-image: url('img/sterne0.gif');
+}
+
+div.seite div.inhalt ul.wertung li.s1 {
+	background-image: url('img/sterne1.gif');
+}
+
+div.seite div.inhalt ul.wertung li.s2 {
+	background-image: url('img/sterne2.gif');
+}
+
+div.seite div.inhalt ul.wertung li.s3 {
+	background-image: url('img/sterne3.gif');
+}
+
+div.seite div.inhalt ul.wertung li.s4 {
+	background-image: url('img/sterne4.gif');
+}
+
+div.seite div.inhalt ul.wertung li.s5 {
+	background-image: url('img/sterne5.gif');
+}
+
+div.referenzUntertitel {
+  margin: 6px 0 0 0;
+  padding: 2px 0px 0px 30px;
+  background: transparent url('img/pfeil.gif') no-repeat 15px 5px;
+}
+
+div.referenzUntertitel span.zeile1 {
+  display: block;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+div.referenzUntertitel span.zeile2 {
+  display: block;
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: normal;
+  color: #aaaaaa;
+  margin: 3px 0 0 0;
+  padding: 0;
+}
+
+
+/* --- Linker Bereich --- */
+div.seite div.inhalt div.inhaltLinks {
+  float: left;
+  width: 460px;
+  padding: 30px 20px 20px 35px;
+}
+
+div.seite div.inhalt div.inhaltLinks h1 {
+  left: 100px;
+  width: 470px;
+}
+
+div.seite div.inhalt div.inhaltLinks h2 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 10px 0px 5px 0px;
+}
+
+div.seite div.inhalt div.inhaltLinks h2.nummeriert {
+  font-size: 12px;
+  font-weight: bold;
+	padding: 8px 0 0 0px;
+	background: transparent url('img/nummer_hintergrund.gif') no-repeat left top;
+	height: 22px;
+  margin: 10px 0px 5px 0px;
+}
+
+div.seite div.inhalt div.inhaltLinks h2.nummeriert span {
+	color: #ffff00;
+	width: 27px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: right;
+  margin: 0px 8px 0px 0px;
+	display: block;
+	float: left;
+}
+
+div.seite div.inhalt div.inhaltLinks h2.symbol {
+  font-size: 12px;
+  font-weight: bold;
+	padding: 8px 0 0 0px;
+	height: 22px;
+  margin: 10px 0px 20px 0px;
+}
+
+div.seite div.inhalt div.inhaltLinks h2.symbol img {
+  position: relative;
+	top: 4px;
+	margin: 0 6px 0 0;
+}
+
+div.seite div.inhalt div.inhaltLinks blockquote span.untertitel {
+	font-size: 10px;
+	display: block;
+	width: 100%;
+	text-align: right;
+	padding: 15px 0 0 0;
+	border-bottom: 1px solid #eeeeee;
+  color: #888888;
+}
+
+div.seite div.inhalt div.inhaltLinks blockquote span.untertitel a {
+  color: #888888;
+	text-decoration: none;
+}
+
+
+/* ***********************************************************
+   Referenz-Seite
+   **********************************************************/
+	 
+div.seite div.inhalt div.inhaltLinks div.referenzenListe  div.referenz {
+  width: 200px;
+  float: left;
+  margin: 0 30px 30px 0;
+}
+
+div.seite div.inhalt div.inhaltLinks div.referenzenListe div.referenz a {
+  display: block;
+  width: 200px;
+  height: 153px;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+
+div.seite div.inhalt div.inhaltLinks div.referenzenListe  div.referenz a:hover {
+  background-position: left -152px;
+}
+
+
+/* ***********************************************************
+   News-Seite
+   **********************************************************/
+
+div.news {
+  margin: 0px 0 10px 0;
+}
+
+div.news div.eintrag {
+  margin: 0;
+  float: left;
+  padding: 0 0 15px 0;
+}
+
+/* -- Datumskasten -- */
+div.news div.eintrag div.datum {
+  /* Bild: 47 x 49 px */
+  float: left;
+  width: 40px;
+  height: 35px;
+  padding: 7px 0 0 0px;
+  margin: 6px 0 0 0;
+  background: transparent url('img/news_datum_hintergrund.gif') no-repeat left top;
+}
+
+div.news div.eintrag div.datum span.tag {
+  display: block;
+	width: 29px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: right;
+  margin: 0px 0px 0px 0px;
+}
+
+div.news div.eintrag div.datum span.monatJahr {
+  display: block;
+  color: #999999;
+  font-size: 9px;
+	line-height: auto;
+  text-align: center;
+  margin: -3px 0px 0px -10px;
+}
+
+div.news div.eintrag div.text {
+  float: right;
+	width: 410px;
+	color: #555555;
+  padding: 0px 0px 0px 10px;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.eintrag div.text p {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.eintrag div.text p a.weiterlesen {
+  padding: 0 0 0 16px;
+	background: transparent url('img/icon_lesen.gif') no-repeat 0 2px;
+	color: #555555;
+	text-decoration: none;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.eintrag div.text p a.weiterlesen:hover {
+	text-decoration: underline;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.eintrag div.text h2 {
+  margin: 0px;
+  font-size: 12px;
+  padding: 0;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.eintrag div.text h2 a {
+  color: #555555;
+  text-decoration: none;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.eintrag div.text h2 a:hover {
+  text-decoration: underline;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.eintrag div.text h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: 10px;
+  color: #999999;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.newsFuss {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0px 0px 0px;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.newsFuss div.links {
+  width: 64%;
+	float: left;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.newsFuss div.rechts {
+  width: 34%;
+	float: right;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.newsFuss a {
+	color: #555555;
+	text-decoration: none;
+	padding: 0 0 0 16px;
+	background: transparent url('img/icon_standard.gif') no-repeat left top;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.newsFuss a:hover {
+	text-decoration: underline;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.newsFuss a.archiv {
+	background: transparent url('img/icon_archiv.gif') no-repeat left 1px;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.newsFuss a.zurueck {
+	background: transparent url('img/icon_zurueck.gif') no-repeat left 1px;
+}
+
+div.seite div.inhalt div.inhaltLinks div.news div.newsFuss a.vor {
+	padding: 0 16px 0 0;
+	background: transparent url('img/icon_vor.gif') no-repeat right 1px;
+}
+
+
+/* -- News Artikel & Fuss --*/
+
+div.newsArtikel div.artikelfuss {
+  color: #666666;
+  font-size: 11px;
+	font-style: italic;
+  width: 100%;
+  margin: 30px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
+	text-align: right;
+}
+
+/* -- Newsarchiv Datumsauswahl -- */
+div.seite div.inhalt div.inhaltRechts ul.newsArchivAuswahl {
+}
+
+div.seite div.inhalt div.inhaltRechts ul.newsArchivAuswahl li {
+	background: transparent url('img/icon_kalender.gif') no-repeat 2px 5px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.newsArchivAuswahl li.gewaehlt a {
+	font-weight: bold;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.newsArchivAuswahl li.gewaehlt ul li a {
+	font-weight: normal;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.newsArchivAuswahl li.gewaehlt ul li.gewaehlt a {
+	font-weight: bold;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.newsArchivAuswahl li ul {
+	margin: 0;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.newsArchivAuswahl li ul li {
+	background: transparent url('img/icon_standard.gif') no-repeat 2px 5px;
+}
+
+/* ***********************************************************
+   Sitemap-Seite
+   **********************************************************/
+
+div.seite div.inhalt div.inhaltLinks ul.sitemap ul {
+	margin-bottom: 0;
+}
+
+div.seite div.inhalt div.inhaltLinks ul.sitemap li {
+	font-weight: bold;
+}
+
+div.seite div.inhalt div.inhaltLinks ul.sitemap li ul li {
+	font-weight: normal;
+}
+
+/* ***********************************************************
+   Kontaktformular
+   **********************************************************/
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular {
+	width: 100%;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular table {
+	width: 100%;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular table tr td {
+	vertical-align: top;
+	padding: 2px;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular table tr td.buttonZeile {
+	text-align: right;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular input.textfeld {
+	border: 1px solid #ccc;
+	width: 350px;
+	padding: 3px;
+	font-family: Arial, Sans, Verdana, Tahoma, Helvecia;
+	font-size: 12px;
+	color: #333333;
+	background: fff;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular button {
+	width: 84px;
+	height: 22px;
+	background: transparent url('img/button.gif') no-repeat left -22px;
+	border: 0;
+	color: #fff;
+	font-size: 12px;
+	padding: 0 0 5px 0;
+	margin: 5px 0 10px 0;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular button:hover {
+	background: transparent url('img/button.gif') no-repeat left top;
+	cursor: pointer;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular textarea {
+	border: 1px solid #ccc;
+	width: 350px;
+	height: 200px;
+	padding: 3px;
+	font-family: Arial, Sans, Verdana, Tahoma, Helvecia;
+	font-size: 12px;
+	color: #333333;
+	background: fff;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular textarea.klein {
+	height: 80px;
+}
+
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular textarea.fehler, 
+div.seite div.inhalt div.inhaltLinks form.kontaktFormular input.fehler {
+	border: 1px solid #990000;
+	background:
+}
+
+
+/* ***********************************************************
+   Rechte Sidebar
+   **********************************************************/
+div.seite div.inhalt div.inhaltRechts {
+  float: right;
+  width: 220px;
+	text-align: left;
+  padding: 30px 25px 20px 0;
+}
+
+div.seite div.inhalt div.inhaltRechts hr {
+	clear: both;
+	float: none;
+	width: 100%;
+	border: 0px;
+	border-bottom: 1px solid #eee;
+	background: transparent;
+	height: 1px;
+	margin: 20px 0 20px 0px;
+}
+
+div.seite div.inhalt div.inhaltRechts h1 {
+  left: 600px;
+  width: 245px;
+}
+
+div.seite div.inhalt div.inhaltRechts h2 {
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0;
+}
+
+div.seite div.inhalt div.inhaltRechts p {
+	text-align: left;
+}
+
+div.seite div.inhalt div.inhaltRechts p.mitte {
+	text-align: center;
+}
+
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe {
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 20px 8px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li {
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a {
+	color: #555555;
+	text-decoration: none;
+	padding: 0 0 0 16px;
+	background: transparent url('img/icon_standard.gif') no-repeat left top;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a:hover {
+	text-decoration: underline;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.zurueck {
+	background: transparent url('img/icon_zurueck.gif') no-repeat left top;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.drucken {
+	background: transparent url('img/icon_drucken.gif') no-repeat left 1px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.email {
+	background: transparent url('img/icon_email.gif') no-repeat left 1px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.link{
+	background: transparent url('img/icon_link.gif') no-repeat left 1px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.rss{
+	background: transparent url('img/fuss_rss.gif') no-repeat left 2px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.skype{
+	background: transparent url('img/icon_skype.gif') no-repeat left 2px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.icq{
+	background: transparent url('img/icon_icq.gif') no-repeat left 2px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.winlive{
+	background: transparent url('img/icon_winlive.gif') no-repeat left 2px;
+}
+
+div.seite div.inhalt div.inhaltRechts ul.linkListe li a.xing{
+	background: transparent url('img/icon_xing.gif') no-repeat left 2px;
+}
+
+/* === Sonderformatierungen === */
+
+div.seite div.inhalt div.inhaltRechts div.wv2Branding {
+	text-align: center;
+	font-size: 10px;
+	color: #999999;
+	line-height: 12px;
+	margin: 50px 0 0 0;
+}
+
+div.seite div.inhalt div.inhaltRechts div.wv2Branding a {
+	color: #999999;
+	text-decoration: none;
+}
+
+div.seite div.inhalt div.inhaltRechts div.wv2Branding img {
+	margin: 0 0 6px 0;
+}
+
+/* -- Referenzliste -- */
+div.seite div.inhalt ul.referenzen {}
+
+div.seite div.inhalt ul.referenzen li {
+	margin: 0 0 10px 0;
+}
+
+div.seite div.inhalt ul.referenzen li span.untertitel {
+	display: block;
+	font-size: 10px;
+	line-height: 12px;
+	color: #999;
+	width: 85%;
+}
+
+/* -- Mini-Referenzen im Seitenrand -- */
+
+div.seite div.inhalt div.inhaltRechts div.referenz {
+	margin: 0 0 20px 0;
+}
+
+div.seite div.inhalt div.inhaltRechts div.referenz img {
+
+}
+
+div.seite div.inhalt div.inhaltRechts div.referenz p {
+	padding: 3px 0 0 23px;
+	margin: -5px 0 0 0;
+	background: transparent url('img/pfeil.gif') no-repeat 8px 10px;
+}
+
+div.seite div.inhalt div.inhaltRechts div.referenz p span.untertitel {
+	display: block;
+	font-size: 10px;
+	line-height: 12px;
+	color: #999;
+	width: 85%;
+}
+
+
+/* ***********************************************************
+   Fusszeile
+   **********************************************************/
+div.seite div.fuss {
+  clear: both;
+  padding: 10px 10px 0px 10px;
+  margin: 0px 0px 0px -5px;
+  width: 780px;
+  height: 40px;
+  background: transparent url('img/fuss_hintergrund.gif') no-repeat left bottom;
+  font-size: 10px;
+  color: #999999;
+}
+
+div.seite div.fuss div.fussLinks {
+  width: 468px;
+  padding: 0 20px 0px 32px;
+  float: left;
+  background: transparent url('img/fopyright.gif') no-repeat 20px 2px;
+}
+
+div.seite div.fuss div.fussRechts {
+  width: 230px;
+  padding: 0 30px 0px 0px;
+  float: right;
+  text-align: right;
+}
+
+div.seite div.fuss div.fussRechts a {
+  padding: 0 0 0 13px;
+  margin: 0 0 0 5px;
+  background-repeat: no-repeat;
+  background-position: left 1px;
+  background-color: transparent;
+  font-size: 10px;
+  color: #999999;
+  text-decoration: none;
+}
+
+div.seite div.fuss div.fussRechts a:hover {
+  text-decoration: underline;
+}
+
+div.seite div.fuss div.fussRechts a.rss {
+  background-image: url('img/fuss_rss.gif');
+}
+
+div.seite div.fuss div.fussRechts a.sitemap {
+  background-image: url('img/fuss_sitemap.gif');
+}
+
+div.seite div.fuss div.fussRechts a.suche {
+  background-image: url('img/fuss_suche.gif');
+}
+
+div.seite div.fuss div.fussRechts a.impressum {
+  background-image: url('img/fuss_impressum.gif');
+}

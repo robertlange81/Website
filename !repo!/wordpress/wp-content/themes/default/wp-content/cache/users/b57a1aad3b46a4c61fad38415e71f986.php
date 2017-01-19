@@ -1,0 +1,3 @@
+<?php
+//O:8:"stdClass":13:{s:2:"ID";s:1:"1";s:10:"user_login";s:5:"admin";s:9:"user_pass";s:32:"5da1ec3e275eda44aa43b4f18ce99ccf";s:13:"user_nicename";s:5:"admin";s:10:"user_email";s:25:"robert.lange.81@gmail.com";s:8:"user_url";s:0:"";s:15:"user_registered";s:19:"2013-01-21 22:11:20";s:19:"user_activation_key";s:0:"";s:11:"user_status";s:1:"0";s:12:"display_name";s:15:"robert.lange.81";s:13:"wp_user_level";s:2:"10";s:10:"user_level";s:2:"10";s:15:"wp_capabilities";a:1:{s:13:"administrator";b:1;}}
+?>

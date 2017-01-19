@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Ein simples Canvas-Objektsystem -->
+<p>
+<canvas id="canvas" width="500" height="250" style="border:1px solid black"></canvas>
+
+<script src="CanvasQuery.js"></script>
+<script>
+
+
+// CanvasQuery-Objekt erstellen
+var cq = new CanvasQuery('canvas');
+
+
+// Box-Constructor
+var Box = function(context, x, y, w, h, color, vx, vy){
+	var args = ['context', 'x', 'y', 'w', 'h', 'color', 'vx', 'vy'];
+    for(var i = 0; i < arguments.length; i++){
+		this[args[i]] = arguments[i];
+	}
+    this.minX = 0;
+    this.maxX = this.context.canvas.width - this.w;
+    this.minY = 0;
+    this.maxY = this.context.canvas.height - this.h;
+}
+
+
+// Box-Prototyp
+Box.prototype = (function(){
+    var bounce = function(){
+        if(this.x + this.vx >= this.maxX || this.x + this.vx <= this.minX){
+            this.vx = this.vx * -1;
+        }
+        if(this.y + this.vy >= this.maxY || this.y + this.vy <= this.minY){
+            this.vy = this.vy * -1;
+        }
+    }
+    var move = function(){
+        this.x = this.x + this.vx;
+        this.y = this.y + this.vy;
+    }
+    return {
+        animate: function(){
+            bounce.call(this);
+            move.call(this);
+            this.context.save();
+            this.context.fillStyle = this.color;
+            this.context.fillRect(this.x, this.y, this.w, this.h);
+            this.context.restore();
+        }
+    };
+})();
+
+
+// Boxen erstllen
+var boxes = [
+	new Box(cq.context, 58, 89, 20, 20, 'blue', 3, -2),
+	new Box(cq.context, 98, 9, 40, 40, 'red', 1, 2),
+	new Box(cq.context, 4, 9, 30, 30, 'green', 4, -1)
+];
+
+
+// Welt-Animations-Callback
+var draw = function(){
+	this.clearRect(0, 0, 500, 250);
+	for(var i = 0; i < boxes.length; i++){
+		boxes[i].animate();
+	}
+	this.animate(draw);
+}
+cq.animate(draw);
+
+</script>

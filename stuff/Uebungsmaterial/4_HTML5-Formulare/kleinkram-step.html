@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- Die Step-API -->
+<style>input { margin-top:1em; font-size:1.5em; }</style>
+
+<input type="number" id="foo" value="3" step="2">
+<br>
+<input type="button" value="+1" id="plus">
+<input type="button" value="-1" id="minus">
+
+<script>
+	var foo = document.getElementById("foo");
+	var plus = document.getElementById("plus");
+	var minus = document.getElementById("minus");
+	var hoch = function(){
+		foo.stepUp();
+	}
+	var runter = function(){
+		foo.stepDown();
+	}
+</script>

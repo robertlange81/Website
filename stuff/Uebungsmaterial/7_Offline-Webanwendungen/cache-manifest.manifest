@@ -1,0 +1,13 @@
+CACHE MANIFEST
+
+about.html
+
+
+NETWORK:
+
+blog.html
+
+
+FALLBACK:
+
+/ offline.html

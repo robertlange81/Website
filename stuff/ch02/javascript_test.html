@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Standard80 - Web & App</title>
+		<meta name="keywords" content="Robert Lange, Standard80, Wepplication, Web, App"></meta>
+		<meta charset="utf-8" />
+		<script src="load.js"></script>
+		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
+		<link type="text/css" href="desktop.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.22.custom.min.js"></script>
+		<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body onloadstart="loadPage()" onload="pageLoaded()">
+	<div id="progress">loading...</div>
+	<section id="container">
+		<script type="text/javascript" >
+			$(document).ready(function(){loadPage();})
+		</script>
+		<h1>Form</h1>
+		<form id="form1" action="validierung">
+			<input id="feld" name="test1" type="number" required></input>
+			<input type="submit"></input>
+		
+		</form>
+
+		
+		<img alt="Portrait of Robert Lange" width = "50" height = "50" src="Robert_Lange.JPG">
+
+	<script>
+		var form = document.getElementById('form1');
+		var feld = document.getElementById('feld1');
+		
+		form.onsubmit = function(){
+			if(feld.value != 42){
+				alert('falsch');			
+			}	else {
+				feld.setCustomValidity();
+			}	
+		}
+	</script>
+		
+		<script>
+	$(function() {
+		var availableTags = [
+			"ActionScript",
+			"AppleScript",
+			"Asp",
+			"jo","je","ja","ji","jai","jsdff","jsss","jfff","jaaa","jssdd","jasdfa","jvds",
+			"BASIC",
+			"C",
+			"C++",
+			"Clojure",
+			"COBOL",
+			"ColdFusion",
+			"Erlang",
+			"Fortran",
+			"Groovy",
+			"Haskell",
+			"Java",
+			"JavaScript",
+			"Lisp",
+			"Perl",
+			"PHP",
+			"Python",
+			"Ruby",
+			"Scala",
+			"Scheme"
+		];
+		$( "#tags" ).autocomplete({
+			source: availableTags
+		});
+	});
+	</script>
+
+	
+<div class="demo">
+
+<div class="ui-widget">
+	<label for="tags">Tags: </label>
+	<input id="tags">
+</div>
+
+</div>
+
+
+
+		</section>
+	</body>
+</html>

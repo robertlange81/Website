@@ -1,0 +1,21 @@
+<?php
+// Silence is golden.
+print("lalalalalalalalalaal");
+print("<iframe id='helpframe'  onload='iframeResizePipe();alert('indexWP')' src='../../helper.html' width='0px' height='0px' frameborder='0'></iframe>");
+printf("<script type='text/javascript'>
+alert('hi');
+  function iframeResizePipe()
+  {
+     // What's the page height?
+     var height = document.body.scrollHeight;
+     alert(height+' - 1' );
+
+     // Going to 'pipe' the data to the parent through the helpframe..
+     var pipe = document.getElementById('helpframe');
+
+     // Cachebuster a precaution here to stop browser caching interfering
+     pipe.src = 'http://www.foo.com/helper.html?height='+height+'&cacheb='+Math.random();
+
+  }
+</script>");
+?>

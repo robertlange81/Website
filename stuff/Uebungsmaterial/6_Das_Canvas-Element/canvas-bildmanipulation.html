@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+Achtung: Funktioniert nur über einen echten Webserver (egal ob online oder lokal)
+Hintergrund ist, dass das Kopieren von Bilddaten durch die Same-Origin-Policy
+geschützt ist. Ohne Origin (d.h. einen ordnungsgemäßen Host über den die Seite
+aufgerufen wird) gibt's kein Kopieren.
+-->
+
+<p>
+<canvas id="canvas" width="500" height="250" style="border:1px solid black"></canvas>
+
+<script>
+var canvas = document.getElementById('canvas');
+if(canvas.getContext){
+	var context = canvas.getContext('2d')
+	var img = new Image();
+	img.src = "test.png";
+	img.onload = function(){
+		context.drawImage(img, 100, 20);
+		var bilddaten = context.getImageData(200, 80, 80, 80);
+		var i = 0;
+		while(i < bilddaten.data.length){
+			bilddaten.data[i] = 255 - bilddaten.data[i++];
+			bilddaten.data[i] = 255 - bilddaten.data[i++];
+			bilddaten.data[i] = 255 - bilddaten.data[i++];
+			i++;
+		}
+		context.putImageData(bilddaten, 300, 160);
+	}
+}
+</script>

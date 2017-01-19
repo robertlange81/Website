@@ -1,0 +1,63 @@
+#drei mögliche Orte für Konfig:
+# 1) systemweit /etc/gitconfig
+# 2) global $HOME/.gitconfig
+# 3) für ein Repo: <projektname>/.git/config
+# siehe https://www.linuxmuster.net/wiki/entwicklung:meta:git-tutorial:git-local-config 
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/robertlange81/Website.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[alias]
+    # one-line log
+    l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+    a = add
+    ap = add -p
+    c = commit --verbose
+    ca = commit -a --verbose
+    cm = commit -m
+    cam = commit -a -m
+    prom = pull --rebase origin master
+    psom = push origin master
+    d = diff
+    ds = diff --stat
+    dc = diff --cached
+
+    s = status -s
+    co = checkout
+    cob = checkout -b
+    # list branches sorted by last modified
+    b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+    rao = remote add origin
+    ac = !git add . && git commit -am
+    pushitgood = push -u origin --all
+
+# folgendes Skript in bashrc eingeben und dann Reload per: source ~/.bashrc
+#
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#    . /etc/bash_completion                                                                                                                                                                
+#fi
+
+
+#function_exists() {
+#    declare -f -F $1 > /dev/null
+#    return $?
+#}
+#
+#for al in `__git_aliases`; do
+#    alias g$al="git $al"
+
+#    complete_func=_git_$(__git_aliased_command $al)
+#    function_exists $complete_fnc && __git_complete g$al $complete_func
+#done

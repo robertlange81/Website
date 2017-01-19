@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ToDo-Listen-App</title>
+    </head>
+    <body>
+        <h1>ToDo-Liste</h1>
+        <p>
+            <a href="about.html">Über dieses Beispiel</a>
+            <a href="blog.html">Blog</a>
+        </p>
+        <h2>Einträge</h2>
+        <ul id="list">
+            
+        </ul>
+        <form id="new">
+            <h2>Neuer Eintrag</h2>
+            <p>
+                <label for="todoDate">Datum:</label>
+                <input type="date" id="todoDate">
+            </p>
+            <p>
+                <label for="todoTodo">Aufgabe:</label>
+                <input type="text" id="todoTodo">
+            </p>
+            <p>
+                <input type="button" value="Speichern!" id="todoSubmit">
+            </p>
+        </form>
+        <script>
+
+
+// Die Eingabefelder, der Speichern-Button und die ToDo-Liste selbst
+var date = document.getElementById('todoDate');
+var text = document.getElementById('todoTodo');
+var save = document.getElementById('todoSubmit');
+var list = document.getElementById('list');
+
+
+// Cross-Browser-addEvent()-Funktion
+var addEvent = function(elements, type, func){
+    if(Object.prototype.toString.call(elements) != '[object Array]'){
+        elements = [elements];
+    }
+    for(var i = 0; i < elements.length; i++){
+        if(document.addEventListener){
+            elements[i].addEventListener(type, func, false);
+        }
+        else {
+            elements[i].attachEvent('on' + type, func);
+        }
+    }
+};
+
+
+// Request-Hilfsfunktion
+var sendRequest = function(query, callback){
+    var request = new XMLHttpRequest();
+    request.open('get', query, true);
+    request.send(null);
+    request.onreadystatechange = function(){
+        if(request.status == 200 && request.readyState == 4){
+            callback(request.responseText);
+        }
+    };
+};
+
+
+// Speichert einen Todo-Punkt
+var saveTodo = function(todo, callback){
+    var query = escape(todo);
+    sendRequest('save.php?q=' + query, callback);
+};
+
+
+// Lädt die Todo-Punkte vom Server
+var loadTodos = function(){
+    sendRequest('read.php', function(response){
+        list.innerHTML = '';
+        var items = response.split("\n");
+        for(var i = 0; i < items.length; i++){
+            if(items[i].length > 0){
+                displayTodo(items[i]);
+            }
+        }
+    });
+};
+
+
+// Funktion zum Einfügen neuer ToDo-Punkte in das HTML
+var displayTodo = function(text){
+    var li = document.createElement('li');
+    li.innerHTML = text;
+    list.appendChild(li);
+};
+
+
+// Beim Klick auf "Speichern" die Eingabe abspeichern
+addEvent(save, 'click', function(){
+    if(date.value && text.value){
+        var todo = date.value + ': ' + text.value;
+        saveTodo(todo, function(){
+            displayTodo(todo);
+            date.value = text.value = '';
+        });
+    }
+    else {
+        alert('Bitte Datum und Aufgabe ausfüllen!');
+    }
+});
+
+
+// Beim Laden der Seite die ToDo-Liste füllen
+addEvent(window, 'load', function(){
+    loadTodos();
+});
+
+
+// Offline-Event
+addEvent(window, 'offline', function(){
+    console.log('Ab jetzt im Offline-Modus');
+});
+
+// Online-Event
+addEvent(window, 'online', function(){
+    console.log('Ab jetzt im Online-Modus');
+});
+
+
+// Cache-Events
+/*addEvent(applicationCache, 'checking', function(){
+    console.log('Suche Manifest...');
+});
+addEvent(applicationCache, 'noupdate', function(){
+    console.log('Nichts neues im Manifest gefunden.');
+});
+addEvent(applicationCache, 'downloading', function(){
+    console.log('Lade Manifest und Ressourcen...');
+});
+addEvent(applicationCache, 'progress', function(){
+    console.log('Lade Ressourcen...');
+});
+addEvent(applicationCache, 'cached', function(){
+    console.log('Application Cache bereit.');
+});
+addEvent(applicationCache, 'updateready', function(){
+    console.log('Cache aktualisiert.');
+});
+addEvent(applicationCache, 'obsolete', function(){
+    console.log('Cache veraltet.');
+});
+addEvent(applicationCache, 'error', function(){
+    console.log('Fataler Fehler beim Anlegen des Caches.');
+});*/
+
+
+        </script>
+    </body>
+</html>

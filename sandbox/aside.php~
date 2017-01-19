@@ -1,0 +1,33 @@
+				<aside>
+                		<nav>
+                		
+                		  <div>
+								
+									
+											<script type="text/javascript" >
+											
+											if(style == 'handheld') {
+												var homeButton = "<ul id='breadcrumbs'><li class='home_Button'><a onclick='home()' style='cursor:pointer;color: whitesmoke;'>&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</a></li>";
+												var appsButton = "<li class='apps_Button'><a onclick='apps()' style='cursor:pointer;'>&nbsp;&nbsp;Apps&nbsp;&nbsp;&nbsp;</a></li>"
+												var gameButton = "<li class='games_Button'><a onclick='games()' style='cursor:pointer;'>&nbsp;Games&nbsp;&nbsp;</a></li>"
+												var projButton = "<li class='projects_Button'><a onclick='projects()' style='cursor:pointer;'>Projects</a></li>"
+												var blogButton = "<li class='blog_Button'><a onclick='blog()' style='cursor:pointer;'>&nbsp;&nbsp;Blog&nbsp;&nbsp;&nbsp;</a></li></ul>"												
+											} else {																						
+												var homeButton = "<ul id='breadcrumbs'><li class='home_Button'><a onclick='home()'><img src='../images/Home_Button_1.png' width='90' height='50' alt='HOME' /></a></li>";
+												var appsButton = "<li class='apps_Button'><a onclick='apps()'><img src='../images/app_button_1.png' width='90' height='50' alt='APPS' /></a></li>"
+												var gameButton = "<li class='games_Button'><a onclick='games()'><img src='../images/games.png' width='90' height='50' alt='GAMES' /></a></li>"
+												var projButton = "<li class='projects_Button'><a onclick='projects()'><img src='../images/projects.png' width='90' height='50' alt='PROJECTS' /></a></li>"
+												var blogButton = "<li class='blog_Button'><a onclick='blog()'><img src='../images/blog.png' width='90' height='50' alt='BLOG' /></a></li></ul>"
+											}
+											
+											document.write(homeButton);
+											document.write(appsButton);
+											document.write(gameButton);
+											document.write(projButton);
+											document.write(blogButton);
+											</script>
+								
+							  </div>
+							  
+							</nav>
+            </aside>

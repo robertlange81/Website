@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>geoloacatio</title>
+
+</head>
+<body>
+<pre id="ergebnis"></pre>
+<script>
+	var erfolgCallback = function(position){
+		var msg = 'Länge:' + position.coords.longitude + "\n" + 'Breite:' + position.coords.latitude;
+		document.getElementById('ergebnis').innerHTML = msg;
+	};
+	
+	var fehlerCallback = function(e){
+		var msg = 'Fehler ' + e.code + ': ' + e.message;
+		alert(msg); 
+	};
+	
+	var optionen = {
+		enableHighAccuracy: true,
+		timeout: 5000,
+		maximumAge: 0
+	
+	};
+	
+	if(navigator.geolocation){
+		navigator.geolocation.getWatchPosition(erfolgCallback, fehlerCallback, optionen);	
+	}
+</script>
+</body>
+</html>

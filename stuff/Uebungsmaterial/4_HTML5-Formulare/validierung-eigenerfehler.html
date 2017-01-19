@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Selbst programmierte Valdierungslogik -->
+<style>p { font-size:1.5em; } input { margin-top:1em; font-size:inherit; }</style>
+
+<form id="form1" action="validierung-eigenerfehler.html">
+<p>
+Was ist der Sinn des Lebens?
+<input id="feld1" name="test1" type="number" required>
+<p>
+<input type="submit">
+</form>
+
+<script>
+var form = document.getElementById('form1');
+var feld = document.getElementById('feld1');
+
+form.onsubmit = function(){
+	if(feld.value != 42){
+		feld.setCustomValidity("Du hast keine Ahnung");
+	}
+	else {
+		feld.setCustomValidity(null);
+	}
+}
+</script>

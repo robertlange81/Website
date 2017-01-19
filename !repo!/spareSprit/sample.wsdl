@@ -1,0 +1,137 @@
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Test WSDL
+</wsdl:documentation>
+
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+
+<s:complexType name="location">
+<s:sequence>
+	<s:element name="latitude" type="s:double" minOccurs="1" maxOccurs="1" />
+	<s:element name="longitude" type="s:double" minOccurs="1" maxOccurs="1"/>
+</s:sequence>
+</s:complexType> 
+
+<s:element name="GetCoordsByTownRequest">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="stringTown" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetCoordsByTownResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="location" type="tns:location" />
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetTownByCoordsRequest">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="location" type="tns:location" />
+</s:sequence>
+</s:complexType>
+</s:element>
+
+<s:element name="GetTownByCoordsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="stringTown" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+
+</s:schema>
+</wsdl:types>
+
+<wsdl:message name="GetCoordsByTownIn">
+<wsdl:part name="parameters" element="tns:GetCoordsByTownRequest"/>
+</wsdl:message>
+<wsdl:message name="GetCoordsByTownOut">
+<wsdl:part name="parameters" element="tns:GetCoordsByTownResponse"/>
+</wsdl:message>
+
+<wsdl:message name="GetTownByCoordsIn">
+<wsdl:part name="parameters" element="tns:GetTownByCoordsRequest"/>
+</wsdl:message>
+<wsdl:message name="GetTownByCoordsOut">
+<wsdl:part name="parameters" element="tns:GetTownByCoordsResponse"/>
+</wsdl:message>
+
+<wsdl:portType name="FuelServiceSoapType">
+
+<wsdl:operation name="GetCoordsByTown">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Lade Koordinaten zu Stadt
+</wsdl:documentation>
+<wsdl:input message="tns:GetCoordsByTownIn"/>
+<wsdl:output message="tns:GetCoordsByTownOut"/>
+</wsdl:operation>
+
+<wsdl:operation name="GetTownByCoords">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Lade Stadt zu Koordinaten
+</wsdl:documentation>
+<wsdl:input message="tns:GetTownByCoordsIn"/>
+<wsdl:output message="tns:GetTownByCoordsOut"/>
+</wsdl:operation>
+
+</wsdl:portType>
+
+
+<wsdl:binding name="FuelServiceSoap" type="tns:FuelServiceSoapType">
+
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetCoordsByTown">
+<soap:operation soapAction="http://tempuri.org/GetCoordsByTown" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+
+<wsdl:operation name="GetTownByCoords">
+<soap:operation soapAction="http://tempuri.org/GetTownByCoords" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+
+</wsdl:binding>
+
+<!--
+<wsdl:binding name="FuelSoap12" type="tns:FuelServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetCoordsByTown">
+<soap12:operation soapAction="http://tempuri.org/GetCoordsByTown" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+-->
+
+<wsdl:service name="FuelService">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Sample
+</wsdl:documentation>
+<wsdl:port name="FuelServiceSoap" binding="tns:FuelServiceSoap">
+<soap:address location="http://www.sparesprit.de/sample.php"/>
+</wsdl:port>
+<!--wsdl:port name="FuelServiceSoap12" binding="tns:FuelServiceSoap12">
+<soap12:address location="http://www.sparesprit.de/sample.php"/>
+</wsdl:port-->
+</wsdl:service>
+</wsdl:definitions>

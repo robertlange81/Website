@@ -1,0 +1,8 @@
+# robots.txt zu robert-lange.eu
+
+User-agent: *
+Sitemap: http://www.robert-lange.eu/sitemap.xml
+User-agent: *
+Disallow: /santina/       # Klangmassage
+User-agent: *
+Disallow: /tankUp/   	    # sparEsprit.de

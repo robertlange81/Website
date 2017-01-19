@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Demonstriert das @font-face-Prinzip nur - So bitte NICHT verwenden! -->
+
+<style>
+body { font-size:64px; text-align:center; }
+
+@font-face {
+	font-family:"Caviar Dreams";
+	src: url(fonts/Caviar/CaviarDreams-webfont.ttf);
+}
+
+@font-face {
+	font-family:"Caviar Dreams";
+	src: url(fonts/Caviar/CaviarDreams_Bold-webfont.ttf);
+	font-weight:bold;
+}
+
+@font-face {
+	font-family:"Caviar Dreams";
+	src: url(fonts/Caviar/CaviarDreamsItalic-webfont.ttf);
+	font-style:italic;
+}
+
+#foo {
+	font-family:"Caviar Dreams";
+}
+#bar {
+	font-family:"Caviar Dreams";
+	font-weight:bold;
+}
+#baz {
+	font-family:"Caviar Dreams";
+	font-style:italic;
+}
+</style>
+
+<p id="foo">Schicke Schrift!</p>
+<p id="bar">Schicke Schrift!</p>
+<p id="baz">Schicke Schrift!</p>

@@ -1,0 +1,7 @@
+- Helper.html
+- Footer mit Impressum
+- Überschrift / Blinken
+- XML-Sitemap
+- Blogeinträge
+- Google+ / Facebook / Xing
+- Link von GWZO 

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- Schatten f¸r ganze Boxen -->
+<style>
+div {
+	width: 400px;
+	height: 200px;
+	background: pink;
+	margin: 4em;
+}
+
+#foo {
+	box-shadow: -16px -16px 16px -8px #999, /* Schatten nach auﬂen */
+	            inset 0 0 32px #000;        /* Schatten nach innen */
+}
+</style>
+
+<div id="foo"></div>

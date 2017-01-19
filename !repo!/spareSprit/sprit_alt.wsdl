@@ -1,0 +1,99 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+
+<definitions name='sprit' 
+	targetNamespace='http://www.sparesprit.de/sprit' 
+	xmlns:tns='http://www.sparesprit.de/sprit' 
+	xmlns:types='http://www.sparesprit.de/sprit/types'
+	xmlns:soap12='http://schemas.xmlsoap.org/wsdl/soap12/' 
+	xmlns:xsd='http://www.w3.org/2001/XMLSchema' 
+	xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/' 
+	xmlns='http://schemas.xmlsoap.org/wsdl/' >
+	
+	<types>
+		<!--schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sparesprit.de/sprit">				
+			<complexType name="location">
+				<all>
+					<element name="latitude" type="xsd:double" minOccurs="1" maxOccurs="1" />
+					<element name="longitude" type="xsd:double" minOccurs="1" maxOccurs="1"/>
+				</all>
+			</complexType>  
+		</schema-->
+		<xsd:schema >				
+			<xsd:import schemaLocation="http://www.sparesprit.de/schema/types.xsd" namespace="http://www.sparesprit.de/sprit/types"  />
+		</xsd:schema>		
+	</types>	
+  		
+  	<message name='getCoordsByTownRequest'>
+  		<part name='town' type='xsd:string'/>
+	</message>
+	
+	<message name='getCoordsByTownResponse'>
+		<part name='location' type='types:location'/>
+	</message>
+	
+	<portType name='getCoordsByTownPortType'>
+  		<operation name='getCoordsByTown'>
+    		<input message='tns:getCoordsByTownRequest'/>
+    		<output message='tns:getCoordsByTownResponse'/>
+  		</operation>
+	</portType>	
+	
+  	<message name='getTownByCoordRequest'>
+		<part name='location' type='types:location'/>  		
+	</message>
+	
+	<message name='getTownByCoordResponse'>
+		<part name='town' type='xsd:string'/>
+	</message>
+	
+	<portType name='getTownByCoordPortType'>
+  		<operation name='getTownByCoord'>
+    		<input message='tns:getTownByCoordRequest'/>
+    		<output message='tns:getTownByCoordResponse'/>
+  		</operation>
+	</portType>		
+	
+	<binding name='getCoordsByTownBinding' type='tns:getCoordsByTownPortType'>
+  	<soap12:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/> <!-- style rpc | document -->
+	
+  		<operation name='getCoordsByTown'>
+    		<soap12:operation soapAction='urn:sprit#getCoordsByTown'/>
+    		<input>
+      		<soap12:body use='literal' namespace='urn:sprit'
+        			encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    		</input>
+    		<output>
+      		<soap12:body use='literal' namespace='urn:sprit'
+        			encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    		</output>
+  		</operation>		
+	</binding>	
+	
+	<binding name='getTownByCoordBinding' type='tns:getTownByCoordPortType'>
+  	<soap12:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/> <!-- style rpc | document -->
+	
+  		<operation name='getTownByCoord'>
+    		<soap12:operation soapAction='urn:sprit#getTownByCoord'/>
+    		<input>
+      		<soap12:body use='literal' namespace='urn:sprit'
+        			encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    		</input>
+    		<output>
+      		<soap12:body use='literal' namespace='urn:sprit'
+        			encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    		</output>
+  		</operation>		
+	</binding>		
+	
+	<service name='fuelService'>
+	<documentation>Returns location, prices and opening times of fuel stations
+	</documentation>
+  		<port name='getCoordsByTownPort' binding='tns:getCoordsByTownBinding'>
+    		<soap12:address location='http://www.sparesprit.de/server.php'/>
+  		</port>
+		<port name='getTownByCoordPort' binding='tns:getTownByCoordBinding'>
+    		<soap12:address location='http://www.sparesprit.de/server.php'/>
+  		</port>
+	</service>
+	
+</definitions>

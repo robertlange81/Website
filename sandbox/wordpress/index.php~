@@ -1,0 +1,23 @@
+<?php 
+/* Short and sweet */
+
+print("<iframe id='helpframe'  onload='iframeResizePipe();' src='../helper.html' width='0px' height='0px' frameborder='0'></iframe>");
+printf("<script type='text/javascript'>
+  var lastHeight;
+  
+  function iframeResizePipe()
+  {
+			if(lastHeight != document.body.offsetHeight + 250) {	
+ 	 			lastHeight = document.body.offsetHeight + 250;
+     			// Going to 'pipe' the data to the parent through the helpframe..
+     			var pipe = document.getElementById('helpframe');
+
+     			// Cachebuster a precaution here to stop browser caching interfering
+     			pipe.src = '../helper.html?height='+lastHeight+'&cacheb='+Math.random();
+
+     		}
+  } </script>");
+define('WP_USE_THEMES', true);
+require('./wp-blog-header.php');
+
+?>

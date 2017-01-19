@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Bulletproof @font-face-Syntax. So wird's gemacht! -->
+
+<style>
+body {
+    font-size:64px;
+    text-align:center;
+}
+
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url(fonts/Caviar/CaviarDreams-webfont.eot?)
+             format("ignoriert-mich"), /* Internet Explorer 6 - 8 */
+         url(fonts/Caviar/CaviarDreams-webfont.woff)
+             format("woff"),           /* Moderne Browser */
+         url(fonts/Caviar/CaviarDreams-webfont.ttf)
+             format("truetype"),       /* Ältere Browser */
+         url(fonts/Caviar/CaviarDreams.svg#webfont)
+             format("svg");            /* iPhone und iPad */
+}
+
+/* ...die wir dann verwenden können! */
+#foo {
+    font-family: "Caviar Dreams";
+}
+
+</style>
+
+<p id="foo">
+	Schicke Schrift!
+</p>

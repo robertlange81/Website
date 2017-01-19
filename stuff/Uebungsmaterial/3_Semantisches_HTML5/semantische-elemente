@@ -1,0 +1,9 @@
+Liste der neuen Elemente
+
+<section>  Inhaltliche Unterteilung
+<article>  Wie <section>, nur für isolierte Inhalte (Blogposts, Kommentare u.Ä.)
+<aside>    Angefügte Inhalte; der Hauptinhalt macht auch ohne die <aside> Sinn
+<nav>      Hauptnavigationen
+<header>   Kopfbereich einer Seite oder eines Abschnittes
+<footer>   Fußbereich einer Seite oder eines Abschnittes
+<time>     Zeitangeben (Achtung: spezielles Format)

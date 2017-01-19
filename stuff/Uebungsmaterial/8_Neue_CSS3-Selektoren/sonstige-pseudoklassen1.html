@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Sonstige CSS3-Pseudoklassen -->
+
+<style>
+li:first-child {
+	color:green;
+}
+li:last-child {
+	color:red;
+}
+:only-child {
+	color:blue;
+}
+p:empty {
+	border:2px solid red;
+}
+:root {
+	border:2px solid lime;
+}
+:enabled {
+	color:green;
+}
+:disabled {
+	color:magenta;
+}
+p:not(#foo) {
+	font-weight:bold
+}
+</style>
+
+<p id="foo">
+Hallo
+<ul id="navi">
+	<li>Start
+	<li>Projekte
+	<li>Kontakte
+</ul>
+<p>
+Welt
+<p>
+<p><!-- Hallo! --> </p>
+<p>
+<input type="text" value="Foo" disabled>

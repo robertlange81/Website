@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- Manuell ausgelöste Validierung -->
+<style>p { font-size:1.5em; } input { margin-top:1em; font-size:inherit; }</style>
+
+<form id="form1" action="validierung-html.html">
+<p>
+<input id="feld1" name="test1" type="text" pattern="[0-9]{5}" required>
+<p>
+<input type="button" value="Prüfen" onclick="pruefe()">
+</form>
+
+<script>
+var form = document.getElementById('form1');
+var feld = document.getElementById('feld1');
+
+var pruefe = function(){
+	form.checkValidity();
+}
+</script>

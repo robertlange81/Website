@@ -1,0 +1,93 @@
+<?php include ("head.php"); ?>
+						
+            	<?
+            	
+            		if(!empty($_GET['lang'])){
+                 		$lang = $_GET['lang'];
+                 	} elseif (isset($_COOKIE["lang"])) {
+                 		$lang = $_COOKIE["lang"];
+                 	} else {
+                 		$lang = 'de';
+                 	}
+                 	
+						if(!empty($_GET['theme'])){
+							$theme = $_GET['theme'];
+						   switch($_GET['theme']) {
+                  		case "start" : printf("<header id='header1' class='home'>");printf("<script> document.cookie = 'theme=st;' </script>");break;
+								case "home" : printf("<header id='header1' class='home'>");printf("<script> document.cookie = 'theme=ho;' </script>");break;
+								case "apps" : printf("<header id='header1' class='apps'>");printf("<script> document.cookie = 'theme=ap;' </script>");break;
+								case "games" : printf("<header id='header1' class='games'>");printf("<script> document.cookie = 'theme=ga;' </script>");break;
+								case "projects" : printf("<header id='header1' class='projects'>");printf("<script> document.cookie = 'theme=pr;' </script>");break;
+								case "blog" : printf("<header id='header1' class='blog'>");printf("<script> document.cookie = 'theme=bl;' </script>");break;
+								default : printf("<header id='header1'class='home' >");printf("<script> document.cookie = 'theme=ho;' </script>");
+							}
+						} else {
+							printf("<header id='header1' class='home'>");
+							printf("<script> document.cookie = 'theme=ho;' </script>");
+						}
+					?>
+            <a href="javascript:play('start')">Bark</a> 
+				<?php include ("header.php"); ?>
+				<a id="top"></a>
+				
+								
+				<?php include ("aside.php"); ?>
+				
+											            
+            <section id="content1">
+					<script type="text/javascript" >
+						$(document).ready(function(){loadPage();})
+						var artStart = "<article id='contentArea'>";										
+						document.write(artStart);	
+						var artEnd = "</article>";	
+						document.write(artEnd);					 
+					</script>
+					
+					<noscript>
+					<?php
+						if(!empty($_GET['theme'])){
+						   switch($_GET['theme']) {
+                  		case "start" : printf("<article  id='home'>");$theme = "home"; break;
+								case "home" : printf("<article  id='home'>");$theme = "home";break;
+								case "apps" : printf("<article  id='apps'>");$theme = "apps";break;
+								case "games" : printf("<article  id='games'>");$theme = "games";break;
+								case "projects" : printf("<article  id='projects'>");$theme = "projects";break;
+								case "blog" : printf("<article  id='blog'>");$theme = "blog";break;
+								default : printf("<article id='home'>");
+							}
+						} else {
+							printf("<article  id='home'>");
+						}
+						
+						$article = mysql_query("select * from `content` where `theme` = '$theme' and `lang` = '$lang'");
+						if(mysql_num_rows($article) >=1) {
+							while($aktZeile = mysql_fetch_assoc($article)){
+								echo $aktZeile['article'];
+							}
+						} 
+
+												
+						
+						printf("</article> ");
+					?>
+					</noscript>	
+					
+					
+					  <?		if($style != 'handheld') include ("footer.php");	?>	
+					           
+            </section>
+            
+                  <script src="js/load.js"></script>      
+						<script type="text/javascript" src="js/bling.js"></script>
+						</div>
+            <?
+                        
+            if($style == 'handheld') {
+            	include ("textOptions.php"); 
+            }
+            				
+				?>
+	</body>
+</html>
+
+				

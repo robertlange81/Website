@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- Ein fest eingebundenes und ein dynamisch erzeugtes Audio-Element
+Beachten Sie: MP3-Unterstützung gibt es (noch) nicht in allen Browsern -->
+<style>body { font-size:1.5em; }</style>
+
+<p>
+<audio src="audio.mp3" controls></audio>
+
+<p>
+<input type="button" value="abspielen!" onclick="abspielen()">
+
+<script>
+var abspielen = function(){
+	new Audio('audio.mp3').play();
+}
+</script>

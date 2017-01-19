@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Die drei neuen Attributselektoren -->
+
+<style>
+[title^="Hallo"]{
+	color:red;
+}
+[title$="Welt"]{
+	font-weight:bold;
+}
+[title*="neue"]{
+	font-style:italic;
+}
+</style>
+
+<p title="Hallo">
+Hallo
+
+<p title="Hallo Welt">
+Hallo
+
+<p title="Hallo schöne neue Welt">
+Hallo

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Selbst programmiertes Videoplayer-Interface -->
+
+<p>
+<video id="film" src="video.mp4" width="50%"></video>
+
+<p>
+<input type="button" value="Start/Stop" onclick="start()">
+<input type="button" value="Stummschalten" onclick="stumm()">
+<input type="button" value="Lauter" onclick="lauter()">
+<input type="button" value="Leiser" onclick="leiser()">
+
+<script>
+var video = document.getElementById('film');
+
+var start = function(){
+	if(video.paused){
+		video.play();
+	}
+	else {
+		video.pause();
+	}
+}
+
+var stumm = function(){
+	if(video.muted){
+		video.muted = false;
+	}
+	else {
+		video.muted = true;
+	}
+}
+
+var lauter = function(){
+	if(video.volume < 1){
+		video.volume = (video.volume < 0.8) ? video.volume + 0.2 : 1;
+	}
+}
+
+var leiser = function(){
+	if(video.volume > 0){
+		video.volume = (video.volume > 0.2) ? video.volume - 0.2 : 0;
+	}
+}
+</script>

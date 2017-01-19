@@ -1,0 +1,59 @@
+-- lamp
+sudo apt-get install apache2 libapache2-mod-php7.0 php7.0 php7.0-mysql mysql-server phpmyadmin
+Konfigurieren phpmyadmin (nachträglich)  "sudo dpkg-reconfigure -plow phpmyadmin" (Leertaste)
+Wichtig, sonst fehlen Funktionen wie trim und phpmyadmin läuft nicht:
+sudo apt-get install php7.0-mbstring // fur debian und ubuntu
+
+sudo apt-get install php-gettext // fehlt bei php7 auch oft
+// übrigens, mit "apt-get remove --purge phpmyadmin" wird alles gelöscht (auch Konfigs)
+
+// bei Fehlern: /var/log/apache2/error.log
+
+This is the default welcome page used to test the correct operation of the Apache2 server after installation on Ubuntu systems. It is based on the equivalent page on Debian, from which the Ubuntu Apache packaging is derived. If you can read this page, it means that the Apache HTTP server installed at this site is working properly. You should replace this file (located at /var/www/html/index.html) before continuing to operate your HTTP server.
+If you are a normal user of this web site and don't know what this page is about, this probably means that the site is currently unavailable due to maintenance. If the problem persists, please contact the site's administrator.
+
+apache2.conf is the main configuration file. It puts the pieces together by including all remaining configuration files when starting up the web server.
+ports.conf is always included from the main configuration file. It is used to determine the listening ports for incoming connections, and this file can be customized anytime.
+Configuration files in the mods-enabled/, conf-enabled/ and sites-enabled/ directories contain particular configuration snippets which manage modules, global configuration fragments, or virtual host configurations, respectively.
+They are activated by symlinking available configuration files from their respective *-available/ counterparts. These should be managed by using our helpers a2enmod, a2dismod, a2ensite, a2dissite, and a2enconf, a2disconf . See their respective man pages for detailed information.
+The binary is called apache2. Due to the use of environment variables, in the default configuration, apache2 needs to be started/stopped with /etc/init.d/apache2 or apache2ctl. Calling /usr/bin/apache2 directly will not work with the default configuration.
+
+https://wiki.ubuntuusers.de/LAMP/
+
+/etc/apache2/
+|-- apache2.conf
+|       `--  ports.conf
+|-- mods-enabled
+|       |-- *.load
+|       `-- *.conf
+|-- conf-enabled
+|       `-- *.conf
+|-- sites-enabled
+|       `-- *.conf
+
+-- Berechtigungen
+https://wiki.ubuntuusers.de/Rechte/
+https://forum.ubuntuusers.de/topic/berechtigung-eines-ordners-rekursiv-aendern/
+(nach apache-Dir suchen mit "find / -name httpd.conf" oder "ps -ef | grep apache")
+=> gibts aber nicht mehr
+
+
+-- vHosts (https://wiki.ubuntuusers.de/Apache/Virtual_Hosts/)
+
+
+
+-- git
+sudo apt-get update
+sudo apt-get install git
+mkdir -m a=rwx Website
+git config --global user.name "Robert Lange"
+git config --global user.email "Robert.Lange.81@gmail.com"
+git config --list
+git init
+git remote add origin https://github.com/robertlange81/Website.git
+git remote -v
+sudo apt install vim
+vim ~/.bashrc
+source ~/.bashrc
+
+

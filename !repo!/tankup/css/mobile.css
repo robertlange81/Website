@@ -1,0 +1,388 @@
+#progress {
+	
+    /*background:-moz-radial-gradient(center, #000, #8181FF); /* Firefox */
+	 /*background:-webkit-radial-gradient(center, #000, #8181FF); /* Safari, Chrome */
+	 /*background:-o-radial-gradient(center, #000, #8181FF); /* Opera */
+	 /*background:-ms-radial-gradient(center, #000, #8181FF); /* IE */
+	 /*background:radial-gradient(center, #000, #8181FF); /* W3C Standard */
+	 background-color: white;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    left: 0px;
+    top:0px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 10;
+}
+
+body 
+{
+	background-color: #ddd;
+	color: #222;
+	font-family: Helvetica;	
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+#favoriten{
+	position:fixed;
+	top:37px;
+	right:6px;
+	border: 2px solid #444444;
+	padding: 5px;
+	z-index: 99;
+}
+
+header  
+{
+	background-color: #ccc;
+	border-bottom: 1px solid #666;
+	color: #222;
+	display: block;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 50%;
+	padding-right: 50%;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0px 1px 1px #fff;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#999));
+	height: 75px;	
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 7;
+}
+
+header h1
+{
+	margin: 0;
+	padding: 0;
+}
+
+#profil
+{
+	display: none;	
+}
+
+#umkreisDiv{
+	position: fixed;
+	top: 40px;
+	left: 15px;
+	padding: 6px;
+	height: 20px;
+	float: right;
+	z-index: 8;
+}
+
+#sortierungDiv {
+	position: fixed;
+	top: 40px;
+	left: 148px;	
+	padding: 5px;
+	height: 20px;
+	z-index: 8;
+}
+
+#ort {
+	position: fixed;
+	top: 7px;
+	left: 20px;	
+	padding: 5px;
+	padding-left: 25px;
+	height: 35px;
+	width: 238px;
+	background: url(../img/schild_leer_gross2.png) 50% 0 / 100% no-repeat;
+	z-index:8;
+}
+
+#stadt {
+	border: none;
+	left: 5%;
+	width: 230px;
+}
+
+#header ul
+{
+	list-style: none;
+	margin: 10px;
+	padding: 0;	
+}
+
+#header ul li
+{
+	background-color: #ffffff;
+	border: 1px solid #999999;
+	color: #222222;
+	display: block;
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom: -1px;
+	padding: 12px 10px;	
+		text-decoration: none;
+}
+
+#content, #sidebar
+{
+	padding: 10px;	
+}
+
+
+#treibstoff
+{
+	position: fixed;
+	top: 6px;
+	z-index: 9;
+	width: 33%;
+	right: 5px;
+}
+
+#treibstoff select {
+    padding:3px;
+	 color: white;
+	 text-decoration: none;	
+	 text-transform: uppercase;
+    cursor:pointer;
+	 width: 100%;
+	 height: 30px;
+	 background: #333;
+	 display: block;
+	 position: relative;
+    text-align: center;
+    font-size: 20px;
+	z-index: 9;
+	bottom: 0px;
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	
+	background-image: -webkit-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -moz-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -ms-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: -o-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	background-image: linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+	border:none;
+}
+
+#results
+{
+	background: #FFF;
+	z-index: -1;
+}
+
+#results table {
+	border: 1px solid black;
+	width: 100%;
+}
+
+#results a {
+	text-decoration: none;
+	color: black;	
+}
+
+#saeule
+{
+	z-index: -1;
+	margin-top: 76px;
+}
+
+.preis {
+	color: wheat;
+	font-size: 110%;
+	font-weight: bold;
+	position: relative;
+	text-align: center;
+}
+
+#results img
+{
+	background: #FFF;
+	width: 75px;
+	height: 75px;
+}
+
+#results .detail img
+{
+	background: transparent;
+	width: 100px;
+	height: 75px;
+}
+
+results td
+{
+	border-top: 1px black;
+	padding-left: 0px;
+	padding-right: 0px;
+	text-align:center;
+}
+
+#tankstelle {
+	display:none;
+}
+
+#route {
+	display:none;
+}
+
+#oeffnungszeiten {
+	display:none;
+}
+
+#preis {
+	color: wheat;
+	font-size: 120%;
+	position: relative;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	margin-left: 50%;
+	margin-right: 50%;
+}
+
+#preis input {
+	position: relative;
+	width: 240px;
+	font-size: 70%;
+	color: darkblue;
+	text-align: center;
+	background:-moz-radial-gradient(center, #fff, #F1F181); /* Firefox */
+ 	background:-webkit-radial-gradient(center, #fff, #F1F181); /* Safari, Chrome */
+ 	background:-o-radial-gradient(center, #fff, #F1F181); /* Opera */
+ 	background:-ms-radial-gradient(center, #fff, #F1F181); /* IE */
+ 	background:radial-gradient(center, #fff, #F1F181); /* W3C Standard */
+ 	border-radius: 10px;
+ 	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;		
+}	
+
+.noFav {
+	background-image:url(../img/starblack.jpg) !important;
+	background-repeat:no-repeat;	
+	background-size: 65px 65px;
+	cursor: pointer;	
+	width: 65px;
+	height: 65px;
+	padding: 0px;
+}
+
+.noFav:hover {
+	background-image:url(../img/stargold.jpg) !important;	
+	background-repeat:no-repeat;	
+	background-size: 65px 65px;
+	cursor: pointer;
+	width: 65px;
+	height: 65px;
+	padding: 0px;
+}
+
+.isFav {
+	background-image:url(../img/stargold.jpg) !important;
+	background-repeat:no-repeat;	
+	background-size: 65px 65px;
+	cursor: pointer;
+	width: 65px;
+	height: 65px;
+	padding: 0px;
+}
+
+.transparent {
+	color: transparent;	
+}
+
+.transparent a {
+	color: transparent;	
+}
+
+.detail {
+	background-color: whitesmoke;
+	border: none; 
+	text-align: left;
+}
+
+.textInTable {
+	position: relative;
+	top: -15px;	
+}
+
+@media all 
+and (min-width : 200px) 
+and (max-width : 600px)
+{
+	body 
+	{
+		font-size: 9px;
+	}	
+	
+	#ort {
+		left: 5px;	
+		padding: 5px;
+		padding-left: 5px;
+		width: 190px;
+	}	
+	
+	#stadt {
+		position:relative;
+		left: 15;
+		top: -3px;
+		width: 160px;
+		height: 15px;
+	}	
+	
+	#umkreisDiv{
+		left: 0px;
+	}
+	
+	#sortierungDiv {
+		left: 110px;	
+	}
+	
+	
+	#results img
+	{
+		background: #FFF;
+		width: 40px;
+		height: 40px;
+	}	
+	
+	#results .detail img
+	{
+		background: transparent;
+		width: 60px;
+		height: 40px;
+		vertical-align:top;
+	}		
+	
+	.textInTable {
+		position: relative;
+		top: 0px;	
+	}
+	
+	#treibstoff {
+		width: 40%;	
+	}
+	
+	.textInTable {
+		position: relative;
+		top: 5px;
+	}	
+}
+
+

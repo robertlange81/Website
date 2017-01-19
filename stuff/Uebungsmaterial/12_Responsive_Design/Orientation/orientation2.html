@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<!-- Orientation-Event als Script (funktioniert so nur in Webkit) -->
+
+<pre id="info" style="font-size:32px;">Info</pre>
+
+<script>
+var info = document.getElementById('info');
+window.addEventListener('deviceorientation', function(evt){
+	var msg = "Drehung: " + evt.alpha + "\n" + 
+	          "Links-Rechts: " + event.beta + "\n" + 
+			  "Vor-Zurück: " + event.gamma;
+	info.innerHTML = msg;
+}, false);
+</script>

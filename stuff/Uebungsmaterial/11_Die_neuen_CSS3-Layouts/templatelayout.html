@@ -1,0 +1,46 @@
+<!doctype html>
+<title>Template-Layout</title>
+
+<!-- Template-Layout -->
+<!-- Funktioniert nur mit JavaScript und jQuery -->
+
+<script src="jquery.min.js"></script>
+<script src="jquery.tpl_layout1.1.6.min.js"></script>
+<script>$(document).ready(function(){ $.setTemplateLayout(); });</script>
+
+<style>
+
+#container {
+	width: 960px;
+	height: 512px;
+	border: 8px solid blue;
+	display: "aaaaaaaa"
+	         "bb.ccccc"
+			 "dddddddd";
+}
+#foo {
+	border: 8px solid red;
+	position: a;
+}
+#bar {
+	border: 8px solid green;
+	position: b;
+}
+#baz {
+	border: 8px solid magenta;
+	position: c;
+}
+#bla {
+	border: 8px solid black;
+	position: d;
+}
+
+
+</style>
+
+<div id="container">
+	<div id="foo">Foo</div>
+	<div id="bar">Bar</div>
+	<div id="baz">Baz</div>
+	<div id="bla">Bla</div>
+</div>

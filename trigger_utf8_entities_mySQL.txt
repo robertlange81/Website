@@ -1,0 +1,11 @@
+create trigger utfentities before insert on wp_posts
+	for each row begin
+		insert into wp_posts set post_content = 
+			replace( 
+                replace( 
+                    replace(
+                        replace( 
+                            replace( 
+                                replace( 
+                                    replace(New.post_content,'Ã¼','&uuml;'),'Ã¤','&auml;'),'Ã¶','&ouml;'),'ÃŸ','&szlig;'),'Ãœ','&Uuml;'),'Ã„','&Auml;'),'Ã–','&Ouml;'); 
+END;

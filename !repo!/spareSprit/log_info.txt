@@ -1,0 +1,2 @@
+[20/Aug/2014:14:30:59] (xmlrpcserver) Aufruf getCoordsByTown mit Bad Dürrenberg
+[20/Aug/2014:14:31:00] (xmlrpcserver) Aufruf getDataByCoord mit Artikel fuelPriceE5 , Umkreis: 40 , Sortieren nach: preis , Long: 12.0692320053 , Lat: 51.2944990071.

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://www.robert-lange.eu/</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=home</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=apps</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=games</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=projects</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=blog</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=home&amp;lang=de</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=home&amp;lang=en</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=imprint</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=apps&amp;lang=de</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=apps&amp;lang=en</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=games&amp;lang=de</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=games&amp;lang=en</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=projects&amp;lang=de</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=projects&amp;lang=en</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=blog&amp;lang=de</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=blog&amp;lang=en</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=imprint&amp;lang=de</loc>
+</url>
+<url>
+  <loc>http://www.robert-lange.eu/index.php?theme=imprint&amp;lang=en</loc>
+</url>
+</urlset>

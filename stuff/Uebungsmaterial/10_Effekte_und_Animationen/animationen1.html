@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- Ein erstes Beispiel für CSS-Animationen -->
+<style>
+@-moz-keyframes test {
+	0% {
+		padding-left:0;
+		color:black;
+	}
+	50% {
+		padding-left:256px;
+		color:red;
+	}
+	100% {
+		padding-left:128px;
+		color:lime;
+	}
+}
+p {
+	font-size:64px;
+	font-weight:bold;
+	color:black;
+}
+p:hover {
+	color:blue;
+	-moz-animation-name:test;
+	-moz-animation-duration:3s;
+}
+</style>
+
+<p>Animiere mich!</p>

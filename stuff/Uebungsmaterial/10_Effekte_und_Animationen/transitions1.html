@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- CSS-Transitions in der ausführlichen Schreibweise -->
+<style>
+p {
+	font-size:64px;
+	font-weight:bold;
+	color:black;
+}
+p:hover {
+	padding-left:128px;
+	color:lime;
+	-moz-transition-property:padding-left, color;
+	-moz-transition-duration:750ms, 3s;
+	-moz-transition-timing-function:ease-out, linear;
+	-moz-transition-delay:2s, 300ms;
+}
+</style>
+
+<p>Animiere mich!</p>

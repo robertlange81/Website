@@ -1,0 +1,3 @@
+AddDefaultCharset UTF-8
+
+Redirect permanent /~www1test/redirect_extern.html http://www.informatik.uni-frankfurt.de/
