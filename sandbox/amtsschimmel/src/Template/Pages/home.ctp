@@ -66,7 +66,7 @@ Email::configTransport('gmail', [
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <?= $this->Html->script('scroll.js') ?>    
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="start" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -81,26 +81,28 @@ Email::configTransport('gmail', [
       <ul class="nav navbar-nav navbar-right">
         <li style="position: absolute; left: 0px" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">AMTSHILFE-LE.de <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#overview">Zum Seitenanfang</a></li>
-            <li><a href="#we">Kontakt</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </li>        
-        <li><a href="#what">WAS</a></li>
-        <li><a href="#how">WIE</a></li>
-        <li><a href="#pricing">WIEVIEL</a></li>      
+        <li><a href="#was">WAS</a></li>
+        <li class="how"><a href="#wie">WIE</a></li>
+        <li><a href="#preise">WIEVIEL</a></li>      
         </ul>
       </ul>
     </div>
   </div>
 </nav>
     
-<div id="overview" class="container-fluid high-padding bg-1 text-center">
+<div id="overview" class="container-fluid high-padding bg-even text-center">
 
 <h3 style='font-weight: 500; font: Montserrat, sans-serif'>Keine Zeit für die Fahrt zum Amt? Keine Nerven oder keine Ahnung?</h3>
   <?= $this->Html->image('kopf.png', ['alt' => 'Reite den Amtsschimmel', 'class' => 'img-responsive img-circle margin', 'style' => 'display:inline', 'alt' => '', 'width' => '280', 'height' => '280']); ?>
 <h3 style='font-weight: 500; font: Montserrat, sans-serif'>Wir erledigen Ihre Behördengänge und helfen bei allen Fragen und Formularen.</h3>
 <div class="starter">
-    <a class="delay sec4 sign-up" href="#lohn-form" style="top:175px">
+    <?= $this->Html->image('qr_amtshilfe.jpg', ['alt' => '', 'class' => 'img-responsive margin', 'style' => 'display:inline; position: relative; margin-right: 650px;margin-top: 20px;', 'alt' => '', 'width' => '120', 'height' => '120']); ?>    
+</div>
+<div class="starter">
+    <a class="delay sec4 sign-up hidden-xs" href="#lohn-form" style="top:175px">
         JETZT TESTEN
     </a>
     <div class="delay sec1 left"><span class="glyphicon glyphicon-check"> </span> Professionell & Zuverlässig</div>
@@ -111,7 +113,7 @@ Email::configTransport('gmail', [
 
 </div>
     
-<div class="container-fluid bg-odd low">
+<div class="container-fluid low">
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="5000">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -123,13 +125,13 @@ Email::configTransport('gmail', [
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"Kein Schlange stehen und einen Tag Urlaub gespart." (KFZ-Anmeldung)<br><span style="font-style:normal;">Robert Lange, Dipl.-Kfm.</span></h4>
+        <h4>"Kein Schlange stehen und einen Tag Urlaub gespart." (KFZ-Anmeldung)<br><span style="font-style:normal;">Santina Koj, Pädagogin</span></h4>
       </div>
       <div class="item">
-        <h4>"Formulare per Mail und Hilfe beim Ausfüllen. Bin voll zufrieden."<br><span style="font-style:normal;">Benjamin Litschko, Geologe</span></h4>
+        <h4>"Meine Gewerbeanmeldung schnell und einfach erledigt - perfekt."<br><span style="font-style:normal;">Robert Lange, Dipl.-Kfm.</span></h4>
       </div>
       <div class="item">
-        <h4>"Parkausweis innerhalb eines Tages erhalten. Perfekt."<br><span style="font-style:normal;">Santina Koj, Pädagogin</span></h4>
+        <h4>"Formulare per Mail und Hilfe beim Ausfüllen. Bin absolut zufrieden."<br><span style="font-style:normal;">Benjamin Litschko, Geologe</span></h4>
       </div>
     </div>
 
@@ -146,7 +148,7 @@ Email::configTransport('gmail', [
 </div>
     
 <!-- Dienstleistungen -->
-<div id="what" class="container-fluid bg-2 text-center">
+<div id="was" class="container-fluid bg-even text-center">
   <h2>Amtshilfen</h2>
   <h4>Unsere Dienstleistungen in Leipzig</h4>
   <br>
@@ -188,7 +190,7 @@ Email::configTransport('gmail', [
 </div>    
 
 <!-- Ablauf -->  
-<div id="how" class="container-fluid bg-even text-center">    
+<div id="wie" class="container-fluid bg-odd text-center">    
   <h3 class="margin">Und so funktioniert es ...</h3><br>
   <div class="row">
     <div class="col-sm-15">
@@ -240,7 +242,7 @@ Email::configTransport('gmail', [
 </div>
 
 <!-- Preise -->    
-<div id="pricing" class="container-fluid bg-odd">
+<div id="preise" class="container-fluid">
   <div class="text-center">
     <h2>Pricing</h2>
     <h4>Choose a payment plan that works for you</h4>
@@ -310,7 +312,7 @@ Email::configTransport('gmail', [
 
 
 <!-- Container (Contact Section) -->
-<div id="we" class="container-fluid bg-grey">
+<div id="kontakt" class="container-fluid bg-grey">
   <h2 class="text-center">CONTACT</h2>
   <div class="row">
     <div class="col-sm-5">
@@ -338,10 +340,10 @@ Email::configTransport('gmail', [
   </div>
 </div>
 <footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
+  <a href="#start" title="Seitenanfang">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+  <p class="left">Made with <span class="glyphicon glyphicon-heart logo-small"></span> in Leipzig</p>
 </footer>
 
 
