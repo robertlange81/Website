@@ -77,29 +77,27 @@ Email::configTransport('gmail', [
         <span class="icon-bar"></span>                        
       </button>
     </div>
+      <a class="navbar-brand" href="#">AMTSHILFE-LE.de </a>
+
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li style="position: absolute; left: 0px" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">AMTSHILFE-LE.de <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#kontakt">Kontakt</a></li>
-          </ul>
-        </li>        
+      <ul class="nav navbar-nav navbar-right">     
         <li><a href="#was">WAS</a></li>
         <li class="how"><a href="#wie">WIE</a></li>
-        <li><a href="#preise">WIEVIEL</a></li>      
-        </ul>
+        <li class="price"><a href="#preise">WIEVIEL</a></li> 
+        <li><a href="#kontakt">WER</a></li>
       </ul>
     </div>
   </div>
 </nav>
     
-<div id="overview" class="container-fluid high-padding bg-even text-center">
+<div id="overview" class="container-fluid high-padding bg-1 text-center">
 
 <h3 style='font-weight: 500; font: Montserrat, sans-serif'>Keine Zeit für die Fahrt zum Amt? Keine Nerven oder keine Ahnung?</h3>
   <?= $this->Html->image('kopf.png', ['alt' => 'Reite den Amtsschimmel', 'class' => 'img-responsive img-circle margin', 'style' => 'display:inline', 'alt' => '', 'width' => '280', 'height' => '280']); ?>
 <h3 style='font-weight: 500; font: Montserrat, sans-serif'>Wir erledigen Ihre Behördengänge und helfen bei allen Fragen und Formularen.</h3>
 <div class="starter">
-    <?= $this->Html->image('qr_amtshilfe.jpg', ['alt' => '', 'class' => 'img-responsive margin', 'style' => 'display:inline; position: relative; margin-right: 650px;margin-top: 20px;', 'alt' => '', 'width' => '120', 'height' => '120']); ?>    
+    <?= $this->Html->image('qr_amtshilfe.jpg', ['alt' => '', 'class' => 'img-responsive margin', 'style' => 'display:inline; position: relative; margin-right: 650px;margin-top: 40px;', 'alt' => '', 'width' => '130', 'height' => '130']); ?>    
+    <p class="left" style="margin-right: 652px; margin-top: 0px;font-size: 9px">Made with <span class="glyphicon glyphicon-heart logo-small"></span> in Leipzig</p>
 </div>
 <div class="starter">
     <a class="delay sec4 sign-up hidden-xs" href="#lohn-form" style="top:175px">
@@ -148,7 +146,7 @@ Email::configTransport('gmail', [
 </div>
     
 <!-- Dienstleistungen -->
-<div id="was" class="container-fluid bg-even text-center">
+<div id="was" class="container-fluid bg-1 text-center">
   <h2>Amtshilfen</h2>
   <h4>Unsere Dienstleistungen in Leipzig</h4>
   <br>
@@ -190,7 +188,7 @@ Email::configTransport('gmail', [
 </div>    
 
 <!-- Ablauf -->  
-<div id="wie" class="container-fluid bg-odd text-center">    
+<div id="wie" class="container-fluid bg-4 text-center">    
   <h3 class="margin">Und so funktioniert es ...</h3><br>
   <div class="row">
     <div class="col-sm-15">
@@ -242,7 +240,7 @@ Email::configTransport('gmail', [
 </div>
 
 <!-- Preise -->    
-<div id="preise" class="container-fluid">
+<div id="preise" class="container-fluid bg-1">
   <div class="text-center">
     <h2>Pricing</h2>
     <h4>Choose a payment plan that works for you</h4>
@@ -312,7 +310,7 @@ Email::configTransport('gmail', [
 
 
 <!-- Container (Contact Section) -->
-<div id="kontakt" class="container-fluid bg-grey">
+<div id="kontakt" class="container-fluid bg-4">
   <h2 class="text-center">CONTACT</h2>
   <div class="row">
     <div class="col-sm-5">
@@ -343,7 +341,6 @@ Email::configTransport('gmail', [
   <a href="#start" title="Seitenanfang">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p class="left">Made with <span class="glyphicon glyphicon-heart logo-small"></span> in Leipzig</p>
 </footer>
 
 
