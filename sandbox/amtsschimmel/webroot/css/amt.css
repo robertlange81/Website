@@ -1,9 +1,12 @@
+    html {
+        margin-right: 1px !important;
+    }
 
-  body {
+   body {
       font: 400 15px Lato, sans-serif !important;
       line-height: 1.8 !important;
       color: #818181 !important;
-      letter-spacing: 1px !important;
+      letter-spacing: 1px !important; 
   }
   h2 {
       font-size: 24px;
@@ -93,6 +96,7 @@
   }
   .panel-footer h3 {
       font-size: 32px;
+      color: #7EFE00;
   }
   .panel-footer h4 {
       color: #aaa;
@@ -233,7 +237,7 @@
     .bg-3:after {         
       border-top: solid 20px purple !important;
     }    
-    .bg-3:after {         
+    .bg-4:after {         
       border-top: solid 20px #f6f6f6 !important;
     }    
 
@@ -305,6 +309,9 @@
     .navbar-brand {
         display: none;
     }      
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: 700px !important;
+}
 }
 @media (min-width: 767px) {
     .text-how {
@@ -317,8 +324,8 @@
     padding-top: 50px !important;
     position: absolute !important;
     top: 90px;
-    width: 120% !important;
-    right: -12%;
+    width: 100% !important;
+    right: 0px;
     z-index: 500 !important;
 }
 
@@ -372,14 +379,14 @@ a:link {
 
 }
 .numbers {
-    color: white !important;  
+    color: #262E40 !important;  
     font-weight: bold;
 }
 .who {
-    color: #86DDF2 !important;    
+    color: #E3001B !important;    
 }
 #how img {
-    filter: brightness(80%);
+
 }
 .gradRight{
 background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
@@ -389,4 +396,25 @@ background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
     background-repeat: repeat-x;
 }
+.modal_chooser {
+    background: #7EFE00;
+    color: white;
+}
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+    body {
+    overflow-y: scroll;
+    }
+    body.modal-open {
+    overflow-y: scroll;
+    margin: 0;
+    }
+    .modal {
+    overflow: auto;
+    }
+}
+
+
+
+
 

@@ -66,7 +66,7 @@ Email::configTransport('gmail', [
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <?= $this->Html->script('scroll.js') ?>    
-<body id="start" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="seitenanfang" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -79,12 +79,14 @@ Email::configTransport('gmail', [
     </div>
       <a class="navbar-brand" href="#">AMTSHILFE-LE.de </a>
 
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">     
-        <li><a href="#was">WAS</a></li>
-        <li class="how"><a href="#wie">WIE</a></li>
-        <li class="price"><a href="#preise">WIEVIEL</a></li> 
-        <li><a href="#kontakt">WER</a></li>
+    <div class="collapse navbar-collapse" id="myNavbar">      
+      <ul class="nav navbar-nav navbar-right">       
+        <li><a title="Angebote" href="#was">WAS</a></li>
+        <li title="Ablauf" class="how"><a href="#wie">WIE</a></li>
+        <li title="Preise" class="price"><a href="#preise">WIEVIEL</a></li> 
+        <li><a title="Kontakt" href="#kontakt">WER</a></li>  
+        <li class="modal_chooser"><a data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">WÄHLEN</a>
+        </li>            
       </ul>
     </div>
   </div>
@@ -100,7 +102,7 @@ Email::configTransport('gmail', [
     <p class="left" style="margin-right: 652px; margin-top: 0px;font-size: 9px">Made with <span class="glyphicon glyphicon-heart logo-small"></span> in Leipzig</p>
 </div>
 <div class="starter">
-    <a class="delay sec4 sign-up hidden-xs" href="#lohn-form" style="top:175px">
+    <a data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" class="delay sec4 sign-up hidden-xs" href="#" style="top:175px">
         JETZT TESTEN
     </a>
     <div class="delay sec1 left"><span class="glyphicon glyphicon-check"> </span> Professionell & Zuverlässig</div>
@@ -191,50 +193,42 @@ Email::configTransport('gmail', [
 <div id="wie" class="container-fluid bg-4 text-center">    
   <h3 class="margin">Und so funktioniert es ...</h3><br>
   <div class="row">
-    <div class="col-sm-15">
+    <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('a.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '100%']); ?>
+            <?= $this->Html->image('1.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '71%']); ?>
             <div class="caption post-content numbers">
                 <h3>1</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Sie wählen</span> online die jeweilige Amtssache und einen Termin aus, an dem wir bei Ihnen daheim oder im Büro vorbei kommen sollen.</p>
+        <p class="text-how"><span class="who">Sie wählen</span> online (oder telefonisch) die jeweilige Amtssache und einen Termin aus, an dem wir bei Ihnen daheim oder im Büro vorbei kommen sollen. Sie können den Termin flexibel 24 Stunden im Voraus verschieben.</p>
     </div>
-    <div class="col-sm-15">
+    <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('b.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '100%']); ?>
+            <?= $this->Html->image('2.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '71%']); ?>
             <div class="caption post-content numbers">
                 <h3>2</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Wir senden</span> Ihnen die jeweiligen Formulare und Vollmachten sowie wertvolle Hinweise zum optimalen Verfahrensablauf per E-Mail zu.</p>
+        <p class="text-how"><span class="who">Wir senden</span> Ihnen die jeweiligen Formulare und Vollmachten sowie wertvolle Hinweise zum optimalen Verfahrensablauf per E-Mail zu.<br><span class="who">Sie drucken</span> danach die (vor)-ausgefüllten Formulare aus und ergänzen fehlende Angaben.</p>
     </div>
-    <div class="col-sm-15">
+    <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('c.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '100%']); ?>
+            <?= $this->Html->image('3.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '71%']); ?>
             <div class="caption post-content numbers">
                 <h3>3</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Sie drucken</span> die vorausgefüllten Formulare aus und ergänzen fehlende Angaben. Notwendige Dokumente legen Sie auch für uns bereit.</p><!-- Für Fragen stehen wir zudem <span class="who">telefonisch</span> zur Verfügung&#185;.-->
+        <p class="text-how"><span class="who">Wir kommen</span> zum vereinbarten Termin und prüfen - auf Wunsch schon vorab telefonisch&#185; - alle Anträge und die notwendigen Dokumente, Ausweispapiere und Vollmachten auf Vollständigkeit und Richtigkeit.</p><!-- Für Fragen stehen wir zudem <span class="who">telefonisch</span> zur Verfügung&#185;.-->
     </div>
-    <div class="col-sm-15">
+    <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('d.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '100%']); ?>
+            <?= $this->Html->image('4.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '100%']); ?>
             <div class="caption post-content numbers">
                 <h3>4</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Wir kommen</span> zum vereinbarten Termin und prüfen, auf Wunsch schon vorab telefonisch&#185;, alle Anträge auf Vollständigkeit und Richtigkeit.</p>
-    </div>
-    <div class="col-sm-15">
-        <div class="thumbnail">
-            <?= $this->Html->image('h.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '100%']); ?>
-            <div class="caption post-content numbers">
-                <h3>5</h3>
-            </div>  
-        </div>
-        <p class="text-how"><span class="who">Wir erledigen</span> für Sie zügig² den Behördengang, legen alle Gebühren aus und bringen alle Dokumente wieder persönlich zu Ihnen zurück.</p>
+        <p class="text-how"></p>
+        <p class="text-how"><span class="who">Wir erledigen</span> für Sie zügig² den Behördengang, legen die Gebühren aus und bringen alle Dokumente wieder persönlich zu Ihnen zurück. Sie können bar oder bequem per Bankeinzug bezahlen.</p>
     </div>
   </div>
 </div>
@@ -242,14 +236,14 @@ Email::configTransport('gmail', [
 <!-- Preise -->    
 <div id="preise" class="container-fluid bg-1">
   <div class="text-center">
-    <h2>Pricing</h2>
-    <h4>Choose a payment plan that works for you</h4>
+    <h2>Preise</h2>
+    <h4>Alle Kosten transparent im Überblick³</h4>
   </div>
   <div class="row slideanim">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>Basic</h1>
+          <h1>Basis</h1>
         </div>
         <div class="panel-body">
           <p><strong>20</strong> Lorem</p>
@@ -259,8 +253,8 @@ Email::configTransport('gmail', [
           <p><strong>Endless</strong> Amet</p>
         </div>
         <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
+          <h3>19 €</h3>
+          <h4></h4>
           <button class="btn btn-lg">Sign Up</button>
         </div>
       </div>      
@@ -278,8 +272,8 @@ Email::configTransport('gmail', [
           <p><strong>Endless</strong> Amet</p>
         </div>
         <div class="panel-footer">
-          <h3>$29</h3>
-          <h4>per month</h4>
+          <h3>29 €</h3>
+          <h4></h4>
           <button class="btn btn-lg">Sign Up</button>
         </div>
       </div>      
@@ -297,8 +291,8 @@ Email::configTransport('gmail', [
           <p><strong>Endless</strong> Amet</p>
         </div>
         <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
+          <h3>49 €</h3>
+          <h4></h4>
           <button class="btn btn-lg">Sign Up</button>
         </div>
       </div>      
@@ -311,13 +305,13 @@ Email::configTransport('gmail', [
 
 <!-- Container (Contact Section) -->
 <div id="kontakt" class="container-fluid bg-4">
-  <h2 class="text-center">CONTACT</h2>
+  <h2 class="text-center">Kontakt</h2>
   <div class="row">
     <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+      <p>Kontaktieren Sie uns - wir antworten innerhalb von 24 Stunden.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Filialen</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +049 176 35 76 0004</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> test@amtshilfen.de</p>
     </div>
     <div class="col-sm-7 slideanim">
       <div class="row">
@@ -338,12 +332,31 @@ Email::configTransport('gmail', [
   </div>
 </div>
 <footer class="container-fluid text-center">
-  <a href="#start" title="Seitenanfang">
+  <a href="#seitenanfang" title="Seitenanfang">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
 </footer>
 
+<!-- Modal -->
+<div id="auswahlModal" style=" padding-right: 0px !important;" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Behördengang auswählen</h4>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>
 
