@@ -76,11 +76,6 @@
   .panel-body {
       color: #262E40;
   }  
-  .panel-footer .btn:hover {
-      border: 1px solid #262E40;
-      background-color: #fff !important;
-      color: #262E40;
-  }
   .panel-heading {
       color: #fff !important;
       background-color: #262E40 !important;
@@ -106,6 +101,13 @@
       margin: 15px 0;
       background-color: #262E40;
       color: #fff;
+  }
+  
+  .panel-footer .btn:hover, .btn:active, .btn:visited, .btn:focus {
+      border: 1px solid #262E40;
+      border-radius: 6px;
+      background-color: #fff !important;
+      text-decoration: none !important;
   }
 
 .navbar-brand {
@@ -412,6 +414,13 @@ background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5
     .modal {
     overflow: auto;
     }
+}
+
+.hint {
+    text-align: left;
+    position: relative;
+    left: 1%;
+    width: 90%;
 }
 
 

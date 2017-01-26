@@ -47,8 +47,6 @@ Email::configTransport('gmail', [
     echo $ex;
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -148,7 +146,7 @@ Email::configTransport('gmail', [
 </div>
     
 <!-- Dienstleistungen -->
-<div id="was" class="container-fluid bg-1 text-center">
+<div id="was" class="container-fluid bg-4 text-center">
   <h2>Amtshilfen</h2>
   <h4>Unsere Dienstleistungen in Leipzig</h4>
   <br>
@@ -190,8 +188,10 @@ Email::configTransport('gmail', [
 </div>    
 
 <!-- Ablauf -->  
-<div id="wie" class="container-fluid bg-4 text-center">    
-  <h3 class="margin">Und so funktioniert es ...</h3><br>
+<div id="wie" class="container-fluid bg-1 text-center">  
+  <h2>Ablauf</h2>
+  <h4>Und so funktioniert es ...</h4>    
+  <br>
   <div class="row">
     <div class="col-sm-3">
         <div class="thumbnail">
@@ -218,7 +218,7 @@ Email::configTransport('gmail', [
                 <h3>3</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Wir kommen</span> zum vereinbarten Termin und prüfen - auf Wunsch schon vorab telefonisch&#185; - alle Anträge und die notwendigen Dokumente, Ausweispapiere und Vollmachten auf Vollständigkeit und Richtigkeit.</p><!-- Für Fragen stehen wir zudem <span class="who">telefonisch</span> zur Verfügung&#185;.-->
+        <p class="text-how"><span class="who">Wir kommen</span> zum vereinbarten Termin und prüfen - auf Wunsch schon vorab per Mail&#185; oder telefonisch&#185; - alle Anträge und die notwendigen Dokumente, Ausweispapiere und Vollmachten auf Vollständigkeit und Richtigkeit.</p><!-- Für Fragen stehen wir zudem <span class="who">telefonisch</span> zur Verfügung&#185;.-->
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
@@ -228,17 +228,24 @@ Email::configTransport('gmail', [
             </div>  
         </div>
         <p class="text-how"></p>
-        <p class="text-how"><span class="who">Wir erledigen</span> für Sie zügig² den Behördengang, legen die Gebühren aus und bringen alle Dokumente wieder persönlich zu Ihnen zurück. Sie können bar oder bequem per Bankeinzug bezahlen.</p>
+        <p class="text-how"><span class="who">Wir erledigen</span> für Sie zügig² den Behördengang, legen die Gebühren aus und bringen alle Dokumente wieder persönlich zu Ihnen zurück. Sie können bei Übergabe bar oder bequem per Bankeinzug bezahlen.</p>
     </div>
+  </div>
+  <div class="hint">
+  <h6>
+      <br>&#185; Im PREMIUM-Paket unterstützen wir Sie auch bei inhaltlichen Fragen zu Ihrer Amtssache.<br>
+      <br>² Im PREMIUM-Paket erledigen wir Ihre Amtssache innerhalb eines - ansonsten spätestens innerhalb von drei Behördentagen.
+  </h6>
   </div>
 </div>
 
 <!-- Preise -->    
-<div id="preise" class="container-fluid bg-1">
+<div id="preise" class="container-fluid bg-4">
   <div class="text-center">
     <h2>Preise</h2>
     <h4>Alle Kosten transparent im Überblick³</h4>
   </div>
+    <br>
   <div class="row slideanim">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
@@ -255,7 +262,7 @@ Email::configTransport('gmail', [
         <div class="panel-footer">
           <h3>19 €</h3>
           <h4></h4>
-          <button class="btn btn-lg">Sign Up</button>
+          <button class="btn btn-lg">Weiter</button>
         </div>
       </div>      
     </div>     
@@ -274,7 +281,7 @@ Email::configTransport('gmail', [
         <div class="panel-footer">
           <h3>29 €</h3>
           <h4></h4>
-          <button class="btn btn-lg">Sign Up</button>
+          <button class="btn btn-lg">Weiter</button>
         </div>
       </div>      
     </div>       
@@ -293,22 +300,25 @@ Email::configTransport('gmail', [
         <div class="panel-footer">
           <h3>49 €</h3>
           <h4></h4>
-          <button class="btn btn-lg">Sign Up</button>
+          <button class="btn btn-lg">Weiter</button>
         </div>
       </div>      
     </div>    
   </div>
+  <div class="hint">
+    <h6>
+        ³ zzgl. der von den Behörden erhobenen Gebühren für die jeweilige Amtssache<br>
+    </h6> 
+      <br>
+  </div>
 </div>
     
-
-
-
-<!-- Container (Contact Section) -->
-<div id="kontakt" class="container-fluid bg-4">
+<!-- Kontakt -->
+<div id="kontakt" class="container-fluid bg-1">
   <h2 class="text-center">Kontakt</h2>
   <div class="row">
     <div class="col-sm-5">
-      <p>Kontaktieren Sie uns - wir antworten innerhalb von 24 Stunden.</p>
+      <p>Kontaktieren Sie uns - wir antworten sofort.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Filialen</p>
       <p><span class="glyphicon glyphicon-phone"></span> +049 176 35 76 0004</p>
       <p><span class="glyphicon glyphicon-envelope"></span> test@amtshilfen.de</p>
@@ -322,7 +332,7 @@ Email::configTransport('gmail', [
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
         </div>
       </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Text" rows="5"></textarea><br>
       <div class="row">
         <div class="col-sm-12 form-group">
           <button class="btn btn-default pull-right" type="submit">Send</button>
