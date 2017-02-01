@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Validation\Validator;
+use Cake\Mailer\Email;
 
 /**
  * Static content controller
@@ -25,33 +26,49 @@ use Cake\Validation\Validator;
  */
 class EmailController extends AppController
 {
-    public function send()
+    public function sendContact()
     {
         if( $this->request->is('ajax') ) {
             $this->autoRender = false;
         }
 
         if ($this->request->isPost()) {
-
-            // get values here 
-            echo $this->request->data['email'] . 'blub';
-            echo $this->request->data['text']; 
-            
+           
             $validator = new Validator();
             $validator
                 ->requirePresence('email')
+                ->notEmpty('email', 'Bitte geben Sie eine gültige Email-Adresse an.')
                 ->add('email', 'validFormat', [
                     'rule' => 'email',
-                    'message' => 'E-mail must be valid'
+                    'message' => 'Bitte geben Sie gültige eine Email-Adresse an.'
                 ])
                 ->requirePresence('name')
-                ->notEmpty('name', 'We need your name.')
-                ->requirePresence('comment')
-                ->notEmpty('comment', 'You need to give a comment.');
+                ->notEmpty('name', 'Bitte geben Sie Ihren Namen an.')
+                ->requirePresence('text')
+                ->notEmpty('text', 'Bitte geben Sie eine Nachricht ein.');
 
             $errors = $validator->errors($this->request->data());
             if (empty($errors)) {
-                // Send an email.
+                try {
+                    $email = new Email('default');
+                    $email->from(['info@standard80.de' => $this->request->data['email']])
+                        ->to('robert.lange.81@gmail.com')
+                        ->subject('Neue Kontaktanfrage')
+                        ->send('von: ' . $this->request->data['name'] . ', Nachricht: ' . $this->request->data['email']);    
+
+                    echo json_encode(['msg' => 'Ihre Nachricht wurde erfolgreich versendet.', 'success' => true]);
+                } catch (Exception $ex) {
+                    echo json_encode(['msg' => $ex,'status'=>500]);
+                }
+            } else {
+                $response = [];
+                foreach ($errors as $model => $modelErrors) {
+                  foreach ($modelErrors as $field => $error) {
+                    $response['msg'] .= $error . ' ';
+                  }
+                }
+                $response['success'] = false;
+                echo json_encode($response);
             }        
         }
     }

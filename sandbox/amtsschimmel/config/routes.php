@@ -56,6 +56,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
     
+    $routes->connect('/email/sendContact', ['controller' => 'Email', 'action' => 'sendContact']);
     $routes->connect('/email/*', ['controller' => 'Email', 'action' => 'send']);
 
     /**

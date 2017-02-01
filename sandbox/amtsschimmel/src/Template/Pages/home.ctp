@@ -73,7 +73,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('amt.css') ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
-  <title>Amtshilfe-LE Leipzig</title>
+  <title>Amtsschimmel-LE Leipzig</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -93,7 +93,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
         <span class="icon-bar"></span>                        
       </button>
     </div>
-      <a class="navbar-brand" href="#">Amtshilfe-LE.de </a>
+      <a class="navbar-brand" href="#">Amtsschimmel-LE.de </a>
 
     <div class="collapse navbar-collapse" id="myNavbar">      
       <ul class="nav navbar-nav navbar-right">       
@@ -407,10 +407,10 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
       <p>Kontaktieren Sie uns - wir antworten sofort.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Filialen</p>
       <p><span class="glyphicon glyphicon-phone"></span> +049 176 35 76 0004</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> test@Amtshilfe-LEn.de</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> info@Amtsschimmel-LE.de</p>
     </div>
     <div class="col-sm-7 slideanim">
-        <form id="contactform" action="/email/send">  
+        <form id="contactform" action="/email/sendContact">  
             <div class="row">                  
                 <div class="col-sm-6 form-group">
                   <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
@@ -419,16 +419,32 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
                   <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
                 </div>
             </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Text" rows="5"></textarea><br>
+            <textarea class="form-control" id="text" name="text" placeholder="Nachricht" rows="5" required></textarea><br>
             <div class="row">
               <div class="col-sm-12 form-group">
-                <button onclick="$('#contactform').submit();" class="btn btn-default pull-right" type="submit">Absenden</button>
+                <button onclick="$('#contactform').submit();" id="submitContact" class="btn btn-default pull-right" type="submit">Absenden</button>
               </div>
             </div>
         </form>
     </div>
   </div>
 </div>
+  <div class="alert alert-success alert-dismissable fade in">
+    <a class="close" aria-label="close">&times;</a>
+    <span id="alert-success-text"></span>
+  </div>
+  <div class="alert alert-info alert-dismissable fade in">
+    <a class="close" aria-label="close">&times;</a>
+    <span id="alert-info-text"></span>
+  </div>
+  <div class="alert alert-warning alert-dismissable fade in">
+    <a class="close" aria-label="close">&times;</a>
+    <span id="alert-warning-text"></span>
+  </div>
+  <div class="alert alert-danger alert-dismissable fade in">
+    <a class="close" aria-label="close">&times;</a>
+    <span id="alert-danger-text"></span>
+  </div>
 <footer class="container-fluid text-center">
   <a href="#seitenanfang" title="Seitenanfang">
     <span class="glyphicon glyphicon-chevron-up"></span>
