@@ -24,7 +24,6 @@ use Cake\Mailer\Email;
 
 $this->layout = false;
 
-
 try {
     /*
 Email::configTransport('gmail', [
@@ -42,20 +41,39 @@ Email::configTransport('gmail', [
     ->subject('About')
     ->send('Mymessage');
 */
+    
+/*
+$email = new Email('default');
+$email->from(['info@standard80.de' => 'Amtschimmel'])
+    ->to('robert.lange.81@gmail.com')
+    ->subject('Mit Anhang')
+    ->attachments([
+    'vollmacht' => [
+        'file' => WWW_ROOT . 'files' . DS . 'vollmacht_abholung_personalausweis.pdf',
+        'mimetype' => 'application/pdf'
+    ]
+    ])
+    ->send(WWW_ROOT . 'files' . DS . 'vollmacht_abholung_personalausweis.pdf');    
   
 } catch (Exception $ex) {
     echo $ex;
 }
+*/
+    
+} catch (Exception $ex) {
 
+}
 ?>
+<!--?php phpinfo(); ?-->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <?= $this->Html->charset() ?>
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('amt.css') ?>    
-  <title>Amtshilfe Leipzig</title>
+    <?= $this->Html->css('amt.css') ?>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+  <title>Amtshilfe-LE Leipzig</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -75,7 +93,7 @@ Email::configTransport('gmail', [
         <span class="icon-bar"></span>                        
       </button>
     </div>
-      <a class="navbar-brand" href="#">AMTSHILFE-LE.de </a>
+      <a class="navbar-brand" href="#">Amtshilfe-LE.de </a>
 
     <div class="collapse navbar-collapse" id="myNavbar">      
       <ul class="nav navbar-nav navbar-right">       
@@ -83,7 +101,7 @@ Email::configTransport('gmail', [
         <li title="Ablauf" class="how"><a href="#wie">WIE</a></li>
         <li title="Preise" class="price"><a href="#preise">WIEVIEL</a></li> 
         <li><a title="Kontakt" href="#kontakt">WER</a></li>  
-        <li class="modal_chooser"><a data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">WÄHLEN</a>
+        <li><a style="color:red !important; font-family: sans-serif;font-weight: 600;" data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">LOS</a>
         </li>            
       </ul>
     </div>
@@ -96,7 +114,7 @@ Email::configTransport('gmail', [
   <?= $this->Html->image('kopf.png', ['alt' => 'Reite den Amtsschimmel', 'class' => 'img-responsive img-circle margin', 'style' => 'display:inline', 'alt' => '', 'width' => '280', 'height' => '280']); ?>
 <h3 style='font-weight: 500; font: Montserrat, sans-serif'>Wir erledigen Ihre Behördengänge und helfen bei allen Fragen und Formularen.</h3>
 <div class="starter">
-    <?= $this->Html->image('qr_amtshilfe.jpg', ['alt' => '', 'class' => 'img-responsive margin', 'style' => 'display:inline; position: relative; margin-right: 650px;margin-top: 40px;', 'alt' => '', 'width' => '130', 'height' => '130']); ?>    
+    <?= $this->Html->image('qr_amtshilfe-le.jpg', ['alt' => '', 'class' => 'img-responsive margin', 'style' => 'display:inline; position: relative; margin-right: 650px;margin-top: 40px;', 'alt' => '', 'width' => '130', 'height' => '130']); ?>    
     <p class="left" style="margin-right: 652px; margin-top: 0px;font-size: 9px">Made with <span class="glyphicon glyphicon-heart logo-small"></span> in Leipzig</p>
 </div>
 <div class="starter">
@@ -152,39 +170,110 @@ Email::configTransport('gmail', [
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <span class="features">
+        <i class="fa fa-address-card fa-4x" aria-hidden="true"></i>
+      </span>
+      <h4>Personalausweis abholen</h4>
+      <p></p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <span class="features">
+        <i class="fa fa-drivers-license fa-4x" aria-hidden="true"></i>
+      </span>
+      <h4>Reisepass abholen</h4>
+      <p></p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <span class="features">
+        <i class="fa fa-leanpub fa-4x" aria-hidden="true"></i>
+      </span>
+      <h4>Amtliche Beglaubigung</h4>
+      <p></p>        
     </div>
   </div>
   <br><br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
+      <span class="features">
+        <i class="fa fa-home fa-4x" aria-hidden="true"></i>
+      </span>
+      <h4>Wohnsitz ummelden</h4>
+      <p></p>
+    </div>  
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
+      <span class="features">
+        <i class="fa fa-globe fa-4x" aria-hidden="true"></i>
+      </span>
+      <h4>Meldebescheinigung</h4>
+      <p></p>
+    </div>  
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
+      <span class="features">
+        <i class="fa fa-wheelchair fa-4x" aria-hidden="true"></i>
+      </span>
+      <h4>Parkausweis beantragen</h4>
+      <p></p>
+    </div>          
   </div>
+  <br><br>
+  <div class="row slideanim">  
+    <div class="col-sm-4">
+        <span class="features">
+            &nbsp;&nbsp;&nbsp;
+          <i class="fa fa-car fa-4x" aria-hidden="true"></i>
+          <i class="fa fa-play fa-1x" aria-hidden="false"></i>
+        </span>
+      <h4>KFZ ANmelden</h4>
+      <p></p>
+    </div>      
+    <div class="col-sm-4">
+      <span class="features">
+            &nbsp;&nbsp;&nbsp;
+          <i class="fa fa-car fa-4x" aria-hidden="true"></i>
+          <i class="fa fa-exchange fa-1x" aria-hidden="false"></i>
+      </span>
+      <h4>KFZ UMmelden</h4>
+      <p></p>
+    </div>      
+    <div class="col-sm-4">
+      <span class="features">
+        <i class="fa fa-car fa-4x" aria-hidden="false"></i>
+        <i class="fa fa-stop fa-1x" aria-hidden="false"></i>
+      </span>
+      <h4>KFZ ABmelden</h4>
+      <p></p>
+    </div>      
+  </div>  
+  <br><br>
+  <div class="row slideanim">  
+    <div class="col-sm-4">
+        <span class="features">
+        &nbsp;&nbsp;&nbsp;
+      <i class="fa fa-industry fa-4x" aria-hidden="true"></i>
+      <i class="fa fa-play fa-1x" aria-hidden="false"></i>
+      </span>
+      <h4>Gewerbe ANmelden</h4>
+      <p></p>
+    </div>      
+    <div class="col-sm-4">
+      <span class="features">
+        &nbsp;&nbsp;&nbsp;
+      <i class="fa fa-industry fa-4x" aria-hidden="true"></i>
+      <i class="fa fa-exchange fa-1x" aria-hidden="false"></i>
+      </span>
+      <h4>Gewerbe UMmelden</h4>
+      <p></p>
+    </div>      
+    <div class="col-sm-4">
+      <span class="features">
+        <i class="fa fa-industry fa-4x" aria-hidden="false"></i>
+        <i class="fa fa-stop fa-1x" aria-hidden="false"></i>
+      </span>
+      <h4>Gewerbe ABmelden</h4>
+      <p></p>
+    </div>      
+  </div>
+<br><br>  
 </div>    
 
 <!-- Ablauf -->  
@@ -195,7 +284,7 @@ Email::configTransport('gmail', [
   <div class="row">
     <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('1.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '71%']); ?>
+            <?= $this->Html->image('1.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '70.5%']); ?>
             <div class="caption post-content numbers">
                 <h3>1</h3>
             </div>  
@@ -204,7 +293,7 @@ Email::configTransport('gmail', [
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('2.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '71%']); ?>
+            <?= $this->Html->image('2.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '70.5%']); ?>
             <div class="caption post-content numbers">
                 <h3>2</h3>
             </div>  
@@ -213,7 +302,7 @@ Email::configTransport('gmail', [
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('3.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '71%']); ?>
+            <?= $this->Html->image('3.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '70.5%']); ?>
             <div class="caption post-content numbers">
                 <h3>3</h3>
             </div>  
@@ -233,8 +322,8 @@ Email::configTransport('gmail', [
   </div>
   <div class="hint">
   <h6>
-      <br>&#185; Im PREMIUM-Paket unterstützen wir Sie auch bei inhaltlichen Fragen zu Ihrer Amtssache.<br>
-      <br>² Im PREMIUM-Paket erledigen wir Ihre Amtssache innerhalb eines - ansonsten spätestens innerhalb von drei Behördentagen.
+      <br>&#185; Mit Support-Option unterstützen wir Sie auch bei inhaltlichen Fragen zu Ihrer Amtssache.<br>
+      <br>² Mit Express-Option erledigen wir Ihre Amtssache innerhalb eines Behördentags (außer Parkausweis) - ansonsten spätestens innerhalb von drei Behördentagen.
   </h6>
   </div>
 </div>
@@ -253,11 +342,10 @@ Email::configTransport('gmail', [
           <h1>Basis</h1>
         </div>
         <div class="panel-body">
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
+          <p><strong>Personalausweis abholen</strong></p>
+          <p><strong>Reisepass abholen</strong></p>
+          <p><strong>Amtliche Beglaubigung</strong></p> 
+          <p><strong>Meldebescheinigung</strong></p>          
         </div>
         <div class="panel-footer">
           <h3>19 €</h3>
@@ -272,14 +360,13 @@ Email::configTransport('gmail', [
           <h1>Pro</h1>
         </div>
         <div class="panel-body">
-          <p><strong>50</strong> Lorem</p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
+          <p><strong>Wohnsitz ummelden</strong></p>                           
+          <p><strong>Gewerbe Anmelden</strong></p>
+          <p><strong>Gewerbe Ummelden</strong></p>
+          <p><strong>Gewerbe Abmelden</strong></p>                 
         </div>
         <div class="panel-footer">
-          <h3>29 €</h3>
+          <h3>25 €</h3>
           <h4></h4>
           <button class="btn btn-lg">Weiter</button>
         </div>
@@ -291,14 +378,13 @@ Email::configTransport('gmail', [
           <h1>Premium</h1>
         </div>
         <div class="panel-body">
-          <p><strong>100</strong> Lorem</p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
+          <p><strong>KFZ Anmelden</strong></p>
+          <p><strong>KFZ Ummelden</strong></p>
+          <p><strong>KFZ Abmelden</strong></p>
+          <p><strong>Parkausweis beantragen</strong></p>            
         </div>
         <div class="panel-footer">
-          <h3>49 €</h3>
+          <h3>29 €</h3>
           <h4></h4>
           <button class="btn btn-lg">Weiter</button>
         </div>
@@ -321,23 +407,25 @@ Email::configTransport('gmail', [
       <p>Kontaktieren Sie uns - wir antworten sofort.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Filialen</p>
       <p><span class="glyphicon glyphicon-phone"></span> +049 176 35 76 0004</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> test@amtshilfen.de</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> test@Amtshilfe-LEn.de</p>
     </div>
     <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Text" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
+        <form id="contactform" action="/email/send">  
+            <div class="row">                  
+                <div class="col-sm-6 form-group">
+                  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+            </div>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Text" rows="5"></textarea><br>
+            <div class="row">
+              <div class="col-sm-12 form-group">
+                <button onclick="$('#contactform').submit();" class="btn btn-default pull-right" type="submit">Absenden</button>
+              </div>
+            </div>
+        </form>
     </div>
   </div>
 </div>

@@ -398,10 +398,6 @@ background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
     background-repeat: repeat-x;
 }
-.modal_chooser {
-    background: #7EFE00;
-    color: white;
-}
 
     @media screen and (-webkit-min-device-pixel-ratio:0) {
     body {
@@ -423,6 +419,10 @@ background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5
     width: 90%;
 }
 
+.features:hover, .features:active {
+    color: chartreuse;
+    cursor: pointer;
+}
 
 
 
