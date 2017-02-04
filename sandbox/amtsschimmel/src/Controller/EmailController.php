@@ -53,8 +53,8 @@ class EmailController extends AppController
                     $email = new Email('default');
                     $email->from(['info@standard80.de' => $this->request->data['email']])
                         ->to('robert.lange.81@gmail.com')
-                        ->subject('Neue Kontaktanfrage')
-                        ->send('von: ' . $this->request->data['name'] . ', Nachricht: ' . $this->request->data['email']);    
+                        ->subject('Neue Kontaktanfrage' . $this->request->data['name'])
+                        ->send('von: ' . $this->request->data['name'] . ', Nachricht: ' . $this->request->data['text']);    
 
                     echo json_encode(['msg' => 'Ihre Nachricht wurde erfolgreich versendet.', 'success' => true]);
                 } catch (Exception $ex) {

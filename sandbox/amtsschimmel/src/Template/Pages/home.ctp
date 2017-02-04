@@ -101,7 +101,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
         <li title="Ablauf" class="how"><a href="#wie">WIE</a></li>
         <li title="Preise" class="price"><a href="#preise">WIEVIEL</a></li> 
         <li><a title="Kontakt" href="#kontakt">WER</a></li>  
-        <li><a style="color:red !important; font-family: sans-serif;font-weight: 600;" data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">LOS</a>
+        <li><a style="color:red !important;" data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">LOS</a>
         </li>            
       </ul>
     </div>
@@ -110,9 +110,9 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
     
 <div id="overview" class="container-fluid high-padding bg-1 text-center">
 
-<h3 style='font-weight: 500; font: Montserrat, sans-serif'>Keine Zeit für die Fahrt zum Amt? Keine Nerven oder keine Ahnung?</h3>
+<h3 style='font-weight: 500;'>Keine Zeit für die Fahrt zum Amt? Keine Nerven oder keine Ahnung?</h3>
   <?= $this->Html->image('kopf.png', ['alt' => 'Reite den Amtsschimmel', 'class' => 'img-responsive img-circle margin', 'style' => 'display:inline', 'alt' => '', 'width' => '280', 'height' => '280']); ?>
-<h3 style='font-weight: 500; font: Montserrat, sans-serif'>Wir erledigen Ihre Behördengänge und helfen bei allen Fragen und Formularen.</h3>
+<h3 style='font-weight: 500;'>Wir erledigen Ihre Behördengänge und helfen bei allen Fragen und Formularen.</h3>
 <div class="starter">
     <?= $this->Html->image('qr_amtshilfe-le.jpg', ['alt' => '', 'class' => 'img-responsive margin', 'style' => 'display:inline; position: relative; margin-right: 650px;margin-top: 40px;', 'alt' => '', 'width' => '130', 'height' => '130']); ?>    
     <p class="left" style="margin-right: 652px; margin-top: 0px;font-size: 9px">Made with <span class="glyphicon glyphicon-heart logo-small"></span> in Leipzig</p>
@@ -141,13 +141,13 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"Kein Schlange stehen und einen Tag Urlaub gespart." (KFZ-Anmeldung)<br><span style="font-style:normal;">Santina Koj, Pädagogin</span></h4>
+        <h4>"Kein Schlange stehen und einen Tag Urlaub gespart."<br><span style="font-style:normal;">Santina Koj, Pädagogin</span></h4>
       </div>
       <div class="item">
-        <h4>"Meine Gewerbeanmeldung schnell und einfach erledigt - perfekt."<br><span style="font-style:normal;">Robert Lange, Dipl.-Kfm.</span></h4>
+        <h4>"Meine Gewerbeanmeldung schnell und einfach erledigt."<br><span style="font-style:normal;">Robert Lange, Dipl.-Kfm.</span></h4>
       </div>
       <div class="item">
-        <h4>"Formulare per Mail und Hilfe beim Ausfüllen. Bin absolut zufrieden."<br><span style="font-style:normal;">Benjamin Litschko, Geologe</span></h4>
+        <h4>"Formulare per Mail und Hilfe beim Ausfüllen - Top!"<br><span style="font-style:normal;">Benjamin Litschko, Dipl.-Geol.</span></h4>
       </div>
     </div>
 
@@ -209,17 +209,18 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
     </div>  
     <div class="col-sm-4">
       <span class="features">
-        <i class="fa fa-wheelchair fa-4x" aria-hidden="true"></i>
+        <!--i class="fa fa-wheelchair fa-4x" aria-hidden="true"></i-->
+        <i class="fa fa-car fa-4x" aria-hidden="true"></i>
       </span>
       <h4>Parkausweis beantragen</h4>
       <p></p>
     </div>          
   </div>
   <br><br>
-  <div class="row slideanim">  
+  <!-- div class="row slideanim">  
     <div class="col-sm-4">
         <span class="features">
-            &nbsp;&nbsp;&nbsp;
+          <i class="fa fa-play fa-1x" aria-hidden="false"></i>
           <i class="fa fa-car fa-4x" aria-hidden="true"></i>
           <i class="fa fa-play fa-1x" aria-hidden="false"></i>
         </span>
@@ -228,7 +229,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
     </div>      
     <div class="col-sm-4">
       <span class="features">
-            &nbsp;&nbsp;&nbsp;
+          <i class="fa fa-exchange fa-1x" aria-hidden="false"></i>
           <i class="fa fa-car fa-4x" aria-hidden="true"></i>
           <i class="fa fa-exchange fa-1x" aria-hidden="false"></i>
       </span>
@@ -237,6 +238,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
     </div>      
     <div class="col-sm-4">
       <span class="features">
+        <i class="fa fa-stop fa-1x" aria-hidden="false"></i>
         <i class="fa fa-car fa-4x" aria-hidden="false"></i>
         <i class="fa fa-stop fa-1x" aria-hidden="false"></i>
       </span>
@@ -244,28 +246,29 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
       <p></p>
     </div>      
   </div>  
-  <br><br>
+  <br><br-->
   <div class="row slideanim">  
     <div class="col-sm-4">
-        <span class="features">
-        &nbsp;&nbsp;&nbsp;
-      <i class="fa fa-industry fa-4x" aria-hidden="true"></i>
-      <i class="fa fa-play fa-1x" aria-hidden="false"></i>
+      <span class="features">
+        <i class="fa fa-play fa-1x" aria-hidden="false"></i>
+        <i class="fa fa-industry fa-4x" aria-hidden="true"></i>
+        <i class="fa fa-play fa-1x" aria-hidden="false"></i>
       </span>
       <h4>Gewerbe ANmelden</h4>
       <p></p>
     </div>      
     <div class="col-sm-4">
       <span class="features">
-        &nbsp;&nbsp;&nbsp;
-      <i class="fa fa-industry fa-4x" aria-hidden="true"></i>
-      <i class="fa fa-exchange fa-1x" aria-hidden="false"></i>
+        <i class="fa fa-exchange fa-1x" aria-hidden="false"></i>
+        <i class="fa fa-industry fa-4x" aria-hidden="true"></i>
+        <i class="fa fa-exchange fa-1x" aria-hidden="false"></i>
       </span>
       <h4>Gewerbe UMmelden</h4>
       <p></p>
     </div>      
     <div class="col-sm-4">
       <span class="features">
+        <i class="fa fa-stop fa-1x" aria-hidden="false"></i>
         <i class="fa fa-industry fa-4x" aria-hidden="false"></i>
         <i class="fa fa-stop fa-1x" aria-hidden="false"></i>
       </span>
@@ -289,7 +292,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
                 <h3>1</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Sie wählen</span> online (oder telefonisch) die jeweilige Amtssache und einen Termin aus, an dem wir bei Ihnen daheim oder im Büro vorbei kommen sollen. Sie können den Termin flexibel 24 Stunden im Voraus verschieben.</p>
+        <p class="text-how"><span class="who">Sie wählen</span> online die jeweilige Amtssache und einen Termin aus, an dem wir bei Ihnen daheim oder im Büro vorbei kommen sollen. Sie können den Termin auch noch nachträglich telefonisch verschieben.</p>
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
@@ -298,7 +301,10 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
                 <h3>2</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Wir senden</span> Ihnen die jeweiligen Formulare und Vollmachten sowie wertvolle Hinweise zum optimalen Verfahrensablauf per E-Mail zu.<br><span class="who">Sie drucken</span> danach die (vor)-ausgefüllten Formulare aus und ergänzen fehlende Angaben.</p>
+        <p class="text-how">
+            <span class="who">Wir senden</span> Ihnen die jeweiligen Formulare und Vollmachten sowie Hinweise zum optimalen Verfahrensablauf per E-Mail zu.
+            <span class="who">Sie drucken</span> die ausgefüllten Formulare aus und ergänzen fehlende Angaben.
+        </p>
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
@@ -307,7 +313,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
                 <h3>3</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Wir kommen</span> zum vereinbarten Termin und prüfen - auf Wunsch schon vorab per Mail&#185; oder telefonisch&#185; - alle Anträge und die notwendigen Dokumente, Ausweispapiere und Vollmachten auf Vollständigkeit und Richtigkeit.</p><!-- Für Fragen stehen wir zudem <span class="who">telefonisch</span> zur Verfügung&#185;.-->
+        <p class="text-how"><span class="who">Wir kommen</span> zum vereinbarten Termin und prüfen alle Anträge und notwendigen Dokumente auf deren Vollständigkeit und Richtigkeit. Auf Wunsch helfen wir Ihnen zudem gerne bei inhaltlichen Fragen<span class="who">&#185;</span>.</p><!-- Für Fragen stehen wir zudem <span class="who">telefonisch</span> zur Verfügung&#185;.-->
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
@@ -317,14 +323,17 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
             </div>  
         </div>
         <p class="text-how"></p>
-        <p class="text-how"><span class="who">Wir erledigen</span> für Sie zügig² den Behördengang, legen die Gebühren aus und bringen alle Dokumente wieder persönlich zu Ihnen zurück. Sie können bei Übergabe bar oder bequem per Bankeinzug bezahlen.</p>
+        <p class="text-how"><span class="who">Wir erledigen</span> für Sie zügig<span class="who">²</span> den Behördengang, legen die Gebühren aus und bringen alle Dokumente wieder persönlich zu Ihnen zurück. Sie können bar bei Übergabe oder bequem per Bankeinzug bezahlen.</p>
     </div>
   </div>
   <div class="hint">
-  <h6>
-      <br>&#185; Mit Support-Option unterstützen wir Sie auch bei inhaltlichen Fragen zu Ihrer Amtssache.<br>
-      <br>² Mit Express-Option erledigen wir Ihre Amtssache innerhalb eines Behördentags (außer Parkausweis) - ansonsten spätestens innerhalb von drei Behördentagen.
-  </h6>
+      <br>
+    <div class="su-note" style="border-color:#e5e55c;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
+        <div class="su-note-inner su-clearfix" style="background-color:#FFFF66;border-color:#ffffe0;color:#333333;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
+            &#185; Mit Support-Option helfen wir Ihnen beim Ausfüllen der Antragsformulare und unterstützen Sie bei inhaltlichen Fragen zu Ihrer Amtssache.
+            <br>² Mit Express-Option erledigen wir Ihre Amtssache (außer Parkausweis) innerhalb <span style="font-weight: bold">eines</span> Behördentags (Standard ist innerhalb von drei).
+        </div>
+    </div>      
   </div>
 </div>
 
@@ -377,10 +386,10 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
         <div class="panel-heading">
           <h1>Premium</h1>
         </div>
-        <div class="panel-body">
-          <p><strong>KFZ Anmelden</strong></p>
-          <p><strong>KFZ Ummelden</strong></p>
-          <p><strong>KFZ Abmelden</strong></p>
+          <div class="panel-body">
+          <p style="color: gray"><strong>KFZ Anmelden</strong></p>
+          <p style="color: gray"><strong>KFZ Ummelden</strong></p>
+          <p style="color: gray"><strong>KFZ Abmelden</strong></p>
           <p><strong>Parkausweis beantragen</strong></p>            
         </div>
         <div class="panel-footer">
@@ -422,7 +431,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
             <textarea class="form-control" id="text" name="text" placeholder="Nachricht" rows="5" required></textarea><br>
             <div class="row">
               <div class="col-sm-12 form-group">
-                <button onclick="$('#contactform').submit();" id="submitContact" class="btn btn-default pull-right" type="submit">Absenden</button>
+                <button id="submitContact" class="btn btn-default pull-right">Absenden</button>
               </div>
             </div>
         </form>

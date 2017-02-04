@@ -3,7 +3,7 @@
     }
 
    body {
-      font: 400 15px Lato, sans-serif !important;
+      font-family: Montserrat, sans-serif !important;
       line-height: 1.8 !important;
       color: #818181 !important;
       letter-spacing: 1px !important; 
@@ -50,7 +50,7 @@
       background-color: #262E40 !important;
   }
     .carousel-inner {
-        min-height: 160px;
+        min-height: 180px;
     }  
   .item h4 {
       font-size: 19px;
@@ -59,7 +59,7 @@
       font-style: italic;
       margin: 40px 0;
       margin-top: 55px;
-      min-height: 55px;
+      min-height: 75px;
       color: #262E40;
   }
   .item span {
@@ -311,13 +311,17 @@
     .navbar-brand {
         display: none;
     }      
-.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
-    max-height: 700px !important;
-}
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+        max-height: 700px !important;
+    }
+    #was .col-sm-4 {
+        margin-top: 40px !important;
+    }    
 }
 @media (min-width: 767px) {
     .text-how {
         text-align: justify;
+        letter-spacing: 0.5px;
     }
 .starter {
     font-size: 2rem !important;
@@ -384,8 +388,22 @@ a:link {
     color: #262E40 !important;  
     font-weight: bold;
 }
+.su-note {
+    margin: 0 0 1.5em 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#e5e55c;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;    
+}
+.su-note-inner {
+    padding: 1em;
+    border-width: 1px;
+    border-style: solid;
+}
 .who {
-    color: #E3001B !important;    
+    color: #FFFF66;  
 }
 #how img {
 
@@ -413,10 +431,8 @@ background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5
 }
 
 .hint {
-    text-align: left;
     position: relative;
-    left: 1%;
-    width: 90%;
+    text-align: left;
 }
 
 .features:hover, .features:active {
@@ -434,6 +450,9 @@ background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5
     display: none;
 }
 
+#was .col-sm-4 {
+    margin-top: 20px;
+}
 
 
 
