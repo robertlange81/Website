@@ -23,46 +23,6 @@ use Cake\Network\Exception\NotFoundException;
 use Cake\Mailer\Email;
 
 $this->layout = false;
-
-try {
-    /*
-Email::configTransport('gmail', [
-    'host' => 'ssl://smtp.gmail.com',
-    'port' => 465,
-    'username' => 'robert.lange.81@gmail.com',
-    'password' => 'Robibert17',
-    'className' => 'Smtp'
-]);   */
-    
-    /*
-    $email = new Email('gmail');
-    $email->from(['robert.lange.81@gmail.com' => 'MySite'])
-    ->to('amtsschimmel-le@web.de')
-    ->subject('About')
-    ->send('Mymessage');
-*/
-    
-/*
-$email = new Email('default');
-$email->from(['info@standard80.de' => 'Amtschimmel'])
-    ->to('robert.lange.81@gmail.com')
-    ->subject('Mit Anhang')
-    ->attachments([
-    'vollmacht' => [
-        'file' => WWW_ROOT . 'files' . DS . 'vollmacht_abholung_personalausweis.pdf',
-        'mimetype' => 'application/pdf'
-    ]
-    ])
-    ->send(WWW_ROOT . 'files' . DS . 'vollmacht_abholung_personalausweis.pdf');    
-  
-} catch (Exception $ex) {
-    echo $ex;
-}
-*/
-    
-} catch (Exception $ex) {
-
-}
 ?>
 <!--?php phpinfo(); ?-->
 <!DOCTYPE html>
@@ -81,7 +41,10 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <?= $this->Html->script('scroll.js') ?>    
+  <?= $this->Html->script('scroll.js') ?>    
+  <?= $this->Html->script('datetimepicker-master/build/jquery.datetimepicker.full.min.js') ?> 
+  <?= $this->Html->css('jquery.datetimepicker.css') ?>
+
 <body id="seitenanfang" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -101,7 +64,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
         <li title="Ablauf" class="how"><a href="#wie">WIE</a></li>
         <li title="Preise" class="price"><a href="#preise">WIEVIEL</a></li> 
         <li><a title="Kontakt" href="#kontakt">WER</a></li>  
-        <li><a style="color:red !important;" data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">LOS</a>
+        <li><a style="color:#7efe00 !important;" data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">WEITER</a>
         </li>            
       </ul>
     </div>
@@ -329,7 +292,7 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
   <div class="hint">
       <br>
     <div class="su-note" style="border-color:#e5e55c;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
-        <div class="su-note-inner su-clearfix" style="background-color:#FFFF66;border-color:#ffffe0;color:#333333;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
+        <div class="su-note-inner su-clearfix" style="background-color:#7EFE00;border-color:#ffffe0;color:#333333;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
             &#185; Mit Support-Option helfen wir Ihnen beim Ausfüllen der Antragsformulare und unterstützen Sie bei inhaltlichen Fragen zu Ihrer Amtssache.
             <br>² Mit Express-Option erledigen wir Ihre Amtssache (außer Parkausweis) innerhalb <span style="font-weight: bold">eines</span> Behördentags (Standard ist innerhalb von drei).
         </div>
@@ -471,7 +434,26 @@ $email->from(['info@standard80.de' => 'Amtschimmel'])
         <h4 class="modal-title">Behördengang auswählen</h4>
       </div>
       <div class="modal-body">
-        <p></p>
+          <form>              
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Option 1</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Option 2</label>
+            </div>
+            <div class="checkbox disabled">
+              <label><input type="checkbox" value="" disabled>Option 3</label>
+            </div>      
+            <!-- http://xdsoft.net/jqplugins/datetimepicker/ -->
+            <div class="form-group">
+              <label for="usr">Abholdatum</label>
+               <div class="form-group">
+              <input id="datePicker" type="text" class="form-control">
+              <input id="timePicker" type="text" class="form-control">
+              </div>
+                            
+            </div>            
+          </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

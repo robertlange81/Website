@@ -10,7 +10,6 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
-
     /**
      * Index method
      *
@@ -19,6 +18,8 @@ class UsersController extends AppController
     public function index()
     {
         $users = $this->paginate($this->Users);
+        
+        $this->translate($users);
 
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
@@ -37,6 +38,7 @@ class UsersController extends AppController
             'contain' => []
         ]);
 
+        $this->translate([$user]);
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }
@@ -108,4 +110,24 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function translate($users) {
+        foreach($users as $user) {
+            if(array_key_exists($user->role, UserRoles::names))
+                $user->role = UserRoles::names[$user->role];
+            
+            $user->did_verify = $user->did_verify ? "Ja": "Nein";
+        }
+    }
+}
+
+class UserRoles 
+{
+    // enum flags
+    const CUSTOMER_BASIC    = 1;
+    const CUSTOMER_PRO      = 2;
+    const CUSTOMER_PREMIUM  = 3;
+    const ADMIN             = 6;
+    
+    const names = [1 => "BASIS", 2 => "PRO", 3 => "PREMIUM", 6 => "ADMIN"];
 }

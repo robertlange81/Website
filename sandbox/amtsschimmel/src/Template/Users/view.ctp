@@ -23,6 +23,18 @@
             <td><?= $this->Number->format($user->id) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('role') ?></th>
+            <td><?= h($user->role) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('did_verify') ?></th>
+            <td><?= h($user->did_verify) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('verify_token') ?></th>
+            <td><?= h($user->verify_token) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Created') ?></th>
             <td><?= h($user->created) ?></td>
         </tr>
