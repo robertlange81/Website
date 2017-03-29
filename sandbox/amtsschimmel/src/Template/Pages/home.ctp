@@ -33,7 +33,7 @@ $this->layout = false;
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('amt.css') ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
-  <title>Amtsschimmel-LE Leipzig</title>
+  <title>Amtshilfe-LE Leipzig</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -56,7 +56,7 @@ $this->layout = false;
         <span class="icon-bar"></span>                        
       </button>
     </div>
-      <a class="navbar-brand" href="#">Amtsschimmel-LE.de </a>
+      <a class="navbar-brand" href="#">Amtshilfe-LE.de </a>
 
     <div class="collapse navbar-collapse" id="myNavbar">      
       <ul class="nav navbar-nav navbar-right">       
@@ -74,7 +74,7 @@ $this->layout = false;
 <div id="overview" class="container-fluid high-padding bg-1 text-center">
 
 <h3 style='font-weight: 500;'>Keine Zeit für die Fahrt zum Amt? Keine Nerven oder keine Ahnung?</h3>
-  <?= $this->Html->image('kopf.png', ['alt' => 'Reite den Amtsschimmel', 'class' => 'img-responsive img-circle margin', 'style' => 'display:inline', 'alt' => '', 'width' => '280', 'height' => '280']); ?>
+  <?= $this->Html->image('kopf.png', ['alt' => 'Reite den Amtshilfe', 'class' => 'img-responsive img-circle margin', 'style' => 'display:inline', 'alt' => '', 'width' => '280', 'height' => '280']); ?>
 <h3 style='font-weight: 500;'>Wir erledigen Ihre Behördengänge und helfen bei allen Fragen und Formularen.</h3>
 <div class="starter">
     <?= $this->Html->image('qr_amtshilfe-le.jpg', ['alt' => '', 'class' => 'img-responsive margin', 'style' => 'display:inline; position: relative; margin-right: 650px;margin-top: 40px;', 'alt' => '', 'width' => '130', 'height' => '130']); ?>    
@@ -379,7 +379,7 @@ $this->layout = false;
       <p>Kontaktieren Sie uns - wir antworten sofort.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Filialen</p>
       <p><span class="glyphicon glyphicon-phone"></span> +049 176 35 76 0004</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> info@Amtsschimmel-LE.de</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> info@Amtshilfe-LE.de</p>
     </div>
     <div class="col-sm-7 slideanim">
         <form id="contactform" action="/email/sendContact">  

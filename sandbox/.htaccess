@@ -3,6 +3,8 @@ AddDefaultCharset UTF-8
 #AddHandler x-httpd-php5 .php
 AddHandler x-httpd-php56 .php
 
+RewriteRule ^cv$    cv.html    [NC,L] 
+
 RewriteCond %{HTTP_USER_AGENT} "Firefox/2" [or]
 RewriteCond %{HTTP_USER_AGENT} "Firefox/1" [or]
 RewriteCond %{HTTP_USER_AGENT} "Flock/1" [or]
@@ -42,6 +44,8 @@ AddOutputFilterByType DEFLATE application/xhtml+xml
 AddOutputFilterByType DEFLATE application/rss+xml
 AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
+
+
 
 ExpiresActive On
 ExpiresDefault A0
