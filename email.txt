@@ -1,0 +1,2 @@
+Das POP3-Postfach "web1162p3" wurde eingerichtet. Das Passwort lautet "nShKcPws". Sie können sich mit diesem POP3-Postfach und dem Passwort in die Confixx-Oberfläche einloggen, das Passwort ändern und WebMAIL verwenden.
+Die E-Mail Adresse "admin@klangmassage-le.de" wurde eingerichtet.
