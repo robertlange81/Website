@@ -64,7 +64,7 @@ $this->layout = false;
         <li title="Ablauf" class="how"><a href="#wie">WIE</a></li>
         <li title="Preise" class="price"><a href="#preise">WIEVIEL</a></li> 
         <li><a title="Kontakt" href="#kontakt">WER</a></li>  
-        <li><a style="color:#7efe00 !important;" data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">WEITER</a>
+        <li><a style="color:#5EC4C9 !important;" data-toggle="modal" title="behördengang auswählen" data-target="#auswahlModal" href="#">WEITER</a>
         </li>            
       </ul>
     </div>
@@ -172,15 +172,15 @@ $this->layout = false;
     </div>  
     <div class="col-sm-4">
       <span class="features">
-        <!--i class="fa fa-wheelchair fa-4x" aria-hidden="true"></i-->
-        <i class="fa fa-car fa-4x" aria-hidden="true"></i>
+        <i class="fa fa-wheelchair fa-4x" aria-hidden="true"></i>
+        <!--i class="fa fa-car fa-4x" aria-hidden="true"></i-->
       </span>
       <h4>Parkausweis beantragen</h4>
       <p></p>
     </div>          
   </div>
   <br><br>
-  <!-- div class="row slideanim">  
+  <div class="row slideanim">  
     <div class="col-sm-4">
         <span class="features">
           <i class="fa fa-play fa-1x" aria-hidden="false"></i>
@@ -209,7 +209,7 @@ $this->layout = false;
       <p></p>
     </div>      
   </div>  
-  <br><br-->
+  <br><br>
   <div class="row slideanim">  
     <div class="col-sm-4">
       <span class="features">
@@ -250,49 +250,49 @@ $this->layout = false;
   <div class="row">
     <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('1.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '70.5%']); ?>
+            <?= $this->Html->image('a.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '250px']); ?>
             <div class="caption post-content numbers">
                 <h3>1</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Sie wählen</span> online die jeweilige Amtssache und einen Termin aus, an dem wir bei Ihnen daheim oder im Büro vorbei kommen sollen. Sie können den Termin auch noch nachträglich telefonisch verschieben.</p>
+        <p class="text-how"><span class="who">Sie wählen</span> online die jeweilige Amtssache und einen Termin aus, an dem wir bei Ihnen daheim oder im Büro vorbei kommen sollen. Sie können den Termin auch noch nachträglich telefonisch verschieben.<br><br></p>
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('2.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '70.5%']); ?>
+            <?= $this->Html->image('b.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '250px']); ?>
             <div class="caption post-content numbers">
                 <h3>2</h3>
             </div>  
         </div>
         <p class="text-how">
-            <span class="who">Wir senden</span> Ihnen die jeweiligen Formulare und Vollmachten sowie Hinweise zum optimalen Verfahrensablauf per E-Mail zu.
-            <span class="who">Sie drucken</span> die ausgefüllten Formulare aus und ergänzen fehlende Angaben.
+            <span class="who">Wir senden</span> Ihnen die jeweiligen Formulare und Vollmachten sowie Hinweise zum optimalen Ablauf des Verfahrens per E-Mail zu.
+            <span class="who">Sie drucken</span> die ausgefüllten Formulare aus und ergänzen fehlende Angaben.<br><br>
         </p>
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('3.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '70.5%']); ?>
+            <?= $this->Html->image('d.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '250px']); ?>
             <div class="caption post-content numbers">
                 <h3>3</h3>
             </div>  
         </div>
-        <p class="text-how"><span class="who">Wir kommen</span> zum vereinbarten Termin und prüfen alle Anträge und notwendigen Dokumente auf deren Vollständigkeit und Richtigkeit. Auf Wunsch helfen wir Ihnen zudem gerne bei inhaltlichen Fragen<span class="who">&#185;</span>.</p><!-- Für Fragen stehen wir zudem <span class="who">telefonisch</span> zur Verfügung&#185;.-->
+        <p class="text-how"><span class="who">Wir kommen</span> zum vereinbarten Termin und prüfen alle Anträge und notwendigen Dokumente auf deren Vollständigkeit und Richtigkeit. Auf Wunsch helfen wir Ihnen zudem gerne bei inhaltlichen Fragen<span class="who">&#185;</span>.<br><br></p><!-- Für Fragen stehen wir zudem <span class="who">telefonisch</span> zur Verfügung&#185;.-->
     </div>
     <div class="col-sm-3">
         <div class="thumbnail">
-            <?= $this->Html->image('4.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '100%']); ?>
+            <?= $this->Html->image('h.jpg', ['alt' => '1.', 'class' => 'img-responsive', 'width' => '250px']); ?>
             <div class="caption post-content numbers">
                 <h3>4</h3>
             </div>  
         </div>
         <p class="text-how"></p>
-        <p class="text-how"><span class="who">Wir erledigen</span> für Sie zügig<span class="who">²</span> den Behördengang, legen die Gebühren aus und bringen alle Dokumente wieder persönlich zu Ihnen zurück. Sie können bar bei Übergabe oder bequem per Bankeinzug bezahlen.</p>
+        <p class="text-how"><span class="who">Wir erledigen</span> für Sie zügig<span class="who">²</span> den Behördengang, legen die Gebühren aus und bringen alle Dokumente wieder persönlich zu Ihnen zurück. Sie können bar bei Übergabe oder bequem per Bankeinzug bezahlen.<br><br></p>
     </div>
   </div>
   <div class="hint">
       <br>
     <div class="su-note" style="border-color:#e5e55c;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
-        <div class="su-note-inner su-clearfix" style="background-color:#7EFE00;border-color:#ffffe0;color:#333333;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
+        <div class="su-note-inner su-clearfix" style="background-color:wheat;border-color:#ffffe0;color:#333333;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
             &#185; Mit Support-Option helfen wir Ihnen beim Ausfüllen der Antragsformulare und unterstützen Sie bei inhaltlichen Fragen zu Ihrer Amtssache.
             <br>² Mit Express-Option erledigen wir Ihre Amtssache (außer Parkausweis) innerhalb <span style="font-weight: bold">eines</span> Behördentags (Standard ist innerhalb von drei).
         </div>
@@ -350,13 +350,13 @@ $this->layout = false;
           <h1>Premium</h1>
         </div>
           <div class="panel-body">
-          <p style="color: gray"><strong>KFZ Anmelden</strong></p>
-          <p style="color: gray"><strong>KFZ Ummelden</strong></p>
-          <p style="color: gray"><strong>KFZ Abmelden</strong></p>
+          <p><strong>KFZ Anmelden</strong></p>
+          <p><strong>KFZ Ummelden</strong></p>
+          <p><strong>KFZ Abmelden</strong></p>
           <p><strong>Parkausweis beantragen</strong></p>            
         </div>
         <div class="panel-footer">
-          <h3>29 €</h3>
+          <h3>35 €</h3>
           <h4></h4>
           <button class="btn btn-lg">Weiter</button>
         </div>
@@ -379,7 +379,7 @@ $this->layout = false;
       <p>Kontaktieren Sie uns - wir antworten sofort.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Filialen</p>
       <p><span class="glyphicon glyphicon-phone"></span> +049 176 35 76 0004</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> info@Amtshilfe-LE.de</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> info@amtshilfe-le.de</p>
     </div>
     <div class="col-sm-7 slideanim">
         <form id="contactform" action="/email/sendContact">  
