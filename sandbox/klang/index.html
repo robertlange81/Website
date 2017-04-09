@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" ng-app="klangmassage">
 
 <head>
 
@@ -63,13 +63,12 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
-            }
-
+            }                 
     </script>    
 
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-controller="TabController as tab">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -84,24 +83,42 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a ng-click="tab.setTab('klangmassage-submenu')" class="page-scroll dropdown-toggle" data-toggle="dropdown" href="#">
+                            Klangmassage
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#about">Ursprung</a></li>
+                          <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#services">Wirkung</a></li>
+                          <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#process">Ablauf</a></li>
+                        </ul>  
                     <li>
-                        <a class="page-scroll" href="#about">Ursprung</a>
-                    </li>   
+                        <a ng-click="tab.setTab('musiktherapie')" class="page-scroll" href="#musiktherapie">Musiktherapie</a>
+                    </li>                         
                     <li>
-                        <a class="page-scroll" href="#services">Wirkung</a>
-                    </li> 
-                    <li>
-                        <a class="page-scroll" href="#process">Ablauf</a>
-                    </li>                     
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Bilder</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#tarifs">Preise</a>
+                        <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#portfolio">Bilder</a>
                     </li>                    
                     <li>
-                        <a class="page-scroll" href="#contact">Kontakt</a>
-                    </li>                                       
+                        <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#tarifs">Preise</a>
+                    </li>                    
+                    <li class="dropdown">
+                        <a ng-click="tab.setTab('weiteres-submenu')" class="page-scroll dropdown-toggle" data-toggle="dropdown" href="#">
+                            Weiteres
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                               <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#contact">Kontakt</a>
+                           </li>  
+                            <li>
+                                <a ng-click="tab.setTab('whoami')" class="page-scroll" href="#whoami">Über Mich</a>
+                            </li>
+                            <li>
+                                <a ng-click="tab.setTab('imprint')" class="page-scroll" href="#imprint">Impressum</a>
+                            </li>
+                        </ul> 
+                    <li>                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -142,367 +159,396 @@
                     </cite>
                     
                 </p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Was ist Klangmassage <strong>?</strong></a>
+                <a ng-click="tab.setTab('klangmassage')" href="#about" class="btn btn-primary btn-xl page-scroll">Was ist Klangmassage <strong>?</strong></a>
+                <a ng-click="tab.setTab('musiktherapie')" href="#musiktherapie" class="page-scroll btn btn-default btn-xl">Was ist Musiktherapie <strong>?</strong></a>
             </div>
         </div>
     </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2 class="section-heading">Peter Hess - Klangmassage</h2>
-                    <hr class="light">
-                    <p class="text-faded">
-                        Die Klangmassage ist eine ganzheitliche Methode, die Körper, Seele und Geist anspricht.
-                        
-                        Der Klangmassage liegen uralte Kenntnisse über die Wirkung von Klängen zugrunde, 
-
-                        die schon vor über 5000 Jahren in der indischen Heilkunst Anwendung fanden.
-
-                        Peter Hess entwickelte die Klangmassage in den 80er Jahren. Auf der 
-
-                        Suche nach alternativen Heilmethoden unternahm er viele Reisen nach 
-
-                        Nepal, Indien und Tibet. In jahrelanger Forschung und Praxis passte er die 
-
-                        Klangmassage an die Bedürfnisse der Menschen im Westen an. 
-
-                        Die Anwendungsmöglichkeiten reichen von sanfter, aber hochwirksamer Entspannung 
-
-                        bis zum zielgerichteten Einsatz in Pädagogik, Therapie, Wellness sowie in Heil- und Heilfachberufen.                 
-                                                        
-                    </p>      
-                    <br>
-                    <br>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Nutzen und Wirkung der Klangmassage</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Die Klangmassage ...</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-bed text-primary sr-icons"></i>
-                        <p class="text-muted">
-                            <br>
-                            ... bewirkt eine tiefe Entspannung und erleichtert das „Loslassen“ – körperlich wie mental.
-                        </p>
-                    </div>
-                </div>                
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heartbeat text-primary sr-icons"></i>
-                        <p class="text-muted">
-                            <br>
-                            ... trägt zur Gesundheitsförderung bei, zu Harmonisierung, Regeneration und Vitalisierung.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-user text-primary sr-icons"></i>
-                        <p class="text-muted">
-                            <br>
-                            ... verbessert die Körperwahrnehmung und stärkt das ursprüngliche Vertrauen des Menschen.                            
-                        </p>
-                    </div>
-                </div>                
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-eye text-primary sr-icons"></i>
-                        <p class="text-muted">
-                            <br>
-                            ... stärkt Selbstbewusstsein, Kreativität und Schaffenskraft, ermöglicht den Zugang zu ungenutzten Ressourcen.
-                        </p>
-                    </div>
-                </div>
-            </div>         
-            <br>
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <br><br><br><br>
-                <a href="#process" class="btn btn-secondary btn-xl page-scroll">Ablauf einer Klangmassage</a>
-            </div>            
-        </div>
-    </section>
-    
-    <section id="process" class="bg-dark" style="padding-top: 35px">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-10 col-md-10 col-lg-offset-1 text-center">
-                        <h2>Ablauf einer Klangmassage</h2>
-                        <br>
+    <div ng-show="tab.isSet('klangmassage')">
+        <section class="bg-primary" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <h2 class="section-heading">Peter Hess - Klangmassage</h2>
+                        <hr class="light">
                         <p class="text-faded">
-                            Nach einem Informationsgespräch werden obertonreiche Klangschalen auf
-                            den bekleideten Körper der Klienten aufgesetzt und behutsam angeschlagen.
-                            Die harmonischen Klänge beruhigen Körper und Geist. Die feinen Vibrationen, 
-                            die von der Klangschale ausgehen, breiten sich nach und nach im Körper aus. 
-                            Schnell setzt eine wohltuende Entspannung ein. 
-                            Ein abschließendes Gespräch gibt den Klienten die Möglichkeit, 
-                            ihre Erfahrungen mitzuteilen und bewusst werden zu lassen. 
-                            Für die Klangmassage werden qualitativ hochwertige Therapie-Klangschalen von
-                            Peter Hess verwendet.
-                        </p>
-                        <br> 
-                            <iframe style="border: 2px solid white" width="415" height="300" class="portfolio-box" src="https://www.youtube.com/embed/1R_V_OdVMXM" frameborder="0" allowfullscreen></iframe>                 
-                        <br>  
-                        <div class="col-lg-12 col-md-12 text-center">
+                            Die Klangmassage ist eine ganzheitliche Methode, die Körper, Seele und Geist anspricht.
 
-                            <hr class="light">
-                            <h3 class="section-heading">Weitere Informationen:</h3>               
-                                <!--a href="javascript:slideTo('Kommentare')">Kommentare zu Klangmassagen mit Santina</a-->
-                                <br><a href="http://www.peter-hess-institut.de" target="_blank" >www.peter-hess-institut.de</a>
-                                <br><a href="http://www.fachverband-klang.de" target="_blank" >www.fachverband-klang.de</a>   
-                            <br><br>
-                        </div>                         
-                        <br>    
-                    <div class="call-to-action">
-                        <a href="#contact" class="page-scroll btn btn-default btn-xl sr-button">Keine Angst - es tut nicht weh <i class="fa fa-smile-o" aria-hidden="true"></i></a>
+                            Der Klangmassage liegen uralte Kenntnisse über die Wirkung von Klängen zugrunde, 
+
+                            die schon vor über 5000 Jahren in der indischen Heilkunst Anwendung fanden.
+
+                            Peter Hess entwickelte die Klangmassage in den 80er Jahren. Auf der 
+
+                            Suche nach alternativen Heilmethoden unternahm er viele Reisen nach 
+
+                            Nepal, Indien und Tibet. In jahrelanger Forschung und Praxis passte er die 
+
+                            Klangmassage an die Bedürfnisse der Menschen im Westen an. 
+
+                            Die Anwendungsmöglichkeiten reichen von sanfter, aber hochwirksamer Entspannung 
+
+                            bis zum zielgerichteten Einsatz in Pädagogik, Therapie, Wellness sowie in Heil- und Heilfachberufen.                 
+
+                        </p>      
+                        <br>
+                        <br>
+                        <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Nutzen und Wirkung der Klangmassage</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>    
-    
-    <section class="no-padding" style="padding-bottom:30px" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter popup-gallery">           
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Klangmassage
-                                </div>
-                                <div class="project-name">
-                                    Behandlung durch Klänge
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Klangmassage
-                                </div>
-                                <div class="project-name">
-                                    Peter-Hess-Klangschalen
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Klangmassage
-                                </div>
-                                <div class="project-name">
-                                    Peter-Hess-Klangschalen
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Klangmassage
-                                </div>
-                                <div class="project-name">
-                                    Santina Koj: Peter Hess - Klangmassagepraktikerin 
-                                    und Musiktherapeutin der DMVS e.V.
-                                </div>
-                            </div>
-                        </div>                        
-                    </a>
-                </div>                 
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Klangmassage
-                                </div>
-                                <div class="project-name">
-                                    Praxis
-                                </div>
-                            </div>
-                        </div>                        
-                    </a>
-                </div>               
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Klangmassage
-                                </div>
-                                <div class="project-name">
-                                    Praxis
-                                </div>
-                            </div>                            
-                        </div>
-                    </a>
-                </div>                
-            </div>
-        </div>
-    </section>
-    
-    <section class="bg-dark" id="tarifs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center bg-default">
-                    <h2 class="section-heading">Preise für professionelle Klangmassagen</h2><br>
-                    <hr class="light">
-                    <div id="accordion" class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde (nur noch für kurze Zeit) : 29 €</a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in">
-                                <div class="panel-body" style="color: black">
-                                    <h3>29 €</h3>
-                                    <p>
-                                    Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
-					HNO-Gemeinschaftspraxis
-					</a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
-                                        Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">45 min Klangmassage plus Vor- und Nachgespräch : 39 €</a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <h3>39 €</h3>
-                                    <p>
-                                    Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
-					HNO-Gemeinschaftspraxis
-					</a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
-                                        Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
-                                    </p>                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3 Klangmassagen à 45 min : 99 €</a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <h3>99 €</h3>
-                                    <p>
-                                    Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
-					HNO-Gemeinschaftspraxis
-					</a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
-                                        Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
-                                    </p>                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">6 Klangmassagen à 45 min 199 €</a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <h3>199 €</h3>
-                                    <p>
-                                    Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
-					HNO-Gemeinschaftspraxis
-					</a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
-                                        Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
-                                    </p>                                    
-                                </div>
-                            </div>
-                        </div>   
-                    <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                        Gutscheine für Klangmassage zum Einheitspreis von 39 €
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <h3>39 €</h3>
-                                    <p>
-                                    Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
-					HNO-Gemeinschaftspraxis
-					</a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
-                                        Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden.
-                                    </p>                                    
-                                </div>
-                            </div>
-                        </div>                          
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Die Klangmassage ...</h2>
+                        <br>
+                        <br>                        
+                        <hr class="primary">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-bed text-primary sr-icons"></i>
+                            <p class="text-muted">
+                                <br>
+                                ... bewirkt eine tiefe Entspannung und erleichtert das „Loslassen“ – körperlich wie mental.
+                            </p>
+                        </div>
+                    </div>                
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-heartbeat text-primary sr-icons"></i>
+                            <p class="text-muted">
+                                <br>
+                                ... trägt zur Gesundheitsförderung bei, zu Harmonisierung, Regeneration und Vitalisierung.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-user text-primary sr-icons"></i>
+                            <p class="text-muted">
+                                <br>
+                                ... verbessert die Körperwahrnehmung und stärkt das ursprüngliche Vertrauen des Menschen.                            
+                            </p>
+                        </div>
+                    </div>                
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-eye text-primary sr-icons"></i>
+                            <p class="text-muted">
+                                <br>
+                                ... stärkt Selbstbewusstsein, Kreativität und Schaffenskraft, ermöglicht den Zugang zu ungenutzten Ressourcen.
+                            </p>
+                        </div>
+                    </div>
+                </div>         
+                <br>
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <br><br><br><br>
+                    <a href="#process" class="btn btn-secondary btn-xl page-scroll">Ablauf einer Klangmassage</a>
+                </div>            
+            </div>
+        </section>
+
+        <section id="process" class="bg-dark" style="padding-top: 35px">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-lg-offset-1 text-center">
+                            <h2>Ablauf einer Klangmassage</h2>
+                            <br>
+                            <p class="text-faded">
+                                Nach einem Informationsgespräch werden obertonreiche Klangschalen auf
+                                den bekleideten Körper der Klienten aufgesetzt und behutsam angeschlagen.
+                                Die harmonischen Klänge beruhigen Körper und Geist. Die feinen Vibrationen, 
+                                die von der Klangschale ausgehen, breiten sich nach und nach im Körper aus. 
+                                Schnell setzt eine wohltuende Entspannung ein. 
+                                Ein abschließendes Gespräch gibt den Klienten die Möglichkeit, 
+                                ihre Erfahrungen mitzuteilen und bewusst werden zu lassen. 
+                                Für die Klangmassage werden qualitativ hochwertige Therapie-Klangschalen von
+                                Peter Hess verwendet.
+                            </p>
+                            <br> 
+                                <iframe style="border: 2px solid white" width="415" height="300" class="portfolio-box" src="https://www.youtube.com/embed/1R_V_OdVMXM" frameborder="0" allowfullscreen></iframe>                 
+                            <br>  
+                            <div class="col-lg-12 col-md-12 text-center">
+
+                                <hr class="light">
+                                <h3 class="section-heading">Weitere Informationen:</h3>               
+                                    <!--a href="javascript:slideTo('Kommentare')">Kommentare zu Klangmassagen mit Santina</a-->
+                                    <br><a href="http://www.peter-hess-institut.de" target="_blank" >www.peter-hess-institut.de</a>
+                                    <br><a href="http://www.fachverband-klang.de" target="_blank" >www.fachverband-klang.de</a>   
+                                <br><br>
+                            </div>                         
+                            <br>    
+                        <div class="call-to-action">
+                            <a href="#contact" class="page-scroll btn btn-default btn-xl sr-button">Keine Angst - es tut nicht weh <i class="fa fa-smile-o" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>           
+
+        <section class="no-padding" style="padding-bottom:30px" id="portfolio">
+            <div class="container-fluid">
+                <div class="row no-gutter popup-gallery">           
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
+                            <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Klangmassage
+                                    </div>
+                                    <div class="project-name">
+                                        Behandlung durch Klänge
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
+                            <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Klangmassage
+                                    </div>
+                                    <div class="project-name">
+                                        Peter-Hess-Klangschalen
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
+                            <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Klangmassage
+                                    </div>
+                                    <div class="project-name">
+                                        Peter-Hess-Klangschalen
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
+                            <img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Klangmassage
+                                    </div>
+                                    <div class="project-name">
+                                        Santina Koj: Peter Hess - Klangmassagepraktikerin 
+                                        und Musiktherapeutin der DMVS e.V.
+                                    </div>
+                                </div>
+                            </div>                        
+                        </a>
+                    </div>                 
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
+                            <img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Klangmassage
+                                    </div>
+                                    <div class="project-name">
+                                        Praxis
+                                    </div>
+                                </div>
+                            </div>                        
+                        </a>
+                    </div>               
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
+                            <img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Klangmassage
+                                    </div>
+                                    <div class="project-name">
+                                        Praxis
+                                    </div>
+                                </div>                            
+                            </div>
+                        </a>
+                    </div>                
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark" id="tarifs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center bg-default">
+                        <h2 class="section-heading">Preise für professionelle Klangmassagen</h2><br>
+                        <hr class="light">
+                        <div id="accordion" class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde (nur noch für kurze Zeit) : 29 €</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body" style="color: black">
+                                        <h3>29 €</h3>
+                                        <p>
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                            HNO-Gemeinschaftspraxis
+                                            </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
+                                            Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">45 min Klangmassage plus Vor- und Nachgespräch : 39 €</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <h3>39 €</h3>
+                                        <p>
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                            HNO-Gemeinschaftspraxis
+                                            </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
+                                            Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
+                                        </p>                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3 Klangmassagen à 45 min : 99 €</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <h3>99 €</h3>
+                                        <p>
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                            HNO-Gemeinschaftspraxis
+                                            </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
+                                            Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
+                                        </p>                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">6 Klangmassagen à 45 min 199 €</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <h3>199 €</h3>
+                                        <p>
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                            HNO-Gemeinschaftspraxis
+                                            </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
+                                            Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
+                                        </p>                                    
+                                    </div>
+                                </div>
+                            </div>   
+                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                            Gutscheine für Klangmassage zum Einheitspreis von 39 €
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <h3>39 €</h3>
+                                        <p>
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                            HNO-Gemeinschaftspraxis
+                                            </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
+                                            Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden.
+                                        </p>                                    
+                                    </div>
+                                </div>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+      
+        
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Anfrage stellen</h2>
                     <hr class="primary">
-                    <p>Hast Du / Ihr (mal wieder) Lust auf eine Klangmassage? Prima!<br>Ruf mich an oder schreib' eine Mail und ich melde mich so schnell wie möglich!</p>
+                    <p>Möchtest Du / Ihr (mal wieder) eine Klangmassage / Musiktherapie erleben?<br>Dann ruf mich an oder schreib' eine Mail oder nutze hier das Kontaktformular.</p>
                 <br>
                 </div>
             </div>
             <div class="row">    
                 <div class="col-lg-4 text-center">
-                    
+                    <form name="contactForm" ng-controller="ContactController as contactCtrl" ng-submit="contactForm.$valid && contactCtrl.addContact()" novalidate>
+                      <!--  Live Preview 
+                      <blockquote >
+                        <strong>{{contactCtrl.contact.stars}} Stars</strong>
+                        {{contactCtrl.contact.body}}
+                         <cite class="clearfix">—{{contact.author}} on {{contact.createdOn | date}}</cite>
+                      </blockquote>
+                      -->
+                      <!--  Review Form -->
+                      <br><br>
+                      <fieldset class="form-group">
+                        <select id="contactType" ng-model="contactCtrl.contact.type" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
+                          <option value="">Art der Anfrage</option>
+                        </select>
+                      </fieldset>
+                      <fieldset class="form-group">                        
+                        <textarea ng-model="contactCtrl.contact.body" style="height: 130px" class="form-control" placeholder="Nachricht (optional)" title="Nachricht"></textarea>
+                      </fieldset>
+                      <fieldset class="form-group">
+                        <label>E-Mail-Adresse*</label>
+                        <input ng-model="contactCtrl.contact.author" id="contactEmail" type="email" class="form-control" placeholder="Max.Mustermann@example.org" title="Email" required />
+                      </fieldset>
+                      <fieldset class="form-group">                        
+                        <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-primary pull-right" value="Absenden" />
+                      </fieldset>
+                    </form>                    
                 </div>
                 <div class="col-lg-4 text-center">  
-                    <br><br>
                     <p>
                         <br><br>
-                        <a href="tel:+491637774437">
+                        <a href="tel:+491637774437" style="color: black">
                             <i class="fa fa-phone fa-3x sr-contact"></i><br>+49 (0)163-777 4437
                         </a>
                     </p>                      
                     <br><br>
                     <p>
-                        <a href="mailto:santina_koj@gmx.de">
+                        <a href="mailto:santina_koj@gmx.de" style="color: black">
                             <i class="fa fa-envelope-o fa-3x sr-contact"></i><br>santina_koj@gmx.de
                         </a>
                     </p>                      
@@ -513,13 +559,233 @@
                     <!--a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915" target="_blank"> 
                         <img src="img/maps.png" alt="Die Klangmassage findet in der HNO-Gemeinschaftspraxis Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt" width="240"> 
                     </a-->                    
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" width="400" height="300" frameborder="0" style="border:2px solid #F05F40" allowfullscreen></iframe>               
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" width="400" height="300" frameborder="0" style="border:2px solid black" allowfullscreen></iframe>               
                 </div>                   
             </div>
         </div>
     </section>
+</div>         
     
+<div ng-show="tab.isSet('musiktherapie')">
+       <section class="bg-dark" id="musiktherapie">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <br>
+                        <h2 class="section-heading">Musiktherapie nach Christoph Schwabe</h2>
+                        <br>
+                        <hr class="light">
+                           <img src="img\portfolio\thumbnails\mt.JPG" alt="">
+                            <h2>
+                                <br>
+                                <cite>
+                                „Musik berührt uns und kann das ausdrücken,
+                                <br>
+				was wir nicht vermögen in Worte zu fassen.“
+                                </cite>
+                            </h2>			
+				<p style="text-align: justify">
+					<br>
+					Musiktherapie ist eine handlungsorientierte Therapieform, die 
+					
+					Musik und Bewegung als Ausdrucks- und Kommunikationsmittel nutzt. 
+					
+					Ziel dabei ist die Verbesserung von Störungen im Erleben und Verhalten. 
+					
+					Somit ist Musiktherapie eine Form nonverbaler Psychotherapie.
+					
+					Das musiktherapeutische Konzept nach Christoph Schwabe ist 
+					
+					schulenübergreifend angelegt und kann vielfältig eingesetzt werden:
+					
+				<br><br>
+				</p>
+				
+					<ul class="list-group"  style="color:black">				
+						<li class="list-group-item">in der Psychiatrie, Psychotherapie und Psychosomatik</li>
+						<li class="list-group-item">in neurologischen Kliniken oder Rehabilitationskliniken</li>
+						<li class="list-group-item">in sozialen Einrichtungen, z.B. Kitas oder Frühförderzentren</li>
+						<li class="list-group-item">in Seniorenheimen</li>
+						<li class="list-group-item">in Behinderteneinrichtungen, z.B. Förderschulen oder Wohnheimen für Menschen mit Behinderung</li>
+						<li class="list-group-item">in Musikschulen etc.</li>			
+					</ul>										
+				
+
+				<div class="headline">
+					<br>
+					<h2>Methoden der Musiktherapie nach Christoph Schwabe</h2>
+				</div>
+				<p  style="text-align: justify">	
+				<br>
+						Die Methoden des musiktherapeutischen Konzepts dienen 
+						
+						der Entwicklung der Wahrnehmungsfähigkeit, des Selbstausdrucks und 
+						
+						der sozialen Interaktion. Sie regen gezielte Handlungen an, die im 
+						
+						Anschluss reflektiert und bewusst werden können. 
+						
+						Die einzelnen Methoden können für sich eingesetzt 
+						
+						oder mit den anderen Methoden vernetzt werden:				
+					<br><br>
+				</p>
+					<ul class="list-group" style="color:black">
+						<li class="list-group-item">Instrumentalimprovisation</li>
+						<li class="list-group-item">Gruppensingtherapie</li>
+						<li class="list-group-item">Bewegungsimprovisation</li>
+						<li class="list-group-item">Tänzerische Musiktherapie</li>
+						<li class="list-group-item">Bildgestalten mit Musik</li>
+						<li class="list-group-item">Regulative Musiktherapie (Wahrnehmungstraining mit Musik)</li>			
+					</ul>	
+					
+				<p>	
+					<br>	
+					Musiktherapie kann einzeln oder in Gruppen durchgeführt werden. <br><br><br>								
+					<img src="img/noten.png" alt="" ><br><br>							
+				</p>
+                                <hr class="light">
+                                <h3 class="section-heading">Weitere Informationen zu Musiktherapie:</h3>               
+                                <br>				
+				<h3><a href="http://musik-und-begegnung.de/" target="_blank" >Musik und Begegnung</a></h3>
+				<h3><a href="http://www.klanggewaechshaus.de/" target="_blank" >Klanggewächshaus</a></h3>
+                                <h3><a href="http://www.musiktherapie-crossen.de/" target="_blank">www.musiktherapie-crossen.de</a></h3>
+                                <br><br>
+                    </div>
+                </div>
+            </div>
+        </section>                         
+    </div>  
+  
+<div ng-show="tab.isSet('whoami')">
+       <section class="bg-dark" id="whoami">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">    
+			<div id="Ich">
+				<h1>Über mich</h1>
+                                <br>
+					<ul>
+						<li>geboren am 11.06.1979 in Leipzig</li>
+						<li>Diplom- Sozialpädagogin</li>
+						<li>Musiktherapeutin der DMVS e.V.</li>
+						<li>Peter Hess- Klangmassagepraktikerin</li>
+						<li>Reiki I und II</li>			
+					</ul>	
+				
+				<br/><br/><br/>
+				<div>
+					<div>
+						Seit meiner Kindheit bin ich mit Musik verbunden. Ich spiele Querflöte, Gitarre und singe gern. 
+						Während des Studiums zur Musiktherapeutin beschäftigte mich die Frage, ob Klang allein schon heilsam sein kann. In der Klangmassage-Ausbildung konnte ich dieser Frage nachgehen und die wohltuende Wirkung des Klanges am eigenen Leibe erfahren. <br><br>
+						Beruflich habe ich vielfältige Erfahrungen gesammelt, sowohl in Deutschland, als auch im Ausland. Zur Zeit arbeite ich als Sozialpädagogin mit autistischen Kindern und Jugendlichen sowie als Musiktherapeutin mit Senioren in Pflegeheimen. Die Arbeit mit Klangschalen lässt sich dabei gut integrieren. Weiterhin biete ich Klangmassage zur Entspannung an. 				
+					</div>
+				</div>
+				<br/><br/><br/><br/>
+			</div> 
+		</div>
+	</div>    
+
+        </section>                         
+    </div>                             
     
+    <div ng-show="tab.isSet('imprint')">
+       <section class="bg-dark" id="imprint">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <h2 class="section-heading">Impressum</h2>
+                        <hr class="light">
+			Santina Koj<br/><br/>
+
+                        Alfred-Kästner-Str. 16<br/>
+                        04275 Leipzig<br/><br/>
+
+                        Tel.: <a href="tel:+491637774437"> +49 (0) 163 777 44 37</a><br/>
+                        Mail: <a href="mailto:santina_koj@gmx.de"> santina_koj@gmx.de</a>
+
+                        <br/><br/>
+				<p style="text-align: justify">
+<b>DATENSCHUTZERKLÄRUNG</b>
+<br/><br/>
+Vielen Dank für Ihr Interesse an meinem Onlineauftritt. Der Schutz Ihrer persönlichen Daten liegt mir sehr am Herzen. An dieser Stelle möchte ich Sie daher über den Datenschutz informieren. Selbstverständlich beachte ich die gesetzlichen Bestimmungen des Datenschutzgesetzes (BDSG) des Telemediengesetzes (TMG) und anderer datenschutzrechtlicher Bestimmungen.
+<br/><br/>
+Gegenstand des Datenschutzes sind personenbezogene Daten. Diese sind nach § 3 Abs. 1 BDSG Einzelangaben über persönlich oder sachliche Verhältnisse einer bestimmten oder bestimmbaren natürlichen Person. Hierunter fallen z. B. Angaben wie Name, Post-Adresse, E-Mail-Adresse oder Telefonnummer, ggf. aber auch Nutzungsdaten wie Ihre IP-Adresse. Im Allgemeinen ist es für die Nutzung dieser Internetseite nicht erforderlich, dass Sie personenbezogene Daten angeben. Damit ich Dienstleistungen aber tatsächlich erbringen kann, benötige ich ggf. Ihre personenbezogenen Daten. Dies gilt sowohl bei der Zusendung von Informationsmaterial oder bestellter Ware sowie auch für die Beantwortung individueller Anfragen.
+<br/><br/>
+Wenn Sie mich mit der Erbringung einer Dienstleistung oder der Zusendung von Ware beauftragen, erhebe und speichere ich Ihre persönlichen Daten grundsätzlich nur, soweit es für die Erbringung der Dienstleistung oder die Durchführung des Vertrages notwendig ist. Dazu kann es erforderlich sein, Ihre persönlichen Daten an Unternehmen weiterzugeben, die ich zur Erbringung der Dienstleistung oder zur Vertragsabwicklung einsetze. Dies sind z. B. Transportunternehmen oder andere Service-Dienste.
+<br/><br/>
+Nach vollständiger Vertragsabwicklung werden Ihre Daten gesperrt und nach Ablauf der steuer- und handelsrechtlichen Vorschriften gelöscht, sofern Sie nicht ausdrücklich einer darüber hinausgehende Datenverwendung zugestimmt haben.
+<br/><br/><br/>
+
+<b>DATEN-ERHEBUNG DURCH NUTZUNG VON GOOGLE-ANALYTICS</b>
+<br/><br/>
+Meine Webseite nutzt Google Analytics, einen Webanalysedienst, der Google inc. Google-Analytics verwendet sogenannte „Cookies“. Dabei handelt es sich um Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse ihrer Benutzung der Website ermöglicht. Erfasst werden beispielsweise Informationen zum Betriebssystem, zum Browser, Ihrer IP-Adresse, die von Ihnen zuvor aufgerufene Webseite (Referrer-URL) und Datum und Uhrzeit Ihres Besuchs auf meiner Webseite. Die durch diese Textdatei erzeugten Informationen über die Benutzung meiner Webseite werden an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Information benutzen, um Ihre Nutzung meiner Webseite auszuwerten, um Reports über die Webseitenaktivität für die Webseitenbetreiber zusammen zu stellen und um weitere mit der Webseitennutzung und der Internetnutzung verbundenen Dienstleistungen zu erbringen. Sofern dies gesetzlich vorgeschrieben ist oder soweit Dritte diese Daten im Auftrag von Google verarbeiten, wird Google diese Information auch an diese Dritten weitergeben. Diese Nutzung erfolgt anonymisiert oder pseudonymisiert. Nähere Informationen darüber finden Sie direkt bei <a href="http://www.google.com/intl/de/privacypolicy.html#information">Google</a>. 
+<br/><br/>
+Google benutzt das DoubleClick DART-Cookie 
+Nutzer können die Verwendung des DART-Cookies deaktivieren, indem sie die Datenschutzbestimmungen des Werbenetzwerks und Content-Werbenetzwerks von Google aufrufen.
+
+Dabei werden keinerlei unmittelbare persönliche Daten des Nutzers gespeichert, sondern nur die Internetprotokoll–Adresse. Diese Informationen dienen dazu, Sie bei Ihrem nächsten Besuch auf unseren Websites automatisch wiederzuerkennen und Ihnen die Navigation zu erleichtern. Cookies erlauben es uns beispielsweise, eine Website Ihren Interessen anzupassen oder Ihr Kennwort zu speichern, damit Sie es nicht jedes Mal neu eingeben müssen. 
+<br/><br/>
+Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihres Internetsbenutzungsprogramms (Browser) verhindern. Dazu müssen Sie in Ihrem Internet-Browser die Speicherung von Cookies ausschalten. Nähere Informationen hierzu übernehmen Sie bitte den Benutzungshinweisen Ihres Internet-Browsers.
+<br/><br/><br/>
+
+<b>ERHEBUNG UND SPEICHERUNG VON NUTZUNGSDATEN</b><br/><br/>
+
+Zur Optimierung meiner Webseite sammele und speichere ich Daten wie z. B. Datum und Uhrzeit des Seitenaufrufs, die Seite, von der Sie meine Seite aufgerufen haben und Ähnliches, sofern Sie dieser Datenerhebung und -speicherung nicht widersprechen. Dies erfolgt anonymisiert, ohne den Benutzer der Seite persönlich zu identifizieren. Ggf. werden Nutzerprofile mittels eines Pseudonyms erstellt. Auch hierbei erfolgt keine Verbindung zwischen der hinter dem Pseudonym stehenden natürlichen Personen mit den erhobenen Nutzungsdaten zur Erhebung und Speicherung der Nutzungsdaten setze ich auch Cookies ein. Dabei handelt es sich um kleine Textdateien, die auf Ihrem Computer gespeichert werden und zur Speicherung von statistischen Information wie Betriebssystem, Ihrem Internetbenutzungsprogramm (Browser), IP-Adresse, der zuvor aufgerufene Webseite (Referrer-URL) und der Uhrzeit dienen. Diese Daten erhebe ich ausschließlich, zu statistischen Zwecken, um meinen Internetauftritt weiter zu optimieren und meine Internetangebote noch attraktiver gestalten zu können. Die Erhebung und Speicherung erfolgt ausschließlich in anonymisierter oder pseudonymisierter Form und lässt keinen Rückschluss auf Sie als natürlich Person zu.
+<br/><br/><br/>
+<b>ZWECKGEBUNDENE DATENVERWENDUNG</b>
+<br/><br/>
+Ich beachte den Grundsatz der zweckgebundenen Daten-Verwendung und erhebe, verarbeite und speichere Ihre personenbezogenen Daten nur für die Zwecke, für die Sie sienmir mitgeteilt haben. Eine Weitergabe Ihrer persönlichen Daten an Dritte erfolgt ohne Ihre ausdrückliche Einwilligung nicht, sofern dies nicht zur Erbringung der Dienstleistung oder zur Vertragsdurchführung notwendig ist. Auch die Übermittlung an auskunftsberechtigte staatliche Institution und Behörden erfolgt nur im Rahmen der gesetzlichen Auskunftspflichten oder wenn ich durch eine gerichtliche Entscheidung zur Auskunft verpflichtet werde.
+<br/><br/>
+Der Webseitenbetreiber der einen Link zu dieser Seite auf seiner Homepage einfügt hat, ist sich Folgendem bewusst:
+„Mir ist bewusst, dass die Textelemente jeder hier enthaltenen Datenschutzerklärung nur beispielhaften Charakter haben und keinen Anspruch auf Vollständigkeit, Richtigkeit und Aktualität erheben sowie keine individuelle Rechtsberatung ersetzen können. Ein Rechtsberatungsverhältnis oder ein sonst irgendwie bindendes Rechtsverhältnis kommt durch die Nutzung dieser Seiten und Inhalte nicht zustande. Ich weiß, dass ich die Inhalte der Datenschutzerklärung auch selbst dahingehend prüfen muß, ob sie für meine Internetangebote oder -dienste zutreffend sind und keine Zusagen enthalten, die ich selbst nicht erfülle.“
+
+<br/><br/><br/>
+<b>HAFTUNGSHINWEIS</b><br/><br/>
+Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für 
+      eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. 
+      Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht 
+      verpflichtet, übermittelte oder gespeicherte fremde Informationen zu 
+      überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige 
+      Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der 
+      Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon 
+      unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem 
+      Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei 
+      Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte 
+      umgehend entfernen.<br><br><br/>
+<b>HAFTUNG FÜR LINKS</b><br/><br/>
+    Meine Webseite enthält Links zu externen Webseiten Dritter, auf deren 
+      Inhalte ich keinen Einfluss haben. Deshalb kann ich für diese 
+      fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte 
+      der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der 
+      Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung 
+      auf mögliche Rechtsverstöße überprüft. Rechtswidrige 
+      Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente 
+      inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte 
+      einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen 
+      werde ich derartige Links umgehend entfernen.<br/><br/><br/>
+ <b>URHEBERRECHT</b><br/><br/>
+   Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten 
+      unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und 
+      jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen 
+      der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads 
+      und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen 
+      Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, 
+      werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche 
+      gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten ich Sie um einen entsprechenden Hinweis. 
+      Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.
+		<br/><br/><br/><br/>	
+				</p>
+
+
+			
+			</div>
+		</div>
+	</div>    
+
+        </section>                         
+    </div>    
+
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -530,9 +796,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+    <script src="js/app.js"></script>      
 
 </body>
 
