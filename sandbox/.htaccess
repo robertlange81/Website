@@ -49,6 +49,12 @@ AddOutputFilterByType DEFLATE application/x-javascript
 
 ExpiresActive On
 ExpiresDefault A0
+
+<FilesMatch "\.(ttf|otf|eot|woff|jpg|png|jpeg|gif|js|json|html|css)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
  
 # 1 YEAR
 <FilesMatch "\.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav)$">

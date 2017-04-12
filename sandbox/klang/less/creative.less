@@ -51,17 +51,28 @@ p {
 }
 
 .bg-dark {
-    background-color: @gray-darker;
+    //background-color: @gray-darker;
     color: white;
     
-    .panel-body {
-        color: black;
-    }
+    //.panel-body {
+    //    color: black;
+    //}
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    .background-cover;
+    background-position: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+    url('../img/see.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size:  cover;
+    -o-background-size: cover;    
 }
 
 .text-faded {
-    color: fade(white, 80%);
+    color: fade(white, 120%);
     text-align: justify;
+    font-weight: bold;
 }
 
 section {
@@ -170,8 +181,8 @@ header {
     min-height: auto;
     .background-cover;
     background-position: center;
-    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-    url('../img/header.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), 
+    url('../img/sand.jpg');
     -webkit-background-size: cover;
     -moz-background-size:  cover;
     -o-background-size: cover;
@@ -246,12 +257,18 @@ header {
 .service-box {
     max-width: 400px;
     margin: 50px auto 0;
+    color: f05f40;
     @media (min-width: 992px) {
         margin: 20px auto 0;
     }
     p {
         margin-bottom: 0;
     }
+}
+
+.text-muted {
+    color: f05f40;
+    font-weight: bold;
 }
 
 .portfolio-box {
@@ -391,4 +408,14 @@ body {
 }
 .ng-empty {
       border-color: green !important;
+}
+// Messages
+.alert {
+    position: fixed !important; 
+    width: 90% !important;  
+    margin-left: 5% !important; 
+    text-align: center !important;  
+    bottom: 0px !important; 
+    z-index: 9999;
+    display: none;
 }

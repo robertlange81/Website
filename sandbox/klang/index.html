@@ -131,7 +131,7 @@
             <div class="header-content-inner">
                 <div class="container-fluid">
                 <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 20px"> 
-                    <br>
+                    <br><br>
                     <h1 id="homeHeading">Willkommen</h1><br>
                     <h3 id="homeHeading">Wir sind zurück aus der Baby-Pause!<br><br>Neue Termine ab Mai 2017</h3>
                 </div>
@@ -139,11 +139,12 @@
 
                 </div>                    
                 <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 15px">
+                    <br>
                     <img src="img/Tini1.png" class="img-responsive avatar" style="margin: auto auto" alt="">
                 </div>
                 </div>
                 <hr>
-                <p>
+                <p style="font-weight: bold; color: white">
                     
                     <cite>
                         <strong>  „Der Ton der Klangschale berührt unser Innerstes,
@@ -159,16 +160,20 @@
                     </cite>
                     
                 </p>
-                <a ng-click="tab.setTab('klangmassage')" href="#about" class="btn btn-primary btn-xl page-scroll">Was ist Klangmassage <strong>?</strong></a>
-                <a ng-click="tab.setTab('musiktherapie')" href="#musiktherapie" class="page-scroll btn btn-default btn-xl">Was ist Musiktherapie <strong>?</strong></a>
+                <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 15px">
+                    <a ng-click="tab.setTab('km')" href="#about" class="btn btn-primary btn-xl page-scroll">Was ist Klangmassage <strong>?</strong></a>                    
+                </div>                
+                <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 15px">
+                    <a ng-click="tab.setTab('mt')" href="#musiktherapie" class="page-scroll btn btn-default btn-xl">Was ist Musiktherapie <strong>?</strong></a>                 
+                </div>                
             </div>
         </div>
     </header>
     <div ng-show="tab.isSet('klangmassage')">
-        <section class="bg-primary" id="about">
+        <section id="about" class="bg-primary">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
                         <h2 class="section-heading">Peter Hess - Klangmassage</h2>
                         <hr class="light">
                         <p class="text-faded">
@@ -193,13 +198,13 @@
                         </p>      
                         <br>
                         <br>
-                        <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Nutzen und Wirkung der Klangmassage</a>
+                        <a href="#services" class="btn btn-default btn-xl page-scroll">Wirkung der Klangmassage</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services">
+        <section id="services" >
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -252,15 +257,15 @@
                 <br>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <br><br><br><br>
-                    <a href="#process" class="btn btn-secondary btn-xl page-scroll">Ablauf einer Klangmassage</a>
+                    <a href="#process" class="btn btn-primary btn-xl page-scroll">Ablauf einer Klangmassage</a>
                 </div>            
             </div>
         </section>
 
-        <section id="process" class="bg-dark" style="padding-top: 35px">
+        <section id="process" style="padding-top: 35px" class="bg-dark">
             <div class="container text-center">
                 <div class="row">
-                    <div class="col-lg-10 col-md-10 col-lg-offset-1 text-center">
+                    <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-center">
                             <h2>Ablauf einer Klangmassage</h2>
                             <br>
                             <p class="text-faded">
@@ -274,28 +279,29 @@
                                 Für die Klangmassage werden qualitativ hochwertige Therapie-Klangschalen von
                                 Peter Hess verwendet.
                             </p>
-                            <br> 
-                                <iframe style="border: 2px solid white" width="415" height="300" class="portfolio-box" src="https://www.youtube.com/embed/1R_V_OdVMXM" frameborder="0" allowfullscreen></iframe>                 
-                            <br>  
+                            <!--br> 
+                                <iframe height="400" style="border: 2px solid white; width: 80%;" class="portfolio-box" src="https://www.youtube.com/embed/1R_V_OdVMXM" frameborder="0" allowfullscreen></iframe>                 
+                            <br-->  
                             <div class="col-lg-12 col-md-12 text-center">
 
                                 <hr class="light">
-                                <h3 class="section-heading">Weitere Informationen:</h3>               
+                                <h3 class="section-heading">Weitere Informationen:              
                                     <!--a href="javascript:slideTo('Kommentare')">Kommentare zu Klangmassagen mit Santina</a-->
-                                    <br><a href="http://www.peter-hess-institut.de" target="_blank" >www.peter-hess-institut.de</a>
+                                    <br><br><a href="http://www.peter-hess-institut.de" target="_blank" >www.peter-hess-institut.de</a>
                                     <br><a href="http://www.fachverband-klang.de" target="_blank" >www.fachverband-klang.de</a>   
-                                <br><br>
+                                <br><br></h3> 
                             </div>                         
                             <br>    
                         <div class="call-to-action">
-                            <a href="#contact" class="page-scroll btn btn-default btn-xl sr-button">Keine Angst - es tut nicht weh <i class="fa fa-smile-o" aria-hidden="true"></i></a>
+                            <br><br>
+                            <a href="#contact" class="page-scroll btn btn-default btn-xl sr-button">Anfrage stellen</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>           
 
-        <section class="no-padding" style="padding-bottom:30px" id="portfolio">
+        <section class="no-padding" id="portfolio">
             <div class="container-fluid">
                 <div class="row no-gutter popup-gallery">           
                     <div class="col-lg-4 col-sm-6">
@@ -307,7 +313,7 @@
                                         Klangmassage
                                     </div>
                                     <div class="project-name">
-                                        Behandlung durch Klänge
+                                        Behandlung mit Klängen durch Peter Hess
                                     </div>
                                 </div>
                             </div>
@@ -368,7 +374,7 @@
                                         Klangmassage
                                     </div>
                                     <div class="project-name">
-                                        Praxis
+                                        Praxis in der Elsterpassage
                                     </div>
                                 </div>
                             </div>                        
@@ -383,7 +389,7 @@
                                         Klangmassage
                                     </div>
                                     <div class="project-name">
-                                        Praxis
+                                        Praxis in der Elsterpassage
                                     </div>
                                 </div>                            
                             </div>
@@ -403,12 +409,12 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde (nur noch für kurze Zeit) : 29 €</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde (nur noch für kurze Zeit) : 30 €</a>
                                     </h4>
                                 </div>
                                 <div id="collapseOne" class="panel-collapse collapse in">
                                     <div class="panel-body" style="color: black">
-                                        <h3>29 €</h3>
+                                        <h3>30 €</h3>
                                         <p>
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -421,12 +427,12 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">45 min Klangmassage plus Vor- und Nachgespräch : 39 €</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">45 min Klangmassage plus Vor- und Nachgespräch : 40 €</a>
                                     </h4>
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <h3>39 €</h3>
+                                    <div class="panel-body"  style="color: black">
+                                        <h3>40 €</h3>
                                         <p>
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -439,12 +445,12 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3 Klangmassagen à 45 min : 99 €</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3 Klangmassagen à 45 min : 105 €</a>
                                     </h4>
                                 </div>
                                 <div id="collapseThree" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <h3>99 €</h3>
+                                    <div class="panel-body"  style="color: black">
+                                        <h3>105 €</h3>
                                         <p>
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -457,12 +463,12 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">6 Klangmassagen à 45 min 199 €</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">6 Klangmassagen à 45 min 200 €</a>
                                     </h4>
                                 </div>
                                 <div id="collapseFour" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <h3>199 €</h3>
+                                    <div class="panel-body" style="color: black">
+                                        <h3>200 €</h3>
                                         <p>
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -476,19 +482,52 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                            Gutscheine für Klangmassage zum Einheitspreis von 39 €
+                                            Gutscheine für Klangmassage zum Einheitspreis von 40 €
                                         </a>
                                     </h4>
                                 </div>
                                 <div id="collapseFive" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <h3>39 €</h3>
+                                    <div class="panel-body"  style="color: black">
+                                        <h3>40 €</h3>
                                         <p>
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
                                             Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden.
-                                        </p>                                    
+                                        </p>  
+                                        
+                                        <div class="row no-gutter popup-gallery">           
+                                            <div class="col-lg-6 col-sm-6">
+                                                <a href="img/portfolio/fullsize/gutschein1.jpg" class="portfolio-box">
+                                                    <img src="img/portfolio/thumbnails/gutschein1.jpg" class="img-responsive" alt="">
+                                                    <div class="portfolio-box-caption">
+                                                        <div class="portfolio-box-caption-content">
+                                                            <div class="project-category text-faded">
+                                                                Klangmassage
+                                                            </div>
+                                                            <div class="project-name">
+                                                                Gutschein Seite 1
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-6">
+                                                <a href="img/portfolio/fullsize/gutschein2.jpg" class="portfolio-box">
+                                                    <img src="img/portfolio/thumbnails/gutschein2.jpg" class="img-responsive" alt="">
+                                                    <div class="portfolio-box-caption">
+                                                        <div class="portfolio-box-caption-content">
+                                                            <div class="project-category text-faded">
+                                                               Klangmassage
+                                                            </div>
+                                                            <div class="project-name">
+                                                               Gutschein Seite 2
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>        
+                                        </div>
                                     </div>
                                 </div>
                             </div>                          
@@ -506,12 +545,15 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Anfrage stellen</h2>
                     <hr class="primary">
-                    <p>Möchtest Du / Ihr (mal wieder) eine Klangmassage / Musiktherapie erleben?<br>Dann ruf mich an oder schreib' eine Mail oder nutze hier das Kontaktformular.</p>
+                    <p>Möchtest Du / Ihr (mal wieder) eine Klangmassage / Musiktherapie erleben?<br>Dann ruf mich an oder schreib' eine Mail oder nutze gleich das Kontaktformular.</p>
                 <br>
                 </div>
             </div>
-            <div class="row">    
-                <div class="col-lg-4 text-center">
+            <div class="row"> 
+                <!--div class="col-lg-1 text-center">
+                    
+                </div-->
+                <div class="col-lg-5 text-left">
                     <form name="contactForm" ng-controller="ContactController as contactCtrl" ng-submit="contactForm.$valid && contactCtrl.addContact()" novalidate>
                       <!--  Live Preview 
                       <blockquote >
@@ -523,23 +565,24 @@
                       <!--  Review Form -->
                       <br><br>
                       <fieldset class="form-group">
-                        <select id="contactType" ng-model="contactCtrl.contact.type" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
-                          <option value="">Art der Anfrage</option>
+                        <select id="contactType" ng-model="contactCtrl.contact.type" ng-change="contactCtrl.changeType()" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
+                          <option value="">Art der Anfrage*</option>
                         </select>
                       </fieldset>
                       <fieldset class="form-group">                        
-                        <textarea ng-model="contactCtrl.contact.body" style="height: 130px" class="form-control" placeholder="Nachricht (optional)" title="Nachricht"></textarea>
+                          <textarea id="contactText" ng-model="contactCtrl.contact.text" style="height: 155px" class="form-control" placeholder="Nachricht (optional)" title="Nachricht">
+                              
+                          </textarea>
                       </fieldset>
                       <fieldset class="form-group">
-                        <label>E-Mail-Adresse*</label>
-                        <input ng-model="contactCtrl.contact.author" id="contactEmail" type="email" class="form-control" placeholder="Max.Mustermann@example.org" title="Email" required />
+                        <input ng-model="contactCtrl.contact.email" id="contactEmail" type="email" class="form-control" placeholder="E-Mail-Adresse*" title="Email" required />
                       </fieldset>
                       <fieldset class="form-group">                        
                         <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-primary pull-right" value="Absenden" />
                       </fieldset>
                     </form>                    
                 </div>
-                <div class="col-lg-4 text-center">  
+                <div class="col-lg-2 text-center">  
                     <p>
                         <br><br>
                         <a href="tel:+491637774437" style="color: black">
@@ -553,13 +596,13 @@
                         </a>
                     </p>                      
                 </div>  
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-5 text-center">
                     <br><br>
                     <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.012126766419!2d12.334402815502004!3d51.329296779606324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb6d15c6f%3A0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!5e0!3m2!1sde!2sde!4v1491517144534" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe-->                   
                     <!--a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915" target="_blank"> 
                         <img src="img/maps.png" alt="Die Klangmassage findet in der HNO-Gemeinschaftspraxis Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt" width="240"> 
                     </a-->                    
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" width="400" height="300" frameborder="0" style="border:2px solid black" allowfullscreen></iframe>               
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" height="300" frameborder="0" style="border:2px solid black; width: 100%;" allowfullscreen></iframe>               
                 </div>                   
             </div>
         </div>
@@ -567,15 +610,14 @@
 </div>         
     
 <div ng-show="tab.isSet('musiktherapie')">
-       <section class="bg-dark" id="musiktherapie">
+       <section class="bg-default" id="musiktherapie">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1 text-center">
-                        <br>
                         <h2 class="section-heading">Musiktherapie nach Christoph Schwabe</h2>
                         <br>
                         <hr class="light">
-                           <img src="img\portfolio\thumbnails\mt.JPG" alt="">
+                           <img src="img\portfolio\thumbnails\mt.jpg" style="width:70%" alt="">
                             <h2>
                                 <br>
                                 <cite>
@@ -642,7 +684,7 @@
 				<p>	
 					<br>	
 					Musiktherapie kann einzeln oder in Gruppen durchgeführt werden. <br><br><br>								
-					<img src="img/noten.png" alt="" ><br><br>							
+					<img src="img/noten.png" alt="" style="width:80%"><br><br>							
 				</p>
                                 <hr class="light">
                                 <h3 class="section-heading">Weitere Informationen zu Musiktherapie:</h3>               
@@ -662,7 +704,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">    
-			<div id="Ich">
+			<div id="Ich" style="font-weight: bold; font-size: 2rem">
 				<h1>Über mich</h1>
                                 <br>
 					<ul>
@@ -690,7 +732,7 @@
     </div>                             
     
     <div ng-show="tab.isSet('imprint')">
-       <section class="bg-dark" id="imprint">
+       <section class="bg-secondary" id="imprint">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -785,6 +827,23 @@ Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für
 
         </section>                         
     </div>    
+           
+  <div class="alert alert-success alert-dismissable fade in">
+    <a class="close" aria-label="close">&times;</a>
+    <span id="alert-success-text"></span>
+  </div>
+  <div class="alert alert-info alert-dismissable fade in">
+    <a class="close" aria-label="close">&times;</a>
+    <span id="alert-info-text"></span>
+  </div>
+  <div class="alert alert-warning alert-dismissable fade in">
+    <a class="close" aria-label="close">&times;</a>
+    <span id="alert-warning-text"></span>
+  </div>
+  <div class="alert alert-danger alert-dismissable fade in">
+    <a class="close" aria-label="close">&times;</a>
+    <span id="alert-danger-text"></span>
+  </div>           
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
