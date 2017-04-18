@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" ng-app="klangmassage">
+<html lang="de" ng-app="klangmassage" ng-controller="ContactController as contactCtrl">
 
 <head>
 
@@ -90,8 +90,8 @@
                         </a>
                         <ul class="dropdown-menu">
                           <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#about">Ursprung</a></li>
+                          <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#process">Ablauf</a></li>                          
                           <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#services">Wirkung</a></li>
-                          <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#process">Ablauf</a></li>
                         </ul>  
                     <li>
                         <a ng-click="tab.setTab('musiktherapie')" class="page-scroll" href="#musiktherapie">Musiktherapie</a>
@@ -132,8 +132,8 @@
                 <div class="container-fluid">
                 <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 20px"> 
                     <br><br>
-                    <h1 id="homeHeading">Willkommen</h1><br>
-                    <h3 id="homeHeading">Wir sind zurück aus der Baby-Pause!<br><br>Neue Termine ab Mai 2017</h3>
+                    <h1>Willkommen</h1><br>
+                    <h3 style="line-height: 1.5">Wir sind zurück aus der Baby-Pause!<br>Neue Termine ab Mai 2017</h3>
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-1" style="margin-top: 20px"> 
 
@@ -143,11 +143,11 @@
                     <img src="img/Tini1.png" class="img-responsive avatar" style="margin: auto auto" alt="">
                 </div>
                 </div>
-                <hr>
+                <hr class="hr-sec">
                 <p style="font-weight: bold; color: white">
                     
                     <cite>
-                        <strong>  „Der Ton der Klangschale berührt unser Innerstes,
+                        <strong>„Der Ton der Klangschale berührt unser Innerstes,
 
                             er bringt die Seele zum Schwingen.<br>
 
@@ -174,8 +174,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
-                        <h2 class="section-heading">Peter Hess - Klangmassage</h2>
-                        <hr class="light">
+                        <h2 class="section-heading"><br>Die Peter-Hess-Klangmassage</h2>
+                        <hr class="prim" >
                         <p class="text-faded">
                             Die Klangmassage ist eine ganzheitliche Methode, die Körper, Seele und Geist anspricht.
 
@@ -196,78 +196,19 @@
                             bis zum zielgerichteten Einsatz in Pädagogik, Therapie, Wellness sowie in Heil- und Heilfachberufen.                 
 
                         </p>      
-                        <br>
-                        <br>
-                        <a href="#services" class="btn btn-default btn-xl page-scroll">Wirkung der Klangmassage</a>
+                        <!--a href="#process" class="btn btn-default btn-xl page-scroll">Ablauf einer Klangmassage</a-->
                     </div>
                 </div>
             </div>
+            <br>
         </section>
-
-        <section id="services" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Die Klangmassage ...</h2>
-                        <br>
-                        <br>                        
-                        <hr class="primary">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-bed text-primary sr-icons"></i>
-                            <p class="text-muted">
-                                <br>
-                                ... bewirkt eine tiefe Entspannung und erleichtert das „Loslassen“ – körperlich wie mental.
-                            </p>
-                        </div>
-                    </div>                
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-heartbeat text-primary sr-icons"></i>
-                            <p class="text-muted">
-                                <br>
-                                ... trägt zur Gesundheitsförderung bei, zu Harmonisierung, Regeneration und Vitalisierung.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-user text-primary sr-icons"></i>
-                            <p class="text-muted">
-                                <br>
-                                ... verbessert die Körperwahrnehmung und stärkt das ursprüngliche Vertrauen des Menschen.                            
-                            </p>
-                        </div>
-                    </div>                
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-eye text-primary sr-icons"></i>
-                            <p class="text-muted">
-                                <br>
-                                ... stärkt Selbstbewusstsein, Kreativität und Schaffenskraft, ermöglicht den Zugang zu ungenutzten Ressourcen.
-                            </p>
-                        </div>
-                    </div>
-                </div>         
-                <br>
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <br><br><br><br>
-                    <a href="#process" class="btn btn-primary btn-xl page-scroll">Ablauf einer Klangmassage</a>
-                </div>            
-            </div>
-        </section>
-
-        <section id="process" style="padding-top: 35px" class="bg-dark">
+        
+        <section id="process" class="bg-dark">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-center">
-                            <h2>Ablauf einer Klangmassage</h2>
-                            <br>
+                            <h2 class="section-heading">Ablauf einer Klangmassage</h2>
+                            <hr class="prim" >
                             <p class="text-faded">
                                 Nach einem Informationsgespräch werden obertonreiche Klangschalen auf
                                 den bekleideten Körper der Klienten aufgesetzt und behutsam angeschlagen.
@@ -281,25 +222,81 @@
                             </p>
                             <!--br> 
                                 <iframe height="400" style="border: 2px solid white; width: 80%;" class="portfolio-box" src="https://www.youtube.com/embed/1R_V_OdVMXM" frameborder="0" allowfullscreen></iframe>                 
-                            <br-->  
-                            <div class="col-lg-12 col-md-12 text-center">
-
-                                <hr class="light">
-                                <h3 class="section-heading">Weitere Informationen:              
-                                    <!--a href="javascript:slideTo('Kommentare')">Kommentare zu Klangmassagen mit Santina</a-->
-                                    <br><br><a href="http://www.peter-hess-institut.de" target="_blank" >www.peter-hess-institut.de</a>
-                                    <br><a href="http://www.fachverband-klang.de" target="_blank" >www.fachverband-klang.de</a>   
-                                <br><br></h3> 
-                            </div>                         
-                            <br>    
-                        <div class="call-to-action">
-                            <br><br>
-                            <a href="#contact" class="page-scroll btn btn-default btn-xl sr-button">Anfrage stellen</a>
-                        </div>
+                            <br-->                                                     
+                        <!--div class="call-to-action">
+                            <br>
+                            <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Wirkung einer Klangmassage</a>
+                        </div-->
                     </div>
                 </div>
             </div>
-        </section>           
+        </section>          
+
+        <section id="services" class="bg-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-center">
+                        <h2 class="section-heading">Die Klangmassage ...</h2>
+                        <hr class="prim">
+                        <div class="col-lg-6 col-md-6 text-center text-faded">
+                            <div class="service-box">
+                                <i class="fa fa-4x fa-bed sr-icons"></i>
+                                <p class="text-muted">
+                                    <br>
+                                    ... bewirkt eine tiefe Entspannung und erleichtert das „Loslassen“ – körperlich wie mental.
+                                </p>
+                            </div>
+                        </div>                
+                        <div class="col-lg-6 col-md-6 text-center text-faded">
+                            <div class="service-box">
+                                <i class="fa fa-4x fa-heartbeat sr-icons"></i>
+                                <p class="text-muted">
+                                    <br>
+                                    ... trägt zur Gesundheitsförderung bei, zu Harmonisierung, Regeneration und Vitalisierung.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center text-faded">
+                            <div class="service-box">
+                                <i class="fa fa-4x fa-user sr-icons"></i>
+                                <p class="text-muted">
+                                    <br>
+                                    ... verbessert die Körperwahrnehmung und stärkt das ursprüngliche Vertrauen des Menschen.                            
+                                </p>
+                            </div>
+                        </div>                
+                        <div class="col-lg-6 col-md-6 text-center text-faded">
+                            <div class="service-box">
+                                <i class="fa fa-4x fa-eye sr-icons"></i>
+                                <p class="text-muted">
+                                    <br>
+                                    ... stärkt Selbstbewusstsein, Kreativität und Schaffenskraft, ermöglicht den Zugang zu ungenutzten Ressourcen.
+                                </p>
+                            </div>
+                        </div>
+                    </div>         
+                <br>
+                    <div class="col-lg-10 col-lg-offset-1 text-center text-faded">
+                        <br><br>
+                        <!--br><br>
+                        <a href="#contact" class="btn btn-default btn-xl page-scroll">Anfrage stellen</a-->
+                    </div>   
+                    <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-center">
+                        <h3 class="section-heading">Weitere Informationen:</h3>                 
+                        <div class="col-lg-6 col-md-6 text-center">
+                            <br>
+                            <!--a href="javascript:slideTo('Kommentare')">Kommentare zu Klangmassagen mit Santina</a-->
+                            <a href="http://www.peter-hess-institut.de" target="_blank" class="page-scroll btn btn-default btn-xl">www.peter-hess-institut.de</a> 
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center">
+                            <br>
+                            <a href="http://www.fachverband-klang.de" target="_blank" class="page-scroll btn btn-default btn-xl">www.fachverband-klang.de</a>   
+                        </div>  
+                    </div> 
+                </div>
+            </div>      
+            <br><br>
+        </section>        
 
         <section class="no-padding" id="portfolio">
             <div class="container-fluid">
@@ -399,12 +396,11 @@
             </div>
         </section>
 
-        <section class="bg-dark" id="tarifs">
+        <section class="bg-primary" id="tarifs">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1 text-center bg-default">
-                        <h2 class="section-heading">Preise für professionelle Klangmassagen</h2><br>
-                        <hr class="light">
+                        <h2 class="section-heading"><br>Preise für professionelle Klangmassagen</h2><br>
                         <div id="accordion" class="panel-group">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -412,10 +408,10 @@
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde (nur noch für kurze Zeit) : 30 €</a>
                                     </h4>
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse in">
+                                <div id="collapseOne" class="panel-collapse collapse">
                                     <div class="panel-body" style="color: black">
-                                        <h3>30 €</h3>
-                                        <p>
+                                        <a ng-click="contactCtrl.changeType('Schnupperstunde')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
@@ -427,13 +423,13 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">45 min Klangmassage plus Vor- und Nachgespräch : 40 €</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">45 min Klangmassage plus Vor- und Nachgespräch: 40 €</a>
                                     </h4>
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse">
                                     <div class="panel-body"  style="color: black">
-                                        <h3>40 €</h3>
-                                        <p>
+                                        <a ng-click="contactCtrl.changeType('1 Klangmassage')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
@@ -445,13 +441,13 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3 Klangmassagen à 45 min : 105 €</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3 Klangmassagen à 45 min: 105 €</a>
                                     </h4>
                                 </div>
                                 <div id="collapseThree" class="panel-collapse collapse">
                                     <div class="panel-body"  style="color: black">
-                                        <h3>105 €</h3>
-                                        <p>
+                                        <a ng-click="contactCtrl.changeType('Klangmassage 3er-Pack')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
@@ -463,13 +459,13 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">6 Klangmassagen à 45 min 200 €</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">6 Klangmassagen à 45 min: 200 €</a>
                                     </h4>
                                 </div>
                                 <div id="collapseFour" class="panel-collapse collapse">
                                     <div class="panel-body" style="color: black">
-                                        <h3>200 €</h3>
-                                        <p>
+                                        <a ng-click="contactCtrl.changeType('Klangmassage 6er-Pack')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
@@ -482,14 +478,14 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                            Gutscheine für Klangmassage zum Einheitspreis von 40 €
+                                            Gutscheine für Klangmassage zum Einheitspreis: 40 €
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseFive" class="panel-collapse collapse">
+                                <div id="collapseFive" class="panel-collapse collapse in">
                                     <div class="panel-body"  style="color: black">
-                                        <h3>40 €</h3>
-                                        <p>
+                                        <a ng-click="contactCtrl.changeType('Gutschein(e)')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
@@ -538,14 +534,30 @@
         </section>
         
       
-        
-    <section id="contact">
+    <footer>
+    <section id="contact" class="bg-dark" style="padding-top: 10px">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Anfrage stellen</h2>
-                    <hr class="primary">
-                    <p>Möchtest Du / Ihr (mal wieder) eine Klangmassage / Musiktherapie erleben?<br>Dann ruf mich an oder schreib' eine Mail oder nutze gleich das Kontaktformular.</p>
+                    <h2><br>Anfrage stellen</h2>
+                    <hr class="hr-sec">
+                    <p>Interesse an einer Klangmassage ?<br>Kontakt per Mail, Telefon oder Kontaktformular möglich.</p>
+                    <div class="col-lg-6 text-center">  
+                        <p>
+                            <br>
+                            <a href="tel:+491637774437">
+                                <i class="fa fa-phone fa-3x sr-contact"></i><br>+49 (0)163-777 4437
+                            </a>
+                        </p> 
+                    </div> 
+                    <div class="col-lg-6 text-center">  
+                        <p>
+                            <br>                            
+                            <a href="mailto:santina_koj@gmx.de">
+                                <i class="fa fa-envelope-o fa-3x sr-contact"></i><br>santina_koj@gmx.de
+                            </a>
+                        </p>                      
+                    </div>                      
                 <br>
                 </div>
             </div>
@@ -553,8 +565,8 @@
                 <!--div class="col-lg-1 text-center">
                     
                 </div-->
-                <div class="col-lg-5 text-left">
-                    <form name="contactForm" ng-controller="ContactController as contactCtrl" ng-submit="contactForm.$valid && contactCtrl.addContact()" novalidate>
+                <div class="col-lg-4 col-lg-offset-2 text-left">
+                    <form name="contactForm" ng-submit="contactForm.$valid && contactCtrl.addContact()" novalidate>
                       <!--  Live Preview 
                       <blockquote >
                         <strong>{{contactCtrl.contact.stars}} Stars</strong>
@@ -563,54 +575,42 @@
                       </blockquote>
                       -->
                       <!--  Review Form -->
-                      <br><br>
-                      <fieldset class="form-group">
+                      <br>
+                      <fieldset class="form-group" style="width:70%;float:left">
                         <select id="contactType" ng-model="contactCtrl.contact.type" ng-change="contactCtrl.changeType()" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
                           <option value="">Art der Anfrage*</option>
                         </select>
                       </fieldset>
-                      <fieldset class="form-group">                        
-                          <textarea id="contactText" ng-model="contactCtrl.contact.text" style="height: 155px" class="form-control" placeholder="Nachricht (optional)" title="Nachricht">
+                      <fieldset class="form-group" style="width:30%">                        
+                        <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-primary pull-right" style="margin-top:2px" value="Absenden" />
+                      </fieldset>                      
+                      <fieldset class="form-group" style="width:100%;display:block">                        
+                          <textarea id="contactText" ng-model="contactCtrl.contact.text" style="height: 166px" class="form-control" placeholder="Nachricht (optional)" title="Nachricht">
                               
                           </textarea>
                       </fieldset>
                       <fieldset class="form-group">
                         <input ng-model="contactCtrl.contact.email" id="contactEmail" type="email" class="form-control" placeholder="E-Mail-Adresse*" title="Email" required />
                       </fieldset>
-                      <fieldset class="form-group">                        
-                        <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-primary pull-right" value="Absenden" />
-                      </fieldset>
+
                     </form>                    
                 </div>
-                <div class="col-lg-2 text-center">  
-                    <p>
-                        <br><br>
-                        <a href="tel:+491637774437" style="color: black">
-                            <i class="fa fa-phone fa-3x sr-contact"></i><br>+49 (0)163-777 4437
-                        </a>
-                    </p>                      
-                    <br><br>
-                    <p>
-                        <a href="mailto:santina_koj@gmx.de" style="color: black">
-                            <i class="fa fa-envelope-o fa-3x sr-contact"></i><br>santina_koj@gmx.de
-                        </a>
-                    </p>                      
-                </div>  
-                <div class="col-lg-5 text-center">
-                    <br><br>
+                <div class="col-lg-4 text-center">
+                    <br>
                     <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.012126766419!2d12.334402815502004!3d51.329296779606324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb6d15c6f%3A0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!5e0!3m2!1sde!2sde!4v1491517144534" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe-->                   
-                    <!--a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915" target="_blank"> 
-                        <img src="img/maps.png" alt="Die Klangmassage findet in der HNO-Gemeinschaftspraxis Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt" width="240"> 
-                    </a-->                    
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" height="300" frameborder="0" style="border:2px solid black; width: 100%;" allowfullscreen></iframe>               
+                    <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915" target="_blank"> 
+                        <img src="img/maps.png" style="width: 100%; border: 2px solid white" alt="Die Klangmassage findet in der HNO-Gemeinschaftspraxis Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt"> 
+                    </a>                    
+                    <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" height="300" frameborder="0" style="border:2px solid black; width: 100%;" allowfullscreen></iframe-->               
                 </div>                   
             </div>
         </div>
     </section>
+    </footer>
 </div>         
     
 <div ng-show="tab.isSet('musiktherapie')">
-       <section class="bg-default" id="musiktherapie">
+       <section class="bg-default" id="musiktherapie" style="margin-top: 25px; font-weight: bold; font-size: 1.5rem">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -684,9 +684,10 @@
 				<p>	
 					<br>	
 					Musiktherapie kann einzeln oder in Gruppen durchgeführt werden. <br><br><br>								
-					<img src="img/noten.png" alt="" style="width:80%"><br><br>							
+					<img src="img/noten.png" alt="" style="width:80%; max-width:300px"><br><br>							
 				</p>
                                 <hr class="light">
+                                <br>
                                 <h3 class="section-heading">Weitere Informationen zu Musiktherapie:</h3>               
                                 <br>				
 				<h3><a href="http://musik-und-begegnung.de/" target="_blank" >Musik und Begegnung</a></h3>
@@ -700,7 +701,7 @@
     </div>  
   
 <div ng-show="tab.isSet('whoami')">
-       <section class="bg-dark" id="whoami">
+       <section class="bg-default" id="whoami">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">    
@@ -717,7 +718,7 @@
 				
 				<br/><br/><br/>
 				<div>
-					<div>
+					<div style="text-align:justify">
 						Seit meiner Kindheit bin ich mit Musik verbunden. Ich spiele Querflöte, Gitarre und singe gern. 
 						Während des Studiums zur Musiktherapeutin beschäftigte mich die Frage, ob Klang allein schon heilsam sein kann. In der Klangmassage-Ausbildung konnte ich dieser Frage nachgehen und die wohltuende Wirkung des Klanges am eigenen Leibe erfahren. <br><br>
 						Beruflich habe ich vielfältige Erfahrungen gesammelt, sowohl in Deutschland, als auch im Ausland. Zur Zeit arbeite ich als Sozialpädagogin mit autistischen Kindern und Jugendlichen sowie als Musiktherapeutin mit Senioren in Pflegeheimen. Die Arbeit mit Klangschalen lässt sich dabei gut integrieren. Weiterhin biete ich Klangmassage zur Entspannung an. 				
@@ -735,7 +736,7 @@
        <section class="bg-secondary" id="imprint">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <div class="col-lg-8 col-lg-offset-2 text-center text-faded">
                         <h2 class="section-heading">Impressum</h2>
                         <hr class="light">
 			Santina Koj<br/><br/>

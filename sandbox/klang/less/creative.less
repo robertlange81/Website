@@ -12,8 +12,13 @@ body {
     .serif-font;
 }
 
-hr {
+hr.prim {
     border-color: @theme-primary;
+    border-width: 3px;
+}
+
+hr.sec {
+    border-color: @theme-secondary;
     border-width: 3px;
     max-width: 50px;
 }
@@ -24,10 +29,11 @@ hr.light {
 
 a {
     .transition-all;
-    color: @theme-primary;
+    color: @theme-secondary;
     &:hover,
     &:focus {
-        color: darken(@theme-primary, 10%);
+        text-decoration: none;
+        color: #ff1111;
     }
 }
 
@@ -47,36 +53,33 @@ p {
 }
 
 .bg-primary {
-    background-color: @theme-primary;
+    background-color: transparent;//@theme-primary;
 }
 
 .bg-dark {
     //background-color: @gray-darker;
-    color: white;
-    
-    //.panel-body {
-    //    color: black;
-    //}
+    color: whitesmoke;
     position: relative;
     width: 100%;
     min-height: auto;
     .background-cover;
     background-position: center;
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-    url('../img/see.jpg');
+    //background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+    //url('../img/sand.jpg');
     -webkit-background-size: cover;
     -moz-background-size:  cover;
     -o-background-size: cover;    
 }
 
 .text-faded {
-    color: fade(white, 120%);
+    color: fade(@theme-primary, 120%);
     text-align: justify;
     font-weight: bold;
+    line-height: 2;
 }
 
 section {
-    padding: 75px 0;
+    padding: 50px 0;
 }
 
 aside {
@@ -125,7 +128,7 @@ aside {
             &.active {
                 > a,
                 > a:focus {
-                    color: @theme-primary !important;
+                    color: red !important;
                     background-color: transparent;
                     &:hover {
                         background-color: transparent;
@@ -166,7 +169,7 @@ aside {
             .nav > li > a:focus {
                 color: @gray-darker;
                 &:hover {
-                    color: @theme-primary;
+                    color: red;
                 }
             }
         }
@@ -175,14 +178,13 @@ aside {
 
 // Homepage Header
 
-header {
+header, footer {
     position: relative;
     width: 100%;
     min-height: auto;
     .background-cover;
     background-position: center;
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), 
-    url('../img/sand.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('../img/see.jpg');
     -webkit-background-size: cover;
     -moz-background-size:  cover;
     -o-background-size: cover;
@@ -217,7 +219,7 @@ header {
         -webkit-border-radius: 50px;
         -moz-border-radius: 50px;
         border-radius: 50px;
-        border: 3px solid #EF512F;
+        border: 3px solid @theme-secondary;
     }
     
     
@@ -252,12 +254,13 @@ header {
 
 .section-heading {
     margin-top: 0;
+    color: @theme-primary;
 }
 
 .service-box {
     max-width: 400px;
     margin: 50px auto 0;
-    color: f05f40;
+    text-align: center;
     @media (min-width: 992px) {
         margin: 20px auto 0;
     }
@@ -267,7 +270,7 @@ header {
 }
 
 .text-muted {
-    color: f05f40;
+    color: @theme-primary;
     font-weight: bold;
 }
 
@@ -397,6 +400,7 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: @gray-darker;
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/sand_bg_1915_1315.jpg);
 }
 
 // Validierung
@@ -418,4 +422,12 @@ body {
     bottom: 0px !important; 
     z-index: 9999;
     display: none;
+}
+
+#tarifs a {
+    color: @theme-primary;
+}
+
+#tarifs a:hover {
+    color: red;
 }
