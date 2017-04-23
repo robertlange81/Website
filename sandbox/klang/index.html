@@ -101,16 +101,20 @@
                     </li>                    
                     <li>
                         <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#tarifs">Preise</a>
-                    </li>                    
+                    </li>   
+                    <li>
+                       <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#contact">Kontakt</a>
+                   </li>                      
+                  
                     <li class="dropdown">
-                        <a ng-click="tab.setTab('weiteres-submenu')" class="page-scroll dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a ng-click="tab.setTab('weiteres-submenu')" class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Weiteres
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                               <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#contact">Kontakt</a>
-                           </li>  
+                                <a ng-click="tab.setTab('gaestebuch')" class="page-scroll" href="#comments">Gästebuch</a>
+                            </li>                             
                             <li>
                                 <a ng-click="tab.setTab('whoami')" class="page-scroll" href="#whoami">Über Mich</a>
                             </li>
@@ -169,6 +173,7 @@
             </div>
         </div>
     </header>
+    <!-- gesamter Bereich Klangmassage -->
     <div ng-show="tab.isSet('klangmassage')">
         <section id="about" class="bg-primary">
             <div class="container">
@@ -203,6 +208,7 @@
             <br>
         </section>
         
+        <!-- Ablauf -->
         <section id="process" class="bg-dark">
             <div class="container text-center">
                 <div class="row">
@@ -230,8 +236,9 @@
                     </div>
                 </div>
             </div>
-        </section>          
-
+        </section>  
+        
+        <!-- Wirkung -->
         <section id="services" class="bg-primary">
             <div class="container">
                 <div class="row">
@@ -298,6 +305,7 @@
             <br><br>
         </section>        
 
+        <!-- Bilder -->
         <section class="no-padding" id="portfolio">
             <div class="container-fluid">
                 <div class="row no-gutter popup-gallery">           
@@ -395,8 +403,9 @@
                 </div>
             </div>
         </section>
-
-        <section class="bg-primary" id="tarifs">
+        
+        <!-- Preise-->
+        <section class="bg-primary" id="tarifs" style="padding-top: 15px">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1 text-center bg-default">
@@ -410,7 +419,7 @@
                                 </div>
                                 <div id="collapseOne" class="panel-collapse collapse">
                                     <div class="panel-body" style="color: black">
-                                        <a ng-click="contactCtrl.changeType('Schnupperstunde')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <a ng-click="contactCtrl.changeType('Schnupperstunde')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Kontakt</a>
                                         <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -533,205 +542,250 @@
             </div>
         </section>
         
-      
-    <footer>
-    <section id="contact" class="bg-dark" style="padding-top: 10px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2><br>Anfrage stellen</h2>
-                    <hr class="hr-sec">
-                    <p>Interesse an einer Klangmassage ?<br>Kontakt per Mail, Telefon oder Kontaktformular möglich.</p>
-                    <div class="col-lg-6 text-center">  
-                        <p>
-                            <br>
-                            <a href="tel:+491637774437">
-                                <i class="fa fa-phone fa-3x sr-contact"></i><br>+49 (0)163-777 4437
-                            </a>
-                        </p> 
-                    </div> 
-                    <div class="col-lg-6 text-center">  
-                        <p>
-                            <br>                            
-                            <a href="mailto:santina_koj@gmx.de">
-                                <i class="fa fa-envelope-o fa-3x sr-contact"></i><br>santina_koj@gmx.de
-                            </a>
-                        </p>                      
-                    </div>                      
-                <br>
-                </div>
-            </div>
-            <div class="row"> 
-                <!--div class="col-lg-1 text-center">
-                    
-                </div-->
-                <div class="col-lg-4 col-lg-offset-2 text-left">
-                    <form name="contactForm" ng-submit="contactForm.$valid && contactCtrl.addContact()" novalidate>
-                      <!--  Live Preview 
-                      <blockquote >
-                        <strong>{{contactCtrl.contact.stars}} Stars</strong>
-                        {{contactCtrl.contact.body}}
-                         <cite class="clearfix">—{{contact.author}} on {{contact.createdOn | date}}</cite>
-                      </blockquote>
-                      -->
-                      <!--  Review Form -->
-                      <br>
-                      <fieldset class="form-group" style="width:70%;float:left">
-                        <select id="contactType" ng-model="contactCtrl.contact.type" ng-change="contactCtrl.changeType()" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
-                          <option value="">Art der Anfrage*</option>
-                        </select>
-                      </fieldset>
-                      <fieldset class="form-group" style="width:30%">                        
-                        <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-primary pull-right" style="margin-top:2px" value="Absenden" />
-                      </fieldset>                      
-                      <fieldset class="form-group" style="width:100%;display:block">                        
-                          <textarea id="contactText" ng-model="contactCtrl.contact.text" style="height: 166px" class="form-control" placeholder="Nachricht (optional)" title="Nachricht">
-                              
-                          </textarea>
-                      </fieldset>
-                      <fieldset class="form-group">
-                        <input ng-model="contactCtrl.contact.email" id="contactEmail" type="email" class="form-control" placeholder="E-Mail-Adresse*" title="Email" required />
-                      </fieldset>
-
-                    </form>                    
-                </div>
-                <div class="col-lg-4 text-center">
-                    <br>
-                    <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.012126766419!2d12.334402815502004!3d51.329296779606324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb6d15c6f%3A0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!5e0!3m2!1sde!2sde!4v1491517144534" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe-->                   
-                    <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915" target="_blank"> 
-                        <img src="img/maps.png" style="width: 100%; border: 2px solid white" alt="Die Klangmassage findet in der HNO-Gemeinschaftspraxis Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt"> 
-                    </a>                    
-                    <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" height="300" frameborder="0" style="border:2px solid black; width: 100%;" allowfullscreen></iframe-->               
-                </div>                   
-            </div>
-        </div>
-    </section>
-    </footer>
-</div>         
-    
-<div ng-show="tab.isSet('musiktherapie')">
-       <section class="bg-default" id="musiktherapie" style="margin-top: 25px; font-weight: bold; font-size: 1.5rem">
+        <!-- Kontakt -->
+        <footer>
+        <section id="contact" class="bg-dark" style="padding-top: 10px">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1 text-center">
-                        <h2 class="section-heading">Musiktherapie nach Christoph Schwabe</h2>
-                        <br>
-                        <hr class="light">
-                           <img src="img\portfolio\thumbnails\mt.jpg" style="width:70%" alt="">
-                            <h2>
-                                <br>
-                                <cite>
-                                „Musik berührt uns und kann das ausdrücken,
-                                <br>
-				was wir nicht vermögen in Worte zu fassen.“
-                                </cite>
-                            </h2>			
-				<p style="text-align: justify">
-					<br>
-					Musiktherapie ist eine handlungsorientierte Therapieform, die 
-					
-					Musik und Bewegung als Ausdrucks- und Kommunikationsmittel nutzt. 
-					
-					Ziel dabei ist die Verbesserung von Störungen im Erleben und Verhalten. 
-					
-					Somit ist Musiktherapie eine Form nonverbaler Psychotherapie.
-					
-					Das musiktherapeutische Konzept nach Christoph Schwabe ist 
-					
-					schulenübergreifend angelegt und kann vielfältig eingesetzt werden:
-					
-				<br><br>
-				</p>
-				
-					<ul class="list-group"  style="color:black">				
-						<li class="list-group-item">in der Psychiatrie, Psychotherapie und Psychosomatik</li>
-						<li class="list-group-item">in neurologischen Kliniken oder Rehabilitationskliniken</li>
-						<li class="list-group-item">in sozialen Einrichtungen, z.B. Kitas oder Frühförderzentren</li>
-						<li class="list-group-item">in Seniorenheimen</li>
-						<li class="list-group-item">in Behinderteneinrichtungen, z.B. Förderschulen oder Wohnheimen für Menschen mit Behinderung</li>
-						<li class="list-group-item">in Musikschulen etc.</li>			
-					</ul>										
-				
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2><br>Kontakt</h2>
+                        <hr class="hr-sec">
+                        <p>Interesse an einer Klangmassage ?<br>Kontakt per Telefon, Mail oder Kontaktformular möglich.</p>
 
-				<div class="headline">
-					<br>
-					<h2>Methoden der Musiktherapie nach Christoph Schwabe</h2>
-				</div>
-				<p  style="text-align: justify">	
-				<br>
-						Die Methoden des musiktherapeutischen Konzepts dienen 
-						
-						der Entwicklung der Wahrnehmungsfähigkeit, des Selbstausdrucks und 
-						
-						der sozialen Interaktion. Sie regen gezielte Handlungen an, die im 
-						
-						Anschluss reflektiert und bewusst werden können. 
-						
-						Die einzelnen Methoden können für sich eingesetzt 
-						
-						oder mit den anderen Methoden vernetzt werden:				
-					<br><br>
-				</p>
-					<ul class="list-group" style="color:black">
-						<li class="list-group-item">Instrumentalimprovisation</li>
-						<li class="list-group-item">Gruppensingtherapie</li>
-						<li class="list-group-item">Bewegungsimprovisation</li>
-						<li class="list-group-item">Tänzerische Musiktherapie</li>
-						<li class="list-group-item">Bildgestalten mit Musik</li>
-						<li class="list-group-item">Regulative Musiktherapie (Wahrnehmungstraining mit Musik)</li>			
-					</ul>	
-					
-				<p>	
-					<br>	
-					Musiktherapie kann einzeln oder in Gruppen durchgeführt werden. <br><br><br>								
-					<img src="img/noten.png" alt="" style="width:80%; max-width:300px"><br><br>							
-				</p>
-                                <hr class="light">
+                        <form name="contactForm" ng-submit="contactForm.$valid && contactCtrl.addContact()" novalidate>
+                          <br>
+                          <fieldset class="form-group" style="width:70%;float:left">
+                            <select id="contactType" ng-model="contactCtrl.contact.type" ng-change="contactCtrl.changeType()" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
+                              <option value="">Art der Anfrage*</option>
+                            </select>
+                          </fieldset>
+                          <fieldset class="form-group" style="width:30%">                        
+                            <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-default pull-right" style="margin-top:2px" value="Absenden" />
+                          </fieldset>                      
+                          <fieldset class="form-group" style="width:100%;display:block">                        
+                              <textarea id="contactText" ng-model="contactCtrl.contact.text" style="height: 150px" class="form-control" placeholder="Nachricht (optional)" title="Nachricht">
+
+                              </textarea>
+                          </fieldset>
+                          <fieldset class="form-group">
+                            <input ng-model="contactCtrl.contact.email" id="contactEmail" type="email" class="form-control" placeholder="E-Mail-Adresse*" title="Email" required />
+                          </fieldset>
+                          <br>
+                        </form>                         
+                        <div class="col-lg-4 text-center">  
+                            <p>
                                 <br>
-                                <h3 class="section-heading">Weitere Informationen zu Musiktherapie:</h3>               
-                                <br>				
-				<h3><a href="http://musik-und-begegnung.de/" target="_blank" >Musik und Begegnung</a></h3>
-				<h3><a href="http://www.klanggewaechshaus.de/" target="_blank" >Klanggewächshaus</a></h3>
-                                <h3><a href="http://www.musiktherapie-crossen.de/" target="_blank">www.musiktherapie-crossen.de</a></h3>
-                                <br><br>
+                                <a href="tel:+491637774437">
+                                    <i class="fa fa-phone fa-3x sr-contact"></i><br>+49 (0)163-777 4437
+                                </a>
+                            </p> 
+                        </div> 
+                        <div class="col-lg-4 text-center">  
+                            <p>
+                                <img src="img/qrcode_santina_koj.png" style="height: 150px;"> 
+                            </p>                      
+                        </div>                          
+                        <div class="col-lg-4 text-center">  
+                            <p>
+                                <br>                           
+                                <a href="mailto:santina_koj@gmx.de">
+                                    <i class="fa fa-envelope-o fa-3x sr-contact"></i><br>santina_koj@gmx.de
+                                </a>
+                            </p>                      
+                        </div>                                          
+                    <br>
                     </div>
                 </div>
+                <div class="row"> 
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                   
+                    </div>
+                    <div id="karte" class="col-lg-8 col-lg-offset-2 text-center">
+ 
+                        <br>
+                        <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.012126766419!2d12.334402815502004!3d51.329296779606324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb6d15c6f%3A0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!5e0!3m2!1sde!2sde!4v1491517144534" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe-->                   
+                        <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915" target="_blank"> 
+                            <img src="img/maps.png" style="width: 100%;" alt="Die Klangmassage findet in der HNO-Gemeinschaftspraxis Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt"> 
+                        </a>                    
+                        <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" height="300" frameborder="0" style="border:2px solid black; width: 100%;" allowfullscreen></iframe-->               
+                    </div>                   
+                </div>
             </div>
-        </section>                         
+        </section>
+        </footer>
     </div>  
-  
-<div ng-show="tab.isSet('whoami')">
-       <section class="bg-default" id="whoami">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">    
-			<div id="Ich" style="font-weight: bold; font-size: 2rem">
-				<h1>Über mich</h1>
-                                <br>
-					<ul>
-						<li>geboren am 11.06.1979 in Leipzig</li>
-						<li>Diplom- Sozialpädagogin</li>
-						<li>Musiktherapeutin der DMVS e.V.</li>
-						<li>Peter Hess- Klangmassagepraktikerin</li>
-						<li>Reiki I und II</li>			
-					</ul>	
-				
-				<br/><br/><br/>
-				<div>
-					<div style="text-align:justify">
-						Seit meiner Kindheit bin ich mit Musik verbunden. Ich spiele Querflöte, Gitarre und singe gern. 
-						Während des Studiums zur Musiktherapeutin beschäftigte mich die Frage, ob Klang allein schon heilsam sein kann. In der Klangmassage-Ausbildung konnte ich dieser Frage nachgehen und die wohltuende Wirkung des Klanges am eigenen Leibe erfahren. <br><br>
-						Beruflich habe ich vielfältige Erfahrungen gesammelt, sowohl in Deutschland, als auch im Ausland. Zur Zeit arbeite ich als Sozialpädagogin mit autistischen Kindern und Jugendlichen sowie als Musiktherapeutin mit Senioren in Pflegeheimen. Die Arbeit mit Klangschalen lässt sich dabei gut integrieren. Weiterhin biete ich Klangmassage zur Entspannung an. 				
-					</div>
-				</div>
-				<br/><br/><br/><br/>
-			</div> 
-		</div>
-	</div>    
-
-        </section>                         
-    </div>                             
     
+    <!-- Gästebuch -->  
+    <div id="comments" ng-show="tab.isSet('gaestebuch')" ng-controller="ReviewController as revCtrl">
+        <section>
+            <div class="container">
+                <div class="row text-center">
+                    <h1>Gästebuch<br></h1><br>
+                    <div class="col-lg-8 col-lg-offset-2" style="text-align: justify">                        
+                        <ul>              
+                          <li ng-repeat="review in revCtrl.reviews">
+                            <blockquote>
+                              <strong>{{review.body}}</strong>  
+                              <br>
+                              <cite class="clearfix">—{{review.author}}</cite>
+                            </blockquote>
+                          </li>
+                        </ul>  
+                        
+                        <br>
+                        <!--  Review Form -->
+                        <form name="reviewForm" ng-submit="reviewForm.$valid && revCtrl.addReview()" novalidate>
+                          <!--  Live Preview -->
+                          <blockquote>
+                            <strong>{{revCtrl.review.body}}</strong><br>                
+                            <cite class="clearfix">— {{revCtrl.review.author}}</cite>
+                          </blockquote>
+
+                          <!--  Review Form -->
+                          <h4>Möchten Sie einen weiteren Kommentar abgeben?</h4>
+                          <fieldset class="form-group">
+                            <textarea id="reviewBody" ng-model="revCtrl.review.body" class="form-control" placeholder="Geben Sie hier Ihren Beitrag ein*" title="Kommentar" required></textarea>
+                          </fieldset>
+                          <fieldset class="form-group" style="width:70%;float:left">
+                            <input id="reviewAuthor" ng-model="revCtrl.review.author" class="form-control" placeholder="Ihr Name*" title="Autor" required/>
+                          </fieldset>
+                          <fieldset class="form-group" style="width:30%">
+                            <input type="submit" ng-click="revCtrl.trySubmit()" class="btn btn-default pull-right" value="Beitrag speichern" />
+                          </fieldset>
+                        </form>                                                
+                    </div>  
+                </div>
+            </div>
+        </section>
+      
+    </div>          
+
+    <!-- Musiktherapie -->    
+    <div ng-show="tab.isSet('musiktherapie')">
+           <section class="bg-default" id="musiktherapie" style="margin-top: 25px; font-weight: bold; font-size: 1.5rem">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-lg-offset-1 text-center">
+                            <h2 class="section-heading">Musiktherapie nach Christoph Schwabe</h2>
+                            <br>
+                            <hr class="light">
+                               <img src="img\portfolio\thumbnails\mt.jpg" style="width:70%" alt="">
+                                <h2>
+                                    <br>
+                                    <cite>
+                                    „Musik berührt uns und kann das ausdrücken,
+                                    <br>
+                                    was wir nicht vermögen in Worte zu fassen.“
+                                    </cite>
+                                </h2>			
+                                    <p style="text-align: justify">
+                                            <br>
+                                            Musiktherapie ist eine handlungsorientierte Therapieform, die 
+
+                                            Musik und Bewegung als Ausdrucks- und Kommunikationsmittel nutzt. 
+
+                                            Ziel dabei ist die Verbesserung von Störungen im Erleben und Verhalten. 
+
+                                            Somit ist Musiktherapie eine Form nonverbaler Psychotherapie.
+
+                                            Das musiktherapeutische Konzept nach Christoph Schwabe ist 
+
+                                            schulenübergreifend angelegt und kann vielfältig eingesetzt werden:
+
+                                    <br><br>
+                                    </p>
+
+                                            <ul class="list-group"  style="color:black">				
+                                                    <li class="list-group-item">in der Psychiatrie, Psychotherapie und Psychosomatik</li>
+                                                    <li class="list-group-item">in neurologischen Kliniken oder Rehabilitationskliniken</li>
+                                                    <li class="list-group-item">in sozialen Einrichtungen, z.B. Kitas oder Frühförderzentren</li>
+                                                    <li class="list-group-item">in Seniorenheimen</li>
+                                                    <li class="list-group-item">in Behinderteneinrichtungen, z.B. Förderschulen oder Wohnheimen für Menschen mit Behinderung</li>
+                                                    <li class="list-group-item">in Musikschulen etc.</li>			
+                                            </ul>										
+
+
+                                    <div class="headline">
+                                            <br>
+                                            <h2>Methoden der Musiktherapie nach Christoph Schwabe</h2>
+                                    </div>
+                                    <p  style="text-align: justify">	
+                                    <br>
+                                                    Die Methoden des musiktherapeutischen Konzepts dienen 
+
+                                                    der Entwicklung der Wahrnehmungsfähigkeit, des Selbstausdrucks und 
+
+                                                    der sozialen Interaktion. Sie regen gezielte Handlungen an, die im 
+
+                                                    Anschluss reflektiert und bewusst werden können. 
+
+                                                    Die einzelnen Methoden können für sich eingesetzt 
+
+                                                    oder mit den anderen Methoden vernetzt werden:				
+                                            <br><br>
+                                    </p>
+                                            <ul class="list-group" style="color:black">
+                                                    <li class="list-group-item">Instrumentalimprovisation</li>
+                                                    <li class="list-group-item">Gruppensingtherapie</li>
+                                                    <li class="list-group-item">Bewegungsimprovisation</li>
+                                                    <li class="list-group-item">Tänzerische Musiktherapie</li>
+                                                    <li class="list-group-item">Bildgestalten mit Musik</li>
+                                                    <li class="list-group-item">Regulative Musiktherapie (Wahrnehmungstraining mit Musik)</li>			
+                                            </ul>	
+
+                                    <p>	
+                                            <br>	
+                                            Musiktherapie kann einzeln oder in Gruppen durchgeführt werden. <br><br><br>								
+                                            <img src="img/noten.png" alt="" style="width:80%; max-width:300px"><br><br>							
+                                    </p>
+                                    <hr class="light">
+                                    <br>
+                                    <h3 class="section-heading">Weitere Informationen zu Musiktherapie:</h3>               
+                                    <br>				
+                                    <h3><a href="http://musik-und-begegnung.de/" target="_blank" >Musik und Begegnung</a></h3>
+                                    <h3><a href="http://www.klanggewaechshaus.de/" target="_blank" >Klanggewächshaus</a></h3>
+                                    <h3><a href="http://www.musiktherapie-crossen.de/" target="_blank">www.musiktherapie-crossen.de</a></h3>
+                                    <br><br>
+                        </div>
+                    </div>
+                </div>
+            </section>                         
+        </div>  
+
+    <!-- Über Mich -->  
+    <div ng-show="tab.isSet('whoami')">
+           <section class="bg-default" id="whoami">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">    
+                            <div id="Ich" style="font-weight: bold; font-size: 2rem">
+                                    <h1>Über mich</h1>
+                                    <br>
+                                            <ul>
+                                                    <li>geboren am 11.06.1979 in Leipzig</li>
+                                                    <li>Diplom- Sozialpädagogin</li>
+                                                    <li>Musiktherapeutin der DMVS e.V.</li>
+                                                    <li>Peter Hess- Klangmassagepraktikerin</li>
+                                                    <li>Reiki I und II</li>			
+                                            </ul>	
+
+                                    <br/><br/><br/>
+                                    <div>
+                                            <div style="text-align:justify">
+                                                    Seit meiner Kindheit bin ich mit Musik verbunden. Ich spiele Querflöte, Gitarre und singe gern. 
+                                                    Während des Studiums zur Musiktherapeutin beschäftigte mich die Frage, ob Klang allein schon heilsam sein kann. In der Klangmassage-Ausbildung konnte ich dieser Frage nachgehen und die wohltuende Wirkung des Klanges am eigenen Leibe erfahren. <br><br>
+                                                    Beruflich habe ich vielfältige Erfahrungen gesammelt, sowohl in Deutschland, als auch im Ausland. Zur Zeit arbeite ich als Sozialpädagogin mit autistischen Kindern und Jugendlichen sowie als Musiktherapeutin mit Senioren in Pflegeheimen. Die Arbeit mit Klangschalen lässt sich dabei gut integrieren. Weiterhin biete ich Klangmassage zur Entspannung an. 				
+                                            </div>
+                                    </div>
+                                    <br/><br/><br/><br/>
+                            </div> 
+                    </div>
+            </div>    
+
+            </section>                         
+        </div>                             
+
+    <!-- Impressum -->  
     <div ng-show="tab.isSet('imprint')">
        <section class="bg-secondary" id="imprint">
             <div class="container">

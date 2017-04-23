@@ -178,7 +178,7 @@ aside {
 
 // Homepage Header
 
-header, footer {
+header {
     position: relative;
     width: 100%;
     min-height: auto;
@@ -398,11 +398,24 @@ img::-moz-selection {
     background: transparent;
 }
 
+#karte img {
+    border: 2px solid @theme-secondary;
+}
+
 body {
     webkit-tap-highlight-color: @gray-darker;
     background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/sand_bg_1915_1315.jpg);
 }
 
+footer {
+    background: @theme-primary;
+    color: @theme-secondary;
+}
+
+#comments {
+    background: @theme-primary !important;
+    color: @theme-secondary !important;
+}
 // Validierung
 .ng-invalid.ng-dirty  {
       border-color: red;
