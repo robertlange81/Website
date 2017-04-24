@@ -84,7 +84,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a ng-click="tab.setTab('klangmassage-submenu')" class="page-scroll dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a ng-click="tab.setTab('klangmassage-submenu')" class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Klangmassage
                             <span class="caret"></span>
                         </a>
@@ -92,34 +92,34 @@
                           <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#about">Ursprung</a></li>
                           <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#process">Ablauf</a></li>                          
                           <li><a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#services">Wirkung</a></li>
-                        </ul>  
-                    <li>
-                        <a ng-click="tab.setTab('musiktherapie')" class="page-scroll" href="#musiktherapie">Musiktherapie</a>
-                    </li>                         
+                        </ul>                         
                     <li>
                         <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#portfolio">Bilder</a>
                     </li>                    
                     <li>
-                        <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#tarifs">Preise</a>
-                    </li>   
+                        <a ng-click="tab.setTab('klangmassage')" href="#Kommentare">Gästebuch</a>
+                    </li>      
                     <li>
-                       <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#contact">Kontakt</a>
+                        <a ng-click="tab.setTab('klangmassage')" href="#Preise">Preise</a>
+                    </li>                       
+                    <li>
+                       <a ng-click="tab.setTab('klangmassage')" href="#Kontakt">Kontakt</a>
                    </li>                      
                   
                     <li class="dropdown">
-                        <a ng-click="tab.setTab('weiteres-submenu')" class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Weiteres
+                        <a ng-click="tab.setTab('kontakt-submenu')" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Extras
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu"> 
                             <li>
-                                <a ng-click="tab.setTab('gaestebuch')" class="page-scroll" href="#comments">Gästebuch</a>
-                            </li>                             
+                                <a ng-click="tab.setTab('musiktherapie')" href="#musiktherapie">Musiktherapie</a>
+                            </li>                              
                             <li>
-                                <a ng-click="tab.setTab('whoami')" class="page-scroll" href="#whoami">Über Mich</a>
+                                <a ng-click="tab.setTab('whoami')" href="#whoami">Über Mich</a>
                             </li>
                             <li>
-                                <a ng-click="tab.setTab('imprint')" class="page-scroll" href="#imprint">Impressum</a>
+                                <a ng-click="tab.setTab('imprint')" href="#imprint">Impressum</a>
                             </li>
                         </ul> 
                     <li>                    
@@ -174,6 +174,7 @@
         </div>
     </header>
     <!-- gesamter Bereich Klangmassage -->
+    <!-- Ursprung -->
     <div ng-show="tab.isSet('klangmassage')">
         <section id="about" class="bg-primary">
             <div class="container">
@@ -286,7 +287,7 @@
                     <div class="col-lg-10 col-lg-offset-1 text-center text-faded">
                         <br><br>
                         <!--br><br>
-                        <a href="#contact" class="btn btn-default btn-xl page-scroll">Anfrage stellen</a-->
+                        <a href="#Kontakt" class="btn btn-default btn-xl page-scroll">Anfrage stellen</a-->
                     </div>   
                     <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-center">
                         <h3 class="section-heading">Weitere Informationen:</h3>                 
@@ -404,8 +405,54 @@
             </div>
         </section>
         
+        <!-- Gästebuch -->  
+        <div id="Kommentare" ng-controller="ReviewController as revCtrl">
+            <section>
+                <div class="container">
+                    <div class="row text-center">
+                        <h1><br>Gästebuch<br></h1><br>
+                        <div class="col-lg-8 col-lg-offset-2 text-faded">
+                            <ul>              
+                              <li ng-repeat="review in revCtrl.reviews">   
+                                <blockquote>
+                                      <cite class="clearfix">{{review.author}} meint:</cite>
+                                      <br>
+                                      <strong>{{review.body}}</strong>  
+                                      <br><br>
+                                </blockquote>                             
+                              </li>
+                            </ul>  
+
+                            <br>
+                            <!--  Review Form -->
+                            <form name="reviewForm" ng-submit="reviewForm.$valid && revCtrl.addReview()" novalidate>
+                              <!--  Live Preview -->
+                              <blockquote>
+                                <cite ng-show="revCtrl.review.author" class="clearfix">{{revCtrl.review.author}} meint:</cite>                              
+                                <strong>{{revCtrl.review.body}}</strong><br>                
+                              </blockquote>
+
+                              <!--  Review Form -->
+                              <h4>Möchten Sie einen weiteren Kommentar abgeben?</h4>
+                              <fieldset class="form-group">
+                                <textarea id="reviewBody" ng-model="revCtrl.review.body" class="form-control" style="height:200px" placeholder="Geben Sie hier Ihren Beitrag ein*" title="Kommentar" required></textarea>
+                              </fieldset>
+                            <fieldset class="form-group">
+                              <input id="reviewAuthor" ng-model="revCtrl.review.author" class="form-control" placeholder="Ihr Name*" title="Autor" required/>
+                            </fieldset>
+                            <fieldset class="form-group">
+                              <input type="submit" ng-click="revCtrl.trySubmit()" class="btn btn-primary pull-right" value="Beitrag speichern" />
+                            </fieldset>
+                            </form>                                                
+                        </div>  
+                    </div>
+                </div>
+            </section>
+
+        </div>           
+        
         <!-- Preise-->
-        <section class="bg-primary" id="tarifs" style="padding-top: 15px">
+       <section class="bg-primary" id="Preise">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1 text-center bg-default">
@@ -419,7 +466,7 @@
                                 </div>
                                 <div id="collapseOne" class="panel-collapse collapse">
                                     <div class="panel-body" style="color: black">
-                                        <a ng-click="contactCtrl.changeType('Schnupperstunde')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Kontakt</a>
+                                        <a ng-click="contactCtrl.changeType('Schnupperstunde')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Kontakt</a>
                                         <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -437,7 +484,7 @@
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse">
                                     <div class="panel-body"  style="color: black">
-                                        <a ng-click="contactCtrl.changeType('1 Klangmassage')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <a ng-click="contactCtrl.changeType('1 Klangmassage')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
                                         <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -455,7 +502,7 @@
                                 </div>
                                 <div id="collapseThree" class="panel-collapse collapse">
                                     <div class="panel-body"  style="color: black">
-                                        <a ng-click="contactCtrl.changeType('Klangmassage 3er-Pack')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <a ng-click="contactCtrl.changeType('Klangmassage 3er-Pack')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
                                         <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -473,7 +520,7 @@
                                 </div>
                                 <div id="collapseFour" class="panel-collapse collapse">
                                     <div class="panel-body" style="color: black">
-                                        <a ng-click="contactCtrl.changeType('Klangmassage 6er-Pack')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <a ng-click="contactCtrl.changeType('Klangmassage 6er-Pack')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
                                         <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
@@ -493,14 +540,14 @@
                                 </div>
                                 <div id="collapseFive" class="panel-collapse collapse in">
                                     <div class="panel-body"  style="color: black">
-                                        <a ng-click="contactCtrl.changeType('Gutschein(e)')" href="#contact" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
+                                        <a ng-click="contactCtrl.changeType('Gutschein(e)')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
                                         <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
                                             Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden.
                                         </p>  
-                                        
+
                                         <div class="row no-gutter popup-gallery">           
                                             <div class="col-lg-6 col-sm-6">
                                                 <a href="img/portfolio/fullsize/gutschein1.jpg" class="portfolio-box">
@@ -540,11 +587,11 @@
                     </div>
                 </div>
             </div>
-        </section>
-        
+        </section>          
+              
         <!-- Kontakt -->
         <footer>
-        <section id="contact" class="bg-dark" style="padding-top: 10px">
+        <section id="Kontakt" class="bg-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -554,14 +601,11 @@
 
                         <form name="contactForm" ng-submit="contactForm.$valid && contactCtrl.addContact()" novalidate>
                           <br>
-                          <fieldset class="form-group" style="width:70%;float:left">
+                          <fieldset class="form-group">
                             <select id="contactType" ng-model="contactCtrl.contact.type" ng-change="contactCtrl.changeType()" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
                               <option value="">Art der Anfrage*</option>
                             </select>
-                          </fieldset>
-                          <fieldset class="form-group" style="width:30%">                        
-                            <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-default pull-right" style="margin-top:2px" value="Absenden" />
-                          </fieldset>                      
+                          </fieldset>                     
                           <fieldset class="form-group" style="width:100%;display:block">                        
                               <textarea id="contactText" ng-model="contactCtrl.contact.text" style="height: 150px" class="form-control" placeholder="Nachricht (optional)" title="Nachricht">
 
@@ -570,6 +614,9 @@
                           <fieldset class="form-group">
                             <input ng-model="contactCtrl.contact.email" id="contactEmail" type="email" class="form-control" placeholder="E-Mail-Adresse*" title="Email" required />
                           </fieldset>
+                          <fieldset class="form-group">                        
+                            <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-default pull-right" style="margin-top:2px" value="Absenden" />
+                          </fieldset>                           
                           <br>
                         </form>                         
                         <div class="col-lg-4 text-center">  
@@ -613,63 +660,18 @@
             </div>
         </section>
         </footer>
-    </div>  
-    
-    <!-- Gästebuch -->  
-    <div id="comments" ng-show="tab.isSet('gaestebuch')" ng-controller="ReviewController as revCtrl">
-        <section>
-            <div class="container">
-                <div class="row text-center">
-                    <h1>Gästebuch<br></h1><br>
-                    <div class="col-lg-8 col-lg-offset-2" style="text-align: justify">                        
-                        <ul>              
-                          <li ng-repeat="review in revCtrl.reviews">
-                            <blockquote>
-                              <strong>{{review.body}}</strong>  
-                              <br>
-                              <cite class="clearfix">—{{review.author}}</cite>
-                            </blockquote>
-                          </li>
-                        </ul>  
-                        
-                        <br>
-                        <!--  Review Form -->
-                        <form name="reviewForm" ng-submit="reviewForm.$valid && revCtrl.addReview()" novalidate>
-                          <!--  Live Preview -->
-                          <blockquote>
-                            <strong>{{revCtrl.review.body}}</strong><br>                
-                            <cite class="clearfix">— {{revCtrl.review.author}}</cite>
-                          </blockquote>
-
-                          <!--  Review Form -->
-                          <h4>Möchten Sie einen weiteren Kommentar abgeben?</h4>
-                          <fieldset class="form-group">
-                            <textarea id="reviewBody" ng-model="revCtrl.review.body" class="form-control" placeholder="Geben Sie hier Ihren Beitrag ein*" title="Kommentar" required></textarea>
-                          </fieldset>
-                          <fieldset class="form-group" style="width:70%;float:left">
-                            <input id="reviewAuthor" ng-model="revCtrl.review.author" class="form-control" placeholder="Ihr Name*" title="Autor" required/>
-                          </fieldset>
-                          <fieldset class="form-group" style="width:30%">
-                            <input type="submit" ng-click="revCtrl.trySubmit()" class="btn btn-default pull-right" value="Beitrag speichern" />
-                          </fieldset>
-                        </form>                                                
-                    </div>  
-                </div>
-            </div>
-        </section>
-      
     </div>          
 
     <!-- Musiktherapie -->    
     <div ng-show="tab.isSet('musiktherapie')">
-           <section class="bg-default" id="musiktherapie" style="margin-top: 25px; font-weight: bold; font-size: 1.5rem">
+           <section class="bg-default" id="musiktherapie" style="margin-top: 5px; font-weight: bold; font-size: 1.5rem">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 col-lg-offset-1 text-center">
-                            <h2 class="section-heading">Musiktherapie nach Christoph Schwabe</h2>
+                            <h2 class="section-heading"><br><br>Musiktherapie nach Christoph Schwabe</h2>
                             <br>
                             <hr class="light">
-                               <img src="img\portfolio\thumbnails\mt.jpg" style="width:70%" alt="">
+                               <img src="img\portfolio\thumbnails\mt.jpg" style="width:50%" alt="">
                                 <h2>
                                     <br>
                                     <cite>
@@ -753,13 +755,13 @@
         </div>  
 
     <!-- Über Mich -->  
-    <div ng-show="tab.isSet('whoami')">
+    <div ng-show="tab.isSet('whoami')" style="margin-top: 5px;">
            <section class="bg-default" id="whoami">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">    
                             <div id="Ich" style="font-weight: bold; font-size: 2rem">
-                                    <h1>Über mich</h1>
+                                    <h1><br><br>Über mich</h1>
                                     <br>
                                             <ul>
                                                     <li>geboren am 11.06.1979 in Leipzig</li>
@@ -771,7 +773,7 @@
 
                                     <br/><br/><br/>
                                     <div>
-                                            <div style="text-align:justify">
+                                            <div class="text-faded">
                                                     Seit meiner Kindheit bin ich mit Musik verbunden. Ich spiele Querflöte, Gitarre und singe gern. 
                                                     Während des Studiums zur Musiktherapeutin beschäftigte mich die Frage, ob Klang allein schon heilsam sein kann. In der Klangmassage-Ausbildung konnte ich dieser Frage nachgehen und die wohltuende Wirkung des Klanges am eigenen Leibe erfahren. <br><br>
                                                     Beruflich habe ich vielfältige Erfahrungen gesammelt, sowohl in Deutschland, als auch im Ausland. Zur Zeit arbeite ich als Sozialpädagogin mit autistischen Kindern und Jugendlichen sowie als Musiktherapeutin mit Senioren in Pflegeheimen. Die Arbeit mit Klangschalen lässt sich dabei gut integrieren. Weiterhin biete ich Klangmassage zur Entspannung an. 				
@@ -786,12 +788,12 @@
         </div>                             
 
     <!-- Impressum -->  
-    <div ng-show="tab.isSet('imprint')">
+    <div ng-show="tab.isSet('imprint')" style="margin-top: 5px;">
        <section class="bg-secondary" id="imprint">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center text-faded">
-                        <h2 class="section-heading">Impressum</h2>
+                        <h2 class="section-heading"><br><br>Impressum</h2>
                         <hr class="light">
 			Santina Koj<br/><br/>
 

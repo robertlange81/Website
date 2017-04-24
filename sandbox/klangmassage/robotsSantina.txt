@@ -1,6 +1,0 @@
-# robots.txt zu klangmassage-le.de
-
-User-agent: *
-Sitemap: http://www.klangmassage-le.de/sitemap.xml
-
-
