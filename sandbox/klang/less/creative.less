@@ -64,8 +64,8 @@ p {
     min-height: auto;
     .background-cover;
     background-position: center;
-    //background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-    //url('../img/sand.jpg');
+        background: @theme-primary;
+    color: @theme-secondary;
     -webkit-background-size: cover;
     -moz-background-size:  cover;
     -o-background-size: cover;    
@@ -190,7 +190,7 @@ aside {
 
 // Homepage Header
 
-header {
+header, footer {
     position: relative;
     width: 100%;
     min-height: auto;
@@ -434,10 +434,6 @@ footer {
     color: @theme-secondary;
 }
 
-#comments {
-    background: @theme-primary !important;
-    color: @theme-secondary !important;
-}
 // Validierung
 .ng-invalid.ng-dirty  {
       border-color: red;
@@ -459,10 +455,10 @@ footer {
     display: none;
 }
 
-#tarifs a {
-    color: @theme-primary;
+#Preise a {
+    color: @theme-primary !important;
 }
 
-#tarifs a:hover {
-    color: red;
+#Preise a:hover {
+    color: red !important;
 }

@@ -95,16 +95,16 @@
                         </ul>                         
                     <li>
                         <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#portfolio">Bilder</a>
-                    </li>                    
-                    <li>
-                        <a ng-click="tab.setTab('klangmassage')" href="#Kommentare">Gästebuch</a>
-                    </li>      
+                    </li>                        
                     <li>
                         <a ng-click="tab.setTab('klangmassage')" href="#Preise">Preise</a>
                     </li>                       
                     <li>
                        <a ng-click="tab.setTab('klangmassage')" href="#Kontakt">Kontakt</a>
-                   </li>                      
+                   </li>  
+                    <li>
+                        <a ng-click="tab.setTab('klangmassage')" href="#Kommentare">Gästebuch</a>
+                    </li>                     
                   
                     <li class="dropdown">
                         <a ng-click="tab.setTab('kontakt-submenu')" class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -210,7 +210,7 @@
         </section>
         
         <!-- Ablauf -->
-        <section id="process" class="bg-dark">
+        <section id="process" class="bg-primary">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-center">
@@ -403,53 +403,7 @@
                     </div>                
                 </div>
             </div>
-        </section>
-        
-        <!-- Gästebuch -->  
-        <div id="Kommentare" ng-controller="ReviewController as revCtrl">
-            <section>
-                <div class="container">
-                    <div class="row text-center">
-                        <h1><br>Gästebuch<br></h1><br>
-                        <div class="col-lg-8 col-lg-offset-2 text-faded">
-                            <ul>              
-                              <li ng-repeat="review in revCtrl.reviews">   
-                                <blockquote>
-                                      <cite class="clearfix">{{review.author}} meint:</cite>
-                                      <br>
-                                      <strong>{{review.body}}</strong>  
-                                      <br><br>
-                                </blockquote>                             
-                              </li>
-                            </ul>  
-
-                            <br>
-                            <!--  Review Form -->
-                            <form name="reviewForm" ng-submit="reviewForm.$valid && revCtrl.addReview()" novalidate>
-                              <!--  Live Preview -->
-                              <blockquote>
-                                <cite ng-show="revCtrl.review.author" class="clearfix">{{revCtrl.review.author}} meint:</cite>                              
-                                <strong>{{revCtrl.review.body}}</strong><br>                
-                              </blockquote>
-
-                              <!--  Review Form -->
-                              <h4>Möchten Sie einen weiteren Kommentar abgeben?</h4>
-                              <fieldset class="form-group">
-                                <textarea id="reviewBody" ng-model="revCtrl.review.body" class="form-control" style="height:200px" placeholder="Geben Sie hier Ihren Beitrag ein*" title="Kommentar" required></textarea>
-                              </fieldset>
-                            <fieldset class="form-group">
-                              <input id="reviewAuthor" ng-model="revCtrl.review.author" class="form-control" placeholder="Ihr Name*" title="Autor" required/>
-                            </fieldset>
-                            <fieldset class="form-group">
-                              <input type="submit" ng-click="revCtrl.trySubmit()" class="btn btn-primary pull-right" value="Beitrag speichern" />
-                            </fieldset>
-                            </form>                                                
-                        </div>  
-                    </div>
-                </div>
-            </section>
-
-        </div>           
+        </section>         
         
         <!-- Preise-->
        <section class="bg-primary" id="Preise">
@@ -464,11 +418,11 @@
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde (nur noch für kurze Zeit) : 30 €</a>
                                     </h4>
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse">
+                                <div id="collapseOne" class="panel-collapse collapse in">
                                     <div class="panel-body" style="color: black">
                                         <a ng-click="contactCtrl.changeType('Schnupperstunde')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Kontakt</a>
                                         <p style="padding-top:10px">
-                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
                                             Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
@@ -486,7 +440,7 @@
                                     <div class="panel-body"  style="color: black">
                                         <a ng-click="contactCtrl.changeType('1 Klangmassage')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
                                         <p style="padding-top:10px">
-                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
                                             Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
@@ -504,7 +458,7 @@
                                     <div class="panel-body"  style="color: black">
                                         <a ng-click="contactCtrl.changeType('Klangmassage 3er-Pack')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
                                         <p style="padding-top:10px">
-                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
                                             Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
@@ -522,7 +476,7 @@
                                     <div class="panel-body" style="color: black">
                                         <a ng-click="contactCtrl.changeType('Klangmassage 6er-Pack')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
                                         <p style="padding-top:10px">
-                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
                                             Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
@@ -538,11 +492,11 @@
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseFive" class="panel-collapse collapse in">
+                                <div id="collapseFive" class="panel-collapse collapse">
                                     <div class="panel-body"  style="color: black">
                                         <a ng-click="contactCtrl.changeType('Gutschein(e)')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Anfrage stellen</a>
                                         <p style="padding-top:10px">
-                                        Die Klangmassage findet nach Vereinbarung in der <a href="http://www.koj-schieweck.de/"  target="_blank">
+                                        Die Klangmassage findet nach Vereinbarung in der <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
                                             Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden.
@@ -591,19 +545,41 @@
               
         <!-- Kontakt -->
         <footer>
-        <section id="Kontakt" class="bg-dark">
+        <section id="Kontakt" class="bg-primary">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">   
                         <h2><br>Kontakt</h2>
-                        <hr class="hr-sec">
-                        <p>Interesse an einer Klangmassage ?<br>Kontakt per Telefon, Mail oder Kontaktformular möglich.</p>
-
+                        <div class="col-lg-6 text-center">  
+                            <p>
+                                <br>
+                                <a href="tel:+491637774437">
+                                    <i class="fa fa-phone fa-3x sr-contact"></i><br>+49 (0)163-777 4437
+                                </a>
+                                <br>
+                            </p> 
+                        </div> 
+                        <!--div class="col-lg-4 text-center">  
+                            
+                            <p>
+                                <img src="img/qrcode_santina_koj.png" style="height: 150px;"> 
+                            </p>                      
+                        </div-->                          
+                        <div class="col-lg-6 text-center">  
+                            <p>
+                                <br>                           
+                                <a href="mailto:santina_koj@gmx.de">
+                                    <i class="fa fa-envelope-o fa-3x sr-contact"></i><br>santina_koj@gmx.de
+                                </a>
+                            </p>                      
+                        </div>  
+                        </div>
+                    <div class="col-lg-8 col-lg-offset-2 text-center"> 
                         <form name="contactForm" ng-submit="contactForm.$valid && contactCtrl.addContact()" novalidate>
                           <br>
                           <fieldset class="form-group">
                             <select id="contactType" ng-model="contactCtrl.contact.type" ng-change="contactCtrl.changeType()" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
-                              <option value="">Art der Anfrage*</option>
+                              <option value="">Kontaktformular: Art der Anfrage wählen*</option>
                             </select>
                           </fieldset>                     
                           <fieldset class="form-group" style="width:100%;display:block">                        
@@ -618,32 +594,11 @@
                             <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-default pull-right" style="margin-top:2px" value="Absenden" />
                           </fieldset>                           
                           <br>
-                        </form>                         
-                        <div class="col-lg-4 text-center">  
-                            <p>
-                                <br>
-                                <a href="tel:+491637774437">
-                                    <i class="fa fa-phone fa-3x sr-contact"></i><br>+49 (0)163-777 4437
-                                </a>
-                            </p> 
-                        </div> 
-                        <div class="col-lg-4 text-center">  
-                            <p>
-                                <img src="img/qrcode_santina_koj.png" style="height: 150px;"> 
-                            </p>                      
-                        </div>                          
-                        <div class="col-lg-4 text-center">  
-                            <p>
-                                <br>                           
-                                <a href="mailto:santina_koj@gmx.de">
-                                    <i class="fa fa-envelope-o fa-3x sr-contact"></i><br>santina_koj@gmx.de
-                                </a>
-                            </p>                      
-                        </div>                                          
+                        </form>                                                                  
                     <br>
                     </div>
                 </div>
-                <div class="row"> 
+                <!-- div class="row"> 
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                    
                     </div>
@@ -651,15 +606,61 @@
  
                         <br>
                         <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.012126766419!2d12.334402815502004!3d51.329296779606324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb6d15c6f%3A0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!5e0!3m2!1sde!2sde!4v1491517144534" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe-->                   
-                        <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915" target="_blank"> 
+                        <!--a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915" target="_blank"> 
                             <img src="img/maps.png" style="width: 100%;" alt="Die Klangmassage findet in der HNO-Gemeinschaftspraxis Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt"> 
-                        </a>                    
+                        </a-->                    
                         <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.009575449987!2d12.33505727450164!3d51.3293437064882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f79fb7c38327%3A0xb53482e70523abb4!2sZschochersche+Str.+48B%2C+04229+Leipzig!5e0!3m2!1sde!2sde!4v1491518346511" height="300" frameborder="0" style="border:2px solid black; width: 100%;" allowfullscreen></iframe-->               
-                    </div>                   
-                </div>
+                    <!--/div>                   
+                </div-->
             </div>
         </section>
         </footer>
+        
+        <!-- Gästebuch -->  
+        <div id="Kommentare" ng-controller="ReviewController as revCtrl">
+            <section>
+                <div class="container">
+                    <div class="row text-center">
+                        <h1><br>Gästebuch<br></h1><br>
+                        <div class="col-lg-8 col-lg-offset-2 text-faded">
+                            <ul>              
+                              <li ng-repeat="review in revCtrl.reviews">   
+                                <blockquote>
+                                      <cite class="clearfix">{{review.author}} meint:</cite>
+                                      <br>
+                                      <strong>{{review.body}}</strong>  
+                                      <br><br>
+                                </blockquote>                             
+                              </li>
+                            </ul>  
+
+                            <br>
+                            <!--  Review Form -->
+                            <form name="reviewForm" ng-submit="reviewForm.$valid && revCtrl.addReview()" novalidate>
+                              <!--  Live Preview -->
+                              <blockquote>
+                                <cite ng-show="revCtrl.review.author" class="clearfix">{{revCtrl.review.author}} meint:</cite>                              
+                                <strong>{{revCtrl.review.body}}</strong><br>                
+                              </blockquote>
+
+                              <!--  Review Form -->
+                              <h4>Möchten Sie einen weiteren Kommentar abgeben?</h4>
+                              <fieldset class="form-group">
+                                <textarea id="reviewBody" ng-model="revCtrl.review.body" class="form-control" style="height:200px" placeholder="Geben Sie hier Ihren Beitrag ein*" title="Kommentar" required></textarea>
+                              </fieldset>
+                            <fieldset class="form-group">
+                              <input id="reviewAuthor" ng-model="revCtrl.review.author" class="form-control" placeholder="Ihr Name*" title="Autor" required/>
+                            </fieldset>
+                            <fieldset class="form-group">
+                              <input type="submit" ng-click="revCtrl.trySubmit()" class="btn btn-primary pull-right" value="Beitrag speichern" />
+                            </fieldset>
+                            </form>                                                
+                        </div>  
+                    </div>
+                </div>
+            </section>
+
+        </div>         
     </div>          
 
     <!-- Musiktherapie -->    
