@@ -137,7 +137,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 20px"> 
                     <br><br>
                     <h1>Willkommen</h1><br>
-                    <h3 style="line-height: 1.5">Wir sind zurück aus der Baby-Pause!<br>Neue Termine ab Mai 2017</h3>
+                    <h3 style="line-height: 1.5">Wir sind zurück aus der Baby-Pause!</h3>
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-1" style="margin-top: 20px"> 
 
@@ -176,7 +176,7 @@
     <!-- gesamter Bereich Klangmassage -->
     <!-- Ursprung -->
     <div ng-show="tab.isSet('klangmassage')">
-        <section id="about" class="bg-primary">
+        <section id="about" class="mobile_pane bg-primary">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -210,7 +210,7 @@
         </section>
         
         <!-- Ablauf -->
-        <section id="process" class="bg-primary">
+        <section id="process" class="mobile_pane bg-primary">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-center">
@@ -240,7 +240,7 @@
         </section>  
         
         <!-- Wirkung -->
-        <section id="services" class="bg-primary">
+        <section id="services" class="mobile_pane bg-primary">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-center">
@@ -307,7 +307,7 @@
         </section>        
 
         <!-- Bilder -->
-        <section class="no-padding" id="portfolio">
+        <section class="mobile_pane no-padding" id="portfolio">
             <div class="container-fluid">
                 <div class="row no-gutter popup-gallery">           
                     <div class="col-lg-4 col-sm-6">
@@ -406,7 +406,7 @@
         </section>         
         
         <!-- Preise-->
-       <section class="bg-primary" id="Preise">
+       <section class="mobile_pane bg-primary" id="Preise">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1 text-center bg-default">
@@ -579,7 +579,7 @@
                           <br>
                           <fieldset class="form-group">
                             <select id="contactType" ng-model="contactCtrl.contact.type" ng-change="contactCtrl.changeType()" class="form-control" ng-options="types for types in ['Schnupperstunde','1 Klangmassage','Klangmassage 3er-Pack','Klangmassage 6er-Pack', 'Gutschein(e)']" title="Art der Anfrage" required>
-                              <option value="">Kontaktformular: Art der Anfrage wählen*</option>
+                              <option value="">Art der Anfrage wählen*</option>
                             </select>
                           </fieldset>                     
                           <fieldset class="form-group" style="width:100%;display:block">                        
@@ -618,7 +618,7 @@
         
         <!-- Gästebuch -->  
         <div id="Kommentare" ng-controller="ReviewController as revCtrl">
-            <section>
+            <section class="mobile_pane">
                 <div class="container">
                     <div class="row text-center">
                         <h1><br>Gästebuch<br></h1><br>
@@ -626,7 +626,7 @@
                             <ul>              
                               <li ng-repeat="review in revCtrl.reviews">   
                                 <blockquote>
-                                      <cite class="clearfix">{{review.author}} meint:</cite>
+                                      <cite class="clearfix red">{{review.author}} meint:</cite>
                                       <br>
                                       <strong>{{review.body}}</strong>  
                                       <br><br>
@@ -639,12 +639,12 @@
                             <form name="reviewForm" ng-submit="reviewForm.$valid && revCtrl.addReview()" novalidate>
                               <!--  Live Preview -->
                               <blockquote>
-                                <cite ng-show="revCtrl.review.author" class="clearfix">{{revCtrl.review.author}} meint:</cite>                              
+                                <cite ng-show="revCtrl.review.author" class="clearfix red">{{revCtrl.review.author}} meint:</cite>                              
                                 <strong>{{revCtrl.review.body}}</strong><br>                
                               </blockquote>
 
                               <!--  Review Form -->
-                              <h4>Möchten Sie einen weiteren Kommentar abgeben?</h4>
+                              <br>
                               <fieldset class="form-group">
                                 <textarea id="reviewBody" ng-model="revCtrl.review.body" class="form-control" style="height:200px" placeholder="Geben Sie hier Ihren Beitrag ein*" title="Kommentar" required></textarea>
                               </fieldset>
@@ -665,14 +665,14 @@
 
     <!-- Musiktherapie -->    
     <div ng-show="tab.isSet('musiktherapie')">
-           <section class="bg-default" id="musiktherapie" style="margin-top: 5px; font-weight: bold; font-size: 1.5rem">
+           <section class="mobile_pane" id="musiktherapie" style="margin-top: 5px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 col-lg-offset-1 text-center">
                             <h2 class="section-heading"><br><br>Musiktherapie nach Christoph Schwabe</h2>
                             <br>
                             <hr class="light">
-                               <img src="img\portfolio\thumbnails\mt.jpg" style="width:50%" alt="">
+                               <img src="img\portfolio\thumbnails\mt.jpg" style="max-width:80%" alt="">
                                 <h2>
                                     <br>
                                     <cite>
@@ -681,9 +681,9 @@
                                     was wir nicht vermögen in Worte zu fassen.“
                                     </cite>
                                 </h2>			
-                                    <p style="text-align: justify">
+                                    <p class="text-faded">
                                             <br>
-                                            Musiktherapie ist eine handlungsorientierte Therapieform, die 
+                                            Musiktherapie ist eine handlungs-orientierte Therapieform, die 
 
                                             Musik und Bewegung als Ausdrucks- und Kommunikationsmittel nutzt. 
 
@@ -712,11 +712,11 @@
                                             <br>
                                             <h2>Methoden der Musiktherapie nach Christoph Schwabe</h2>
                                     </div>
-                                    <p  style="text-align: justify">	
+                                    <p class="text-faded">	
                                     <br>
-                                                    Die Methoden des musiktherapeutischen Konzepts dienen 
+                                                    Die Methoden der Musiktherapie dienen 
 
-                                                    der Entwicklung der Wahrnehmungsfähigkeit, des Selbstausdrucks und 
+                                                    der Wahrnehmungsfähigkeit, des Selbstausdrucks und 
 
                                                     der sozialen Interaktion. Sie regen gezielte Handlungen an, die im 
 

@@ -37,6 +37,10 @@ a {
     }
 }
 
+ul {
+    list-style-type: none !important;   
+}
+
 h1,
 h2,
 h3,
@@ -44,6 +48,10 @@ h4,
 h5,
 h6 {
     .sans-serif-font;
+    @media (max-width: 800px) {
+        font-size: 2rem !important; 
+        font-weight: bold;
+    }  
 }
 
 p {
@@ -78,16 +86,19 @@ p {
     line-height: 2;  
     font-size: 16px !important;
     @media (max-width: 800px) {
-        font-size: 14px !important;
+        font-size: 13px !important;        
     }      
 }
 
 section {
     padding: 50px 0;
     margin-top:0px;
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         margin-top:0px;
         padding: 30px 0;
+        &.mobile_pane {
+            background: rgba(220,220,220,0.5) !important;
+        }
     }   
 }
 
@@ -461,4 +472,8 @@ footer {
 
 #Preise a:hover {
     color: red !important;
+}
+
+.red {
+    color: red;
 }
