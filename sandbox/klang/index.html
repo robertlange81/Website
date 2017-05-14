@@ -103,7 +103,7 @@
                        <a ng-click="tab.setTab('klangmassage')" href="#Kontakt">Kontakt</a>
                    </li>  
                     <li>
-                        <a ng-click="tab.setTab('klangmassage')" href="#Kommentare">Gästebuch</a>
+                        <a ng-click="tab.setTab('kommentare')" href="#Kommentare">Gästebuch</a>
                     </li>                     
                   
                     <li class="dropdown">
@@ -615,9 +615,11 @@
             </div>
         </section>
         </footer>
-        
+                
+    </div>   
+    
         <!-- Gästebuch -->  
-        <div id="Kommentare" ng-controller="ReviewController as revCtrl">
+        <div id="Kommentare" ng-show="tab.isSet('kommentare')" ng-controller="ReviewController as revCtrl">
             <section class="mobile_pane">
                 <div class="container">
                     <div class="row text-center">
@@ -660,8 +662,7 @@
                 </div>
             </section>
 
-        </div>         
-    </div>          
+        </div>     
 
     <!-- Musiktherapie -->    
     <div ng-show="tab.isSet('musiktherapie')">
