@@ -97,13 +97,13 @@
                         <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#portfolio">Bilder</a>
                     </li>                        
                     <li>
-                        <a ng-click="tab.setTab('klangmassage')" href="#Preise">Preise</a>
+                        <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#Preise">Preise</a>
                     </li>                       
                     <li>
-                       <a ng-click="tab.setTab('klangmassage')" href="#Kontakt">Kontakt</a>
+                       <a ng-click="tab.setTab('klangmassage')" class="page-scroll" href="#Kontakt">Kontakt</a>
                    </li>  
                     <li>
-                        <a ng-click="tab.setTab('kommentare')" href="#Kommentare">Gästebuch</a>
+                        <a ng-click="tab.setTab('kommentare')" class="page-scroll" href="#Kommentare">Gästebuch</a>
                     </li>                     
                   
                     <li class="dropdown">
@@ -134,16 +134,14 @@
         <div class="header-content">
             <div class="header-content-inner">
                 <div class="container-fluid">
-                <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 20px"> 
+                <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 0px"> 
                     <br><br>
-                    <h1>Willkommen</h1><br>
-                    <h3 style="line-height: 1.5">Wir sind zurück aus der Baby-Pause!</h3>
+                    <h1>Herzlich Willkommen</h1><br>
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-1" style="margin-top: 20px"> 
 
                 </div>                    
-                <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 15px">
-                    <br>
+                <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: -20px">
                     <img src="img/Tini1.png" class="img-responsive avatar" style="margin: auto auto" alt="">
                 </div>
                 </div>
@@ -165,7 +163,7 @@
                     
                 </p>
                 <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top: 15px">
-                    <a ng-click="tab.setTab('km')" href="#about" class="btn btn-default btn-xl page-scroll">Was ist Klangmassage <strong>?</strong></a>                    
+                    <a ng-click="tab.setTab('km')" href="#services" class="btn btn-default btn-xl page-scroll">Wozu Klangmassage <strong>?</strong></a>                    
                 </div>                
                 <!--div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 15px">
                     <a ng-click="tab.setTab('mt')" href="#musiktherapie" class="page-scroll btn btn-default btn-xl">Was ist Musiktherapie <strong>?</strong></a>                 
@@ -418,8 +416,8 @@
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde (nur noch für kurze Zeit) : 30 €</a>
                                     </h4>
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse in">
-                                    <div class="panel-body" style="color: black">
+                                <div id="collapseOne" class="panel-collapse collapse in" style="color: black;">
+                                    <div class="panel-body" style="color: black;">
                                         <a ng-click="contactCtrl.changeType('Schnupperstunde')" href="#Kontakt" class="btn btn-xl page-scroll" style="background:#E5E5E5">Kontakt</a>
                                         <p style="padding-top:10px">
                                         Die Klangmassage findet nach Vereinbarung in der <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915"  target="_blank">
@@ -670,7 +668,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 col-lg-offset-1 text-center">
-                            <h2 class="section-heading"><br><br>Musiktherapie nach Christoph Schwabe</h2>
+                            <h1 class="section-heading"><br><br>Musiktherapie nach Christoph Schwabe</h1>
                             <br>
                             <hr class="light">
                                <img src="img\portfolio\thumbnails\mt.jpg" style="max-width:80%" alt="">
@@ -761,9 +759,8 @@
            <section class="bg-default" id="whoami">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">    
-                            <div id="Ich" style="font-weight: bold; font-size: 2rem">
-                                    <h1><br><br>Über mich</h1>
+                    <div id="Ich" class="col-lg-8 col-lg-offset-2 text-center text-faded">
+                        <h1 class="section-heading"><br><br><b>Über Mich</b></h1>
                                     <br>
                                             <ul>
                                                     <li>geboren am 11.06.1979 in Leipzig</li>
@@ -795,7 +792,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center text-faded">
-                        <h2 class="section-heading"><br><br>Impressum</h2>
+                        <h1 class="section-heading"><br><br><b>Impressum</b></h1>
                         <hr class="light">
 			Santina Koj<br/><br/>
 
