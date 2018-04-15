@@ -28,6 +28,7 @@
   
   app.controller('ContactController',  ['$http', function($http){
     this.contact = {};
+    this.president = {};
     this.showInvalidEmail = false;
     this.textReplace = " eine Schnupperstunde ";
     
@@ -41,20 +42,26 @@
                     'Access-Control-Allow-Origin': '*'
                 }
             }
-            $http.post('https://www.klangmassage-le.de/api/Mail.php?request=sendKlangmassage', data, config)                
-            .then(
-                function(response){
-                    $( "#alert-success-text" ).text("Email erfolgreich versendet.");
-                    $( ".alert-success" ).show(200);                       
-                }, 
-                function(response){
-                    $( "#alert-danger-text" ).text("Unbekannter Fehler beim Senden der Mail. Bitte nutzen Sie Ihren eigenen Mail-Client.");
-                    $( ".alert-danger" ).show(200); 
-                }
-            );        
-        // 
-        this.contact;
-        this.contact = {};
+            
+            if(this.contact.president.indexOf('teinmeier') >=0) {
+                $http.post('https://www.klangmassage-le.de/api/Mail.php?request=sendKlangmassage', data, config)                
+                .then(
+                    function(response){
+                        $( "#alert-success-text" ).text("Email erfolgreich versendet.");
+                        $( ".alert-success" ).show(200);                       
+                    }, 
+                    function(response){
+                        $( "#alert-danger-text" ).text("Unbekannter Fehler beim Senden der Mail. Bitte nutzen Sie Ihren eigenen Mail-Client.");
+                        $( ".alert-danger" ).show(200); 
+                    }
+                );        
+                this.contact;
+                this.contact = {};
+            } else {
+                    $( "#alert-danger-text" ).text("Leider falsch, versuchen Sie es bitte nochmal oder nutzen Sie Ihren eigenen E-Mail-Account.");                    
+                    $( ".alert-danger" ).show(200);            
+                    this.contact.president = 'Leider falsch. Wie heißt der Bundespräsident?';
+            }
     };  
     this.changeType = function(val) {
         if(val !== undefined)
@@ -92,6 +99,12 @@
             $('#contactType').removeClass('ng-pristine');
             $('#contactType').removeClass('ng-empty');
             $('#contactType').addClass('ng-dirty');
+          }          
+          if($('#contactPresident').val() === "") {
+            this.showInvalidEmail = true;
+            $('#contactPresident').removeClass('ng-pristine');
+            $('#contactPresident').removeClass('ng-empty');
+            $('#contactPresident').addClass('ng-dirty');
           }          
       }         
     };  

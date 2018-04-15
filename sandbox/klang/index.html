@@ -413,7 +413,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde (nur noch für kurze Zeit) : 30 €</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Schnupperstunde: 35 €</a>
                                     </h4>
                                 </div>
                                 <div id="collapseOne" class="panel-collapse collapse in" style="color: black;">
@@ -423,7 +423,7 @@
                                         Die Klangmassage findet nach Vereinbarung in der <a href="https://www.google.de/maps/place/Dr.+med.+Cosima+Koj/@51.3291694,12.3369777,16z/data=!4m12!1m6!3m5!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!2sDr.+med.+Cosima+Koj!8m2!3d51.3292968!4d12.3365915!3m4!1s0x47a6f79fb6d15c6f:0xf73def8d78684c07!8m2!3d51.3292968!4d12.3365915"  target="_blank">
                                             HNO-Gemeinschaftspraxis
                                             </a> Frau Dr. med. Koj & Frau Dr. med. Schieweck in der Zschocherschen Straße 48b, in 04229 Leipzig statt. 
-                                            Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bar vor Ort.
+                                            Es sollte jeweils eine Gesamtzeit von 60 Minuten einkalkuliert werden. Die Bezahlung erfolgt bitte bar vor Ort.
                                         </p>
                                     </div>
                                 </div>
@@ -587,6 +587,9 @@
                           </fieldset>
                           <fieldset class="form-group">
                             <input ng-model="contactCtrl.contact.email" id="contactEmail" type="email" class="form-control" placeholder="E-Mail-Adresse*" title="Email" required />
+                          </fieldset>
+                          <fieldset class="form-group">
+                            <input ng-model="contactCtrl.contact.president" id="contactPresident" type="text" class="form-control" style="outline: none;" placeholder="Nachname des Bundespräsidenten*" title="Validierung" required />
                           </fieldset>
                           <fieldset class="form-group">                        
                             <input ng-click="contactCtrl.trySubmit()" type="submit" class="btn btn-default pull-right" style="margin-top:2px" value="Absenden" />

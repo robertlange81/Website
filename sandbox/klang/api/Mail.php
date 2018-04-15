@@ -37,12 +37,12 @@ class FuelAPI extends API
                                 $mail->Port = 25;
                                 $mail->SMTPAuth = true;/*Enable SMTP authentication*/
                                 $mail->Username = 'web1162p3';/*SMTP username*/
-                                $mail->Password = 'w1Fxeor9';/*SMTP password*/
+                                $mail->Password = 'Achtung!123';/*SMTP password*/
                                 $mail->SMTPSecure = 'tls';//*Enable encryption, 'ssl' also accepted*/
                                 $mail->From = 'admin@klangmassage-le.de';
                                 $mail->FromName = 'admin@klangmassage-le.de';
                                 $mail->addAddress('2tinis@gmail.com', 'Santina Koj');
-                                $mail->addReplyTo($this->request->email, 'Robert Lange');
+                                $mail->addReplyTo($this->request->email, $this->request->email);
                                 // $mail->WordWrap = 50;
                                 $mail->isHTML(true);/*Set email format to HTML (default = true)*/
                                 $mail->Subject = $subject;
