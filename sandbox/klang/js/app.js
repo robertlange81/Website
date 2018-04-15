@@ -46,9 +46,10 @@
             if(this.contact.president.indexOf('teinmeier') >=0) {
                 $http.post('https://www.klangmassage-le.de/api/Mail.php?request=sendKlangmassage', data, config)                
                 .then(
-                    function(response){
+                    function(response){                        
                         $( "#alert-success-text" ).text("Email erfolgreich versendet.");
-                        $( ".alert-success" ).show(200);                       
+                        $( ".alert-success" ).show(200);  
+                        $( ".alert-danger" ).hide(100); 
                     }, 
                     function(response){
                         $( "#alert-danger-text" ).text("Unbekannter Fehler beim Senden der Mail. Bitte nutzen Sie Ihren eigenen Mail-Client.");
@@ -57,6 +58,7 @@
                 );        
                 this.contact;
                 this.contact = {};
+                return;
             } else {
                     $( "#alert-danger-text" ).text("Leider falsch, versuchen Sie es bitte nochmal oder nutzen Sie Ihren eigenen E-Mail-Account.");                    
                     $( ".alert-danger" ).show(200);            
